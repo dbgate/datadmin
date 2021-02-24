@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E398E0E-E9F0-4988-9490-1DB8C938C963}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plugin.oracle</RootNamespace>
+    <AssemblyName>Plugin.oracle</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DatAdmin\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\DatAdmin\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\extbin\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Utility, Version=0.1.0.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\extbin\Antlr3.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqBridge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c2b14eb747628076, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\extbin\LinqBridge.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AntlrParser\OracleLexer.cs" />
+    <Compile Include="AntlrParser\OracleParser.cs" />
+    <Compile Include="OracleAnalyser.cs" />
+    <Compile Include="OracleConnFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OracleConnFrame.Designer.cs">
+      <DependentUpon>OracleConnFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OracleDbObject.cs" />
+    <Compile Include="OracleDDA.cs" />
+    <Compile Include="OracleDialect.cs" />
+    <Compile Include="OracleDumpLoader.cs" />
+    <Compile Include="OracleQuerySplitter.cs" />
+    <Compile Include="OracleSettings.cs" />
+    <Compile Include="OracleSqlDumper.cs" />
+    <Compile Include="OracleDumpWriter.cs" />
+    <Compile Include="OracleStoredConn.cs" />
+    <Compile Include="OracleTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SqlScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StdIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StdIcons.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OracleConnFrame.resx">
+      <DependentUpon>OracleConnFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SqlScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StdIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oracle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oracle32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatAdmin.Core\DatAdmin.Core.csproj">
+      <Project>{547419E9-1B72-4961-B69F-2B4242CDEF7C}</Project>
+      <Name>DatAdmin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatAdmin.Framework\DatAdmin.Framework.csproj">
+      <Project>{5D983A69-5556-45CF-B4E1-BF78CFF9FD15}</Project>
+      <Name>DatAdmin.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\getconstraintcols.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\getconstraints.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\getrefcols.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\getrefs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\getindexcols.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\getindexes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\syntax.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\createfunction.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\createprocedure.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\createtrigger.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sql\createsequence.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

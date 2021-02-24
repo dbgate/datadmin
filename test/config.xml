@@ -1,0 +1,15 @@
+<Config>
+
+    <ServerConnection>
+        <CreateMacro>connect-mysql</CreateMacro>
+        <ConFileName>test-mysql.con</ConFileName>
+    </ServerConnection>
+
+    <ServerConnection>
+        <CreateMacro>connect-mssql</CreateMacro>
+        <ConFileName>test-mssql.con</ConFileName>
+    </ServerConnection>
+    
+    <AppDataDirectory>c:\jenasoft\DatAdmin2\test\appdata</AppDataDirectory>
+
+</Config>

@@ -1,0 +1,16 @@
+Package: datadmin3
+Version: #VERSION#
+Section: database, cli-mono
+Priority: optional
+Architecture: all
+Essential: no
+Depends: libmono-winforms2.0-cil, libsqlite3-0
+Pre-Depends: 
+Recommends: 
+Suggests: 
+Installed-Size: 4000
+Maintainer: Jan Prochazka <mail@datadmin.com>
+Conflicts: 
+Replaces: 
+Provides: acme
+Description: Quick and easy database administration tool for MySQL, PostgreSQL, SQLite, MS SQL

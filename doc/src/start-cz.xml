@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="DatAdmin">
+<h2>Základní funkce</h2>
+<ul>
+    <li>Spouštění SQL příkazů, výsledky jsou zobrazovány v tabulce</li>
+    <li>Visuální správa databáze, struktura databáze je zobrazena ve stromu</li>
+    <li>Úprava dat v tabulkách libovolné velikosti</li>
+    <li>Zálohování a obnova jednotlivých tabulek nebo celé databáze</li>
+    <li>Nativní přístup k databázim MySQL, MS SQL a SQLite</li>
+    <li>Podporuje všechny datové typy</li>
+    <li>Export a import tabulkových dat z/do souborů CSV, XML, HTML, SQL</li>
+    <li>Generování kostry SQL dotazů</li>
+    <li>Drag &amp; Drop operace s tabulkami i databázemi, kopírování tabulek/databází i mezi různými typy databází</li>
+    <li>Vícejazyčné uživatelské rozhraní - čeština, angličtina</li>
+    <li>Funkce PHP tunel umožňuje připojit se k databázím, které jsou přístupné jen z PHP skriptů</li>
+    <li>Návrh struktury databáze nezávisle na konkrétní databázi, vytváření databázových diagramů</li>
+    <li>Automatické Master/detail pohledy založené na cizích klíčích definovaných v databázi</li>
+    <li>Otevřená architektura umožňující jednoduché přidávání addonů, pro většinu typů addonů jsou k dispozici jednoduché editory</li>
+</ul>
+</help>

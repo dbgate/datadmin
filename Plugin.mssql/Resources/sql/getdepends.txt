@@ -1,0 +1,9 @@
+SELECT
+	mu.name AS MainSchema, mo.name AS MainName, mo.xtype AS MainType,
+	du.name AS RefSchema, do.name AS RefName, do.xtype AS RefType
+FROM
+	sysdepends d
+	INNER JOIN sysobjects mo ON d.id=mo.id
+	INNER JOIN #SCHEMAS# mu ON mo.uid=mu.#SCHEMAID#
+	INNER JOIN sysobjects do ON d.depid=do.id
+	INNER JOIN #SCHEMAS# du ON do.uid=du.#SCHEMAID#

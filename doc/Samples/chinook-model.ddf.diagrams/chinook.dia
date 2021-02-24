@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Diagram>
+  <Table groupid="9bafc1a4-1028-41b1-a442-6fcbdfa885db" name="Album" x="20" y="20">
+    <Column groupid="01be5d7b-e6d4-4ffd-a492-0637ff2ab0e4" name="AlbumId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="b1b905bc-675b-4e95-8da7-f8e9db87544d" name="Title" collation="BINARY" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="cfcf00fb-42d5-4cdc-ae22-385a6e2f31e6" name="ArtistId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <PrimaryKey groupid="3f639279-0bfd-492a-93bf-7e3dc3d8e73e">
+      <Column name="AlbumId" />
+    </PrimaryKey>
+    <ForeignKey pktable="Artist" groupid="aa16d5fa-16f3-4685-869c-503708317e5f" ondelete="undefined" onupdate="undefined" name="FK_Album_0">
+      <Column name="ArtistId" />
+      <PkColumn name="ArtistId" />
+    </ForeignKey>
+    <Index groupid="0a3d0b80-9ce4-4f86-bfea-dea9dd76ed57" unique="0" name="IFK_AlbumArtistId">
+      <Column name="ArtistId" />
+    </Index>
+    <Index groupid="34af601b-95a8-4b46-918e-303c585cb764" unique="0" name="IPK_Album">
+      <Column name="AlbumId" />
+    </Index>
+  </Table>
+  <Table groupid="a5cc6876-d2d8-41d4-ace5-2e6a92d5b024" name="sqlite_sequence" x="28" y="747">
+    <Column groupid="ee53ec64-e9ad-4f6a-a435-e57d3c8f3fbe" name="name" collation="BINARY" nullable="1" datatype="string" typespec.sqlite.subtype="" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="ea557820-b2c3-4691-87f6-39f3c992d81b" name="seq" collation="BINARY" nullable="1" datatype="string" typespec.sqlite.subtype="" length="0" unicode="0" binary="0" varlength="1" />
+  </Table>
+  <Table groupid="3136ec0b-e1af-4ea9-bc39-c5befaf09f14" name="Artist" x="439" y="27">
+    <Column groupid="7567092a-12c0-4439-a875-959061b14ffa" name="ArtistId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="4108559f-64eb-43b1-a8fa-2e175821581b" name="Name" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <PrimaryKey groupid="59c1125f-b958-4c54-9254-bbd67b9fa884">
+      <Column name="ArtistId" />
+    </PrimaryKey>
+    <Index groupid="ec708eda-14fb-4e6d-8a19-f1c97379fc44" unique="0" name="IPK_Artist">
+      <Column name="ArtistId" />
+    </Index>
+  </Table>
+  <Table groupid="01db2be5-017b-4378-a095-e398b4690bc0" name="Customer" x="602" y="337">
+    <Column groupid="1f9eb329-7fbf-4bd9-93a5-b813f901fecb" name="CustomerId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="8f2db134-0dbe-4488-b9d1-abe67f09c51b" name="FirstName" collation="BINARY" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="2d3a496e-4bb7-491e-aa1c-2bc1b56944c7" name="LastName" collation="BINARY" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="01c5a6da-0ba2-4add-82b8-a2d27a28c495" name="Company" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="d80f62cc-69a9-42c1-8439-820db0022c9e" name="Address" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="ce8babc5-79d5-496f-88f2-0ad0399aa1f2" name="City" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="c2fda2c1-f52a-456d-95ec-7e7b87c089fd" name="State" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="62dd933a-55f8-46fa-83f6-016ec5fe86f3" name="Country" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="8c186c3d-e905-4b9c-a9da-c6d53d0c28e2" name="PostalCode" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="11987aa3-7c91-4c73-a96f-de4418a6a705" name="Phone" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="a1b2eacb-c258-47f4-b192-358f44b045b8" name="Fax" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="9c5cfd5e-eb75-4145-a292-233257fa1f6d" name="Email" collation="BINARY" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="8833527f-1e92-4c7b-937f-9076e7b2b8bf" name="SupportRepId" collation="BINARY" nullable="1" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <PrimaryKey groupid="f9fd5294-1fe5-40e2-bb39-136d01405247">
+      <Column name="CustomerId" />
+    </PrimaryKey>
+    <ForeignKey pktable="Employee" groupid="490d4550-6d14-4999-b0f6-7a15e6396ab5" ondelete="undefined" onupdate="undefined" name="FK_Customer_0">
+      <Column name="SupportRepId" />
+      <PkColumn name="EmployeeId" />
+    </ForeignKey>
+    <Index groupid="a6713f3d-b607-4275-8d48-fae406627046" unique="0" name="IFK_CustomerSupportRepId">
+      <Column name="SupportRepId" />
+    </Index>
+    <Index groupid="673b2932-e155-4dfe-b704-8dcbcd377b59" unique="0" name="IPK_Customer">
+      <Column name="CustomerId" />
+    </Index>
+  </Table>
+  <Table groupid="a7c1efe2-29fa-41c6-91c5-b80ad9275cfa" name="Employee" x="555" y="624">
+    <Column groupid="f7f54c38-e13f-4a6c-bed0-d3b554e4b51b" name="EmployeeId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="1e04ba48-43c0-4390-bebf-2582845d352d" name="LastName" collation="BINARY" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="07bfd2af-0974-484d-9500-56bf69f86726" name="FirstName" collation="BINARY" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="23d207e0-b85e-4fbc-8754-d7a7e96ea572" name="Title" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="e7b04719-579a-4669-bf65-e9dba53167ad" name="ReportsTo" collation="BINARY" nullable="1" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="c0e9bdb9-47b4-44af-be94-914f66528354" name="BirthDate" collation="BINARY" nullable="1" datatype="datetime" subtype="datetime" hastimezone="0" />
+    <Column groupid="3a5bd977-3dbf-46f6-87d3-c1e28d117b64" name="HireDate" collation="BINARY" nullable="1" datatype="datetime" subtype="datetime" hastimezone="0" />
+    <Column groupid="e0967394-165a-4fa0-9352-c5456311aef0" name="Address" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="4d05ade6-3603-42d8-810f-d8481281e71b" name="City" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="02f1497d-c5d1-44ae-9d68-e3036ebbf0f6" name="State" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="fce0a52c-6b87-4f99-afdb-cb1eafe642a7" name="Country" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="14a059a5-2730-4bea-b8c8-b74d24bbde1f" name="PostalCode" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="72fe631c-29e8-4573-bbcf-cc3c38f67257" name="Phone" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="5fafdfbe-ee07-4f2b-bb22-41a597ef7cce" name="Fax" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="d5264b4f-b59e-402d-959a-632b711fb0c9" name="Email" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <PrimaryKey groupid="e38c8eb9-4d4a-4dc4-bcb1-6aabb9aee430">
+      <Column name="EmployeeId" />
+    </PrimaryKey>
+    <ForeignKey pktable="Employee" groupid="3bd88e3d-48d9-48b8-a849-bd7f6b46f78d" ondelete="undefined" onupdate="undefined" name="FK_Employee_0">
+      <Column name="ReportsTo" />
+      <PkColumn name="EmployeeId" />
+    </ForeignKey>
+    <Index groupid="d307ce59-e122-46f9-b1a5-7fd317331c2f" unique="0" name="IFK_EmployeeReportsTo">
+      <Column name="ReportsTo" />
+    </Index>
+    <Index groupid="e1ab1276-f117-401d-a2b5-e2899420e119" unique="0" name="IPK_Employee">
+      <Column name="EmployeeId" />
+    </Index>
+  </Table>
+  <Table groupid="d019ae91-8a05-41cf-94e9-a849c7a75ce1" name="Genre" x="55" y="578">
+    <Column groupid="5e28402c-ba28-4ec8-8f86-a12f2c503223" name="GenreId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="2a23fbdd-d961-410a-b9fd-ef19c32cb011" name="Name" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <PrimaryKey groupid="ee055f27-cc25-495b-ae5f-2a81ba0d5ff4">
+      <Column name="GenreId" />
+    </PrimaryKey>
+    <Index groupid="fcd53543-3188-4684-b93d-ead13db56d36" unique="0" name="IPK_Genre">
+      <Column name="GenreId" />
+    </Index>
+  </Table>
+  <Table groupid="b6fdc859-eadd-4fb6-b7a7-0c7312a89898" name="Invoice" x="577" y="105">
+    <Column groupid="635d8732-e7c0-4b02-b492-0d621fd16c29" name="InvoiceId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="e18e14bb-9173-424f-9235-81ea0a5f9131" name="CustomerId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="e8cd962f-3b25-4126-bdb4-1ecbd4113208" name="InvoiceDate" collation="BINARY" nullable="0" datatype="datetime" subtype="datetime" hastimezone="0" />
+    <Column groupid="05a3e738-9a4f-4fa0-a74e-3a8013454523" name="BillingAddress" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="be232cc9-d7c3-4aa1-9155-27b5c53778e0" name="BillingCity" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="17e7286f-28f5-40f5-85f0-a89384a2c291" name="BillingState" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="6f8f66e8-d151-4303-a58f-78a50731f4bd" name="BillingCountry" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="a4ec8344-a0e2-4389-9ce5-4a24f15c7141" name="BillingPostalCode" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="6829c135-d06e-43b1-acf6-a72540a1f876" name="Total" collation="BINARY" nullable="0" datatype="numeric" precision="12" scale="3" autoincrement="0" unsigned="0" />
+    <PrimaryKey groupid="a7a2e1b3-c105-4537-a459-42d979f77988">
+      <Column name="InvoiceId" />
+    </PrimaryKey>
+    <ForeignKey pktable="Customer" groupid="657fb59d-acd0-4973-9b79-9bb3644d9f66" ondelete="undefined" onupdate="undefined" name="FK_Invoice_0">
+      <Column name="CustomerId" />
+      <PkColumn name="CustomerId" />
+    </ForeignKey>
+    <Index groupid="1aa3476d-35c5-4882-8034-a0b4671130a3" unique="0" name="IFK_InvoiceCustomerId">
+      <Column name="CustomerId" />
+    </Index>
+    <Index groupid="a561cbde-5474-462b-aa2d-2c6f0a99e80f" unique="0" name="IPK_Invoice">
+      <Column name="InvoiceId" />
+    </Index>
+    <EntityOverride>
+      <BodyBg>
+        <BgColor>White</BgColor>
+        <GradientColor>0</GradientColor>
+        <IsGradient>0</IsGradient>
+        <Angle>0</Angle>
+      </BodyBg>
+      <IsDefinedHeader>1</IsDefinedHeader>
+      <HeaderBg>
+        <BgColor>ffff80c0</BgColor>
+        <GradientColor>White</GradientColor>
+        <IsGradient>1</IsGradient>
+        <Angle>0</Angle>
+      </HeaderBg>
+      <StyleName>invoice</StyleName>
+    </EntityOverride>
+  </Table>
+  <Table groupid="1f1321d5-37c7-4d21-a2e6-ae8551c77c8f" name="InvoiceLine" x="226" y="115">
+    <Column groupid="66508600-d946-4dda-8b0b-5a03bc66d0c3" name="InvoiceLineId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="e0e1aa26-7f39-4b0b-b127-a421f0f19424" name="InvoiceId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="580674ba-50ce-4857-a22f-2c890a68e213" name="TrackId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="c9c89766-c85a-4639-92e0-8ef1e1801d6d" name="UnitPrice" collation="BINARY" nullable="0" datatype="numeric" precision="12" scale="3" autoincrement="0" unsigned="0" />
+    <Column groupid="c548ba2d-85b2-4c69-a344-c28f9418bdea" name="Quantity" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <PrimaryKey groupid="85ba9866-6625-4d02-b5e8-83f6c34738a5">
+      <Column name="InvoiceLineId" />
+    </PrimaryKey>
+    <ForeignKey pktable="Invoice" groupid="35a21ff5-98b4-4e67-a474-56853f640ca2" ondelete="undefined" onupdate="undefined" name="FK_InvoiceLine_1">
+      <Column name="InvoiceId" />
+      <PkColumn name="InvoiceId" />
+    </ForeignKey>
+    <ForeignKey pktable="Track" groupid="272f0c8c-5bd6-4ba6-aba3-6f6eb5f758a7" ondelete="undefined" onupdate="undefined" name="FK_InvoiceLine_0">
+      <Column name="TrackId" />
+      <PkColumn name="TrackId" />
+    </ForeignKey>
+    <Index groupid="6b6e592a-6e8c-441a-bda9-96cc6c8bef6e" unique="0" name="IFK_InvoiceLineTrackId">
+      <Column name="TrackId" />
+    </Index>
+    <Index groupid="af6e9bb7-08e1-4efb-9935-901d543286e7" unique="0" name="IFK_InvoiceLineInvoiceId">
+      <Column name="InvoiceId" />
+    </Index>
+    <Index groupid="7bb9101b-55ce-42d0-ad76-3f74c4477290" unique="0" name="IPK_InvoiceLine">
+      <Column name="InvoiceLineId" />
+    </Index>
+    <EntityOverride>
+      <BodyBg>
+        <BgColor>White</BgColor>
+        <GradientColor>0</GradientColor>
+        <IsGradient>0</IsGradient>
+        <Angle>0</Angle>
+      </BodyBg>
+      <IsDefinedHeader>1</IsDefinedHeader>
+      <HeaderBg>
+        <BgColor>ffff80c0</BgColor>
+        <GradientColor>White</GradientColor>
+        <IsGradient>1</IsGradient>
+        <Angle>0</Angle>
+      </HeaderBg>
+      <StyleName>invoice</StyleName>
+    </EntityOverride>
+  </Table>
+  <Table groupid="7ef9f34b-4b33-479a-8cef-268abebe8a3e" name="MediaType" x="240" y="652">
+    <Column groupid="1007404e-3b57-4e55-9a27-3907e2d12e9e" name="MediaTypeId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="7b19fc2a-a29b-4b08-ae4e-c841ef48a6f9" name="Name" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <PrimaryKey groupid="a7528955-7028-48a2-a50a-95973eb65d75">
+      <Column name="MediaTypeId" />
+    </PrimaryKey>
+    <Index groupid="0184403f-bd50-4e0e-a487-6bb4ecc81897" unique="0" name="IPK_MediaType">
+      <Column name="MediaTypeId" />
+    </Index>
+  </Table>
+  <Table groupid="11f0b4f5-bddb-4d68-8a3c-403286f77051" name="Playlist" x="374" y="471">
+    <Column groupid="651fd01e-c91c-45c2-88b1-29284260c2de" name="PlaylistId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="8d9e4689-4c37-408a-8e9d-93f9855f9ac2" name="Name" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <PrimaryKey groupid="d4457a11-e9af-4923-aec8-1169a0c8647d">
+      <Column name="PlaylistId" />
+    </PrimaryKey>
+    <Index groupid="c55353a0-d016-41e6-94f7-28ed95775fe3" unique="0" name="IPK_Playlist">
+      <Column name="PlaylistId" />
+    </Index>
+    <EntityOverride>
+      <BodyBg>
+        <BgColor>White</BgColor>
+        <GradientColor>0</GradientColor>
+        <IsGradient>0</IsGradient>
+        <Angle>0</Angle>
+      </BodyBg>
+      <IsDefinedHeader>1</IsDefinedHeader>
+      <HeaderBg>
+        <BgColor>ff80ff80</BgColor>
+        <GradientColor>White</GradientColor>
+        <IsGradient>1</IsGradient>
+        <Angle>0</Angle>
+      </HeaderBg>
+      <StyleName>playlist</StyleName>
+    </EntityOverride>
+  </Table>
+  <Table groupid="cecf94a2-1e94-4ce8-b774-d16693359c95" name="PlaylistTrack" x="410" y="328">
+    <Column groupid="43eedfad-b66a-4e7e-a761-b4dce184c033" name="PlaylistId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="9178b136-9b68-4c1d-8ea2-22d25231694a" name="TrackId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <PrimaryKey groupid="777c4877-fd52-4dd3-8ec4-7207dc24c31f">
+      <Column name="PlaylistId" />
+      <Column name="TrackId" />
+    </PrimaryKey>
+    <ForeignKey pktable="Playlist" groupid="40184749-778c-452b-ad19-3b352044a118" ondelete="undefined" onupdate="undefined" name="FK_PlaylistTrack_1">
+      <Column name="PlaylistId" />
+      <PkColumn name="PlaylistId" />
+    </ForeignKey>
+    <ForeignKey pktable="Track" groupid="600ec5c8-a02f-497f-b498-4c005e4cd59f" ondelete="undefined" onupdate="undefined" name="FK_PlaylistTrack_0">
+      <Column name="TrackId" />
+      <PkColumn name="TrackId" />
+    </ForeignKey>
+    <Index groupid="fba9607f-b496-4e82-88ca-e6c18d81d438" unique="0" name="IFK_PlaylistTrackTrackId">
+      <Column name="TrackId" />
+    </Index>
+    <Index groupid="9411eb07-0cd8-49b7-8e93-f25b8ecc09c2" unique="0" name="IPK_PlaylistTrack">
+      <Column name="PlaylistId" />
+      <Column name="TrackId" />
+    </Index>
+    <EntityOverride>
+      <BodyBg>
+        <BgColor>White</BgColor>
+        <GradientColor>0</GradientColor>
+        <IsGradient>0</IsGradient>
+        <Angle>0</Angle>
+      </BodyBg>
+      <IsDefinedHeader>1</IsDefinedHeader>
+      <HeaderBg>
+        <BgColor>ff80ff80</BgColor>
+        <GradientColor>White</GradientColor>
+        <IsGradient>1</IsGradient>
+        <Angle>0</Angle>
+      </HeaderBg>
+      <StyleName>playlist</StyleName>
+    </EntityOverride>
+  </Table>
+  <Table groupid="540ca6b4-5feb-45a3-8f2b-9c6d6b594433" name="Track" x="34" y="301">
+    <Column groupid="11f842c1-a4aa-489c-9e44-dcbb17804ce0" name="TrackId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="d153a38a-e717-4a9e-b666-493bf2c7d6c8" name="Name" collation="BINARY" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="201b03bd-9069-4473-a6d2-755d39272567" name="AlbumId" collation="BINARY" nullable="1" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="995ed412-15a1-4a19-8c55-c37e6724b1b2" name="MediaTypeId" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="14c1eab8-30cf-4178-aaa3-92ac0683a5a4" name="GenreId" collation="BINARY" nullable="1" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="7a7c3a2d-d8dc-4567-bf6b-3cf11c00c665" name="Composer" collation="BINARY" nullable="1" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="3b05e159-9741-4e6b-aa89-0c2b2696ff5f" name="Milliseconds" collation="BINARY" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="41fc6202-839f-4234-8036-5c9ba0599281" name="Bytes" collation="BINARY" nullable="1" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="79b777a1-d7c4-4c78-a998-b5bd805b0d5b" name="UnitPrice" collation="BINARY" nullable="0" datatype="numeric" precision="12" scale="3" autoincrement="0" unsigned="0" />
+    <PrimaryKey groupid="c88d922d-e9ee-4cb9-86d8-931cf5859c91">
+      <Column name="TrackId" />
+    </PrimaryKey>
+    <ForeignKey pktable="MediaType" groupid="c52900f9-3ddb-449b-8d3e-cf6edf740005" ondelete="undefined" onupdate="undefined" name="FK_Track_0">
+      <Column name="MediaTypeId" />
+      <PkColumn name="MediaTypeId" />
+    </ForeignKey>
+    <ForeignKey pktable="Album" groupid="59fc5ecc-81c4-43da-bc58-2374681c62ab" ondelete="undefined" onupdate="undefined" name="FK_Track_2">
+      <Column name="AlbumId" />
+      <PkColumn name="AlbumId" />
+    </ForeignKey>
+    <ForeignKey pktable="Genre" groupid="966354f0-89e9-4fe5-a057-d493577c1861" ondelete="undefined" onupdate="undefined" name="FK_Track_1">
+      <Column name="GenreId" />
+      <PkColumn name="GenreId" />
+    </ForeignKey>
+    <Index groupid="62a92aa2-ae43-4f99-be4b-39a99368c86f" unique="0" name="IFK_TrackMediaTypeId">
+      <Column name="MediaTypeId" />
+    </Index>
+    <Index groupid="26e01aaf-fb49-4be1-ad0f-69561a1d1c15" unique="0" name="IFK_TrackGenreId">
+      <Column name="GenreId" />
+    </Index>
+    <Index groupid="f1ffa6ec-fa3e-4af3-9c01-47765b9c714c" unique="0" name="IFK_TrackAlbumId">
+      <Column name="AlbumId" />
+    </Index>
+    <Index groupid="0eed9c39-6687-4dde-b7b8-dbcae7fc633e" unique="0" name="IPK_Track">
+      <Column name="TrackId" />
+    </Index>
+  </Table>
+  <Style type="datadmin" adtype="diagramstyle">
+    <LineWay>rectangular</LineWay>
+  </Style>
+</Diagram>

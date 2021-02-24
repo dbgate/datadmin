@@ -1,0 +1,21 @@
+SELECT
+isnull(X.[name], '(All)') as [Table],
+X.[rows] AS [Rows#INT],
+X.[reserved] * 1024 AS [Reserved#BYTES],
+X.[data] * 1024 AS [Data#BYTES],
+X.[index_size] * 1024 AS [Index size#BYTES],
+X.[unused] * 1024 AS [Unused#BYTES]
+FROM
+(SELECT
+CAST(object_name(id) AS varchar(50)) AS [name],
+SUM(CASE WHEN indid < 2 THEN CONVERT(bigint, [rows]) END) AS [rows],
+SUM(CONVERT(bigint, reserved)) * 8 AS reserved,
+SUM(CONVERT(bigint, dpages)) * 8 AS data,
+SUM(CONVERT(bigint, used) - CONVERT(bigint, dpages)) * 8 AS index_size,
+SUM(CONVERT(bigint, reserved) - CONVERT(bigint, used)) * 8 AS unused
+FROM sysindexes WITH (NOLOCK)
+WHERE sysindexes.indid IN (0, 1, 255)
+AND sysindexes.id > 100
+AND object_name(sysindexes.id) <> 'dtproperties'
+GROUP BY sysindexes.id WITH ROLLUP) AS X
+ORDER BY X.[name]

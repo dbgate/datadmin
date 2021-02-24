@@ -1,0 +1,315 @@
+<Job title="create database betest_bcp">
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+      <DatabaseMode>all</DatabaseMode>
+    </Connection>
+    <Sql>create database betest_bcp</Sql>
+    <Database>
+    </Database>
+    <GroupId>a5444b12-e85e-4c41-a38e-bb2a52402e3a</GroupId>
+  </Command>
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+      <DatabaseMode>all</DatabaseMode>
+    </Connection>
+    <Sql>CREATE TABLE [dbo].[bcptest] ( 
+    [ID] int IDENTITY(1, 1) NOT NULL, 
+    [DateCol] datetime NULL, 
+    [BlobCol] image NULL, 
+    [FloatCol] float NULL, 
+    [DecimalCol] decimal(10,5) NULL, 
+    [IntCol] int NULL, 
+    [TextCol] varchar(50) NULL, 
+    [BoolCol] bit NOT NULL, 
+    CONSTRAINT [PK_bcptest] PRIMARY KEY ([ID])
+)</Sql>
+    <Database>betest_bcp</Database>
+    <GroupId>8f8ee8be-f11a-4ac6-92d5-d693f0bc5377</GroupId>
+  </Command>
+  <Command type="bulkcopy">
+    <Source delimiter="," quote="&quot;" escape="&quot;" comment="#" trim_spaces="1" filename="c:\jenasoft\DatAdmin\test\data\bcpdata.csv" encoding="utf-8" type="csv" adtype="datastore">
+      <DataFormat>
+        <Param name="dataformat.date_format" value="yyyy-MM-dd" />
+        <Param name="dataformat.time_format" value="HH:mm:ss" />
+        <Param name="dataformat.datetime_format" value="yyyy-MM-dd HH:mm:ss" />
+        <Param name="dataformat.decimal_separator" value="." />
+        <Param name="dataformat.null_values" value="(NULL)" />
+        <Param name="dataformat.true_values" value="true, yes, 1, on" />
+        <Param name="dataformat.false_values" value="false, no, 0, off" />
+        <Param name="dataformat.blob_info_message" value="(BLOB)" />
+        <Param name="dataformat.blob_mode" value="base64" />
+        <Param name="dataformat.hex_bytes_on_line" value="0" />
+      </DataFormat>
+    </Source>
+    <Target dbname="betest_bcp" tblname="bcptest" schema="dbo" type="generic_db_source">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Target>
+    <Transform type="identity" />
+    <CopyOptions>
+      <AllowBulkCopy>1</AllowBulkCopy>
+    </CopyOptions>
+  </Command>
+  <Command type="bulkcopy">
+    <Source delimiter="," quote="&quot;" escape="&quot;" comment="#" trim_spaces="1" filename="c:\jenasoft\DatAdmin\test\data\bcpdata.csv" encoding="utf-8" type="csv" adtype="datastore">
+      <DataFormat>
+        <Param name="dataformat.date_format" value="yyyy-MM-dd" />
+        <Param name="dataformat.time_format" value="HH:mm:ss" />
+        <Param name="dataformat.datetime_format" value="yyyy-MM-dd HH:mm:ss" />
+        <Param name="dataformat.decimal_separator" value="." />
+        <Param name="dataformat.null_values" value="(NULL)" />
+        <Param name="dataformat.true_values" value="true, yes, 1, on" />
+        <Param name="dataformat.false_values" value="false, no, 0, off" />
+        <Param name="dataformat.blob_info_message" value="(BLOB)" />
+        <Param name="dataformat.blob_mode" value="base64" />
+        <Param name="dataformat.hex_bytes_on_line" value="0" />
+      </DataFormat>
+    </Source>
+    <Target dbname="betest_bcp" tblname="bcptest" schema="dbo" type="generic_db_source">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Target>
+    <Transform type="permute">
+      <Column src="DateCol" dst="DateCol" />
+      <Column src="BlobCol" dst="BlobCol" />
+      <Column src="FloatCol" dst="FloatCol" />
+      <Column src="DecimalCol" dst="DecimalCol" />
+      <Column src="IntCol" dst="IntCol" />
+      <Column src="TextCol" dst="TextCol" />
+      <Column src="BoolCol" dst="BoolCol" />
+    </Transform>
+    <CopyOptions>
+      <AllowBulkCopy>1</AllowBulkCopy>
+    </CopyOptions>
+  </Command>
+  <Command type="bulkcopy">
+    <Source delimiter="," quote="&quot;" escape="&quot;" comment="#" trim_spaces="1" filename="c:\jenasoft\DatAdmin\test\data\bcpdata.csv" encoding="utf-8" type="csv" adtype="datastore">
+      <DataFormat>
+        <Param name="dataformat.date_format" value="yyyy-MM-dd" />
+        <Param name="dataformat.time_format" value="HH:mm:ss" />
+        <Param name="dataformat.datetime_format" value="yyyy-MM-dd HH:mm:ss" />
+        <Param name="dataformat.decimal_separator" value="." />
+        <Param name="dataformat.null_values" value="(NULL)" />
+        <Param name="dataformat.true_values" value="true, yes, 1, on" />
+        <Param name="dataformat.false_values" value="false, no, 0, off" />
+        <Param name="dataformat.blob_info_message" value="(BLOB)" />
+        <Param name="dataformat.blob_mode" value="base64" />
+        <Param name="dataformat.hex_bytes_on_line" value="0" />
+      </DataFormat>
+    </Source>
+    <Target dbname="betest_bcp" tblname="bcptest" schema="dbo" type="generic_db_source">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Target>
+    <Transform type="permute">
+      <Column src="DateCol" dst="DateCol" />
+      <Column src="BlobCol" dst="BlobCol" />
+      <Column src="FloatCol" dst="FloatCol" />
+      <Column src="DecimalCol" dst="DecimalCol" />
+      <Column src="IntCol" dst="IntCol" />
+      <Column src="TextCol" dst="TextCol" />
+      <Column src="BoolCol" dst="BoolCol" />
+    </Transform>
+    <CopyOptions>
+      <AllowBulkCopy>0</AllowBulkCopy>
+    </CopyOptions>
+  </Command>
+  <Command type="bulkcopy">
+    <Source dbname="betest_bcp" tblname="bcptest" schema="dbo" type="generic_db_source">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Source>
+    <Target delimiter="," quote="&quot;" escape="&quot;" comment="#" trim_spaces="1" filename="c:\jenasoft\DatAdmin\test\data\bcpdata2-ms.csv" encoding="utf-8" type="csv" adtype="datastore">
+      <DataFormat>
+        <Param name="dataformat.date_format" value="yyyy-MM-dd" />
+        <Param name="dataformat.time_format" value="HH:mm:ss" />
+        <Param name="dataformat.datetime_format" value="yyyy-MM-dd HH:mm:ss" />
+        <Param name="dataformat.decimal_separator" value="*" />
+        <Param name="dataformat.null_values" value="(NULL)" />
+        <Param name="dataformat.true_values" value="true, yes, 1, on" />
+        <Param name="dataformat.false_values" value="false, no, 0, off" />
+        <Param name="dataformat.blob_info_message" value="(BLOB)" />
+        <Param name="dataformat.blob_mode" value="hexa" />
+        <Param name="dataformat.hex_bytes_on_line" value="16" />
+      </DataFormat>
+    </Target>
+    <Transform type="generic">
+      <Column name="ID" expr="ID" type="column" />
+      <Column name="DateCol" expr="DateCol" type="column" />
+      <Column name="BlobCol" expr="BlobCol" type="column" />
+      <Column name="FloatCol" expr="FloatCol" type="column" />
+      <Column name="DecimalCol" expr="DecimalCol" type="column" />
+      <Column name="IntCol" expr="IntCol" type="column" />
+      <Column name="TextCol" expr="TextCol" type="column" />
+      <Column name="BoolCol" expr="BoolCol" type="column" />
+      <Column name="TestVal" expr="TESTOVACIHODNOTA" type="const" />
+      <Column name="PythonVal" expr="x" type="python" />
+      <Script>x=int(row['IntCol'])+1</Script>
+    </Transform>
+    <CopyOptions>
+      <AllowBulkCopy>1</AllowBulkCopy>
+    </CopyOptions>
+  </Command>
+  <Command type="bulkcopy">
+    <Source dbname="betest_bcp" tblname="bcptest" schema="dbo" type="generic_db_source">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Source>
+    <Target storage="attribute" filename="c:\jenasoft\DatAdmin\test\data\bcptest2-ms.xml" encoding="utf-8" type="generic_xml" adtype="datastore">
+      <RootElementName>root</RootElementName>
+      <RowElementName>row</RowElementName>
+      <CellElementName>cell</CellElementName>
+      <ColumnAttributeName>column</ColumnAttributeName>
+      <DataFormat>
+        <Param name="dataformat.date_format" value="yyyy-MM-dd" />
+        <Param name="dataformat.time_format" value="HH:mm:ss" />
+        <Param name="dataformat.datetime_format" value="yyyy-MM-dd HH:mm:ss" />
+        <Param name="dataformat.decimal_separator" value="." />
+        <Param name="dataformat.null_values" value="(NULL)" />
+        <Param name="dataformat.true_values" value="true, yes, 1, on" />
+        <Param name="dataformat.false_values" value="false, no, 0, off" />
+        <Param name="dataformat.blob_info_message" value="(BLOB)" />
+        <Param name="dataformat.blob_mode" value="infotext" />
+        <Param name="dataformat.hex_bytes_on_line" value="0" />
+      </DataFormat>
+    </Target>
+    <Transform type="identity" />
+    <CopyOptions>
+      <AllowBulkCopy>1</AllowBulkCopy>
+    </CopyOptions>
+  </Command>
+  <Command type="bulkcopy">
+    <Source dbname="betest_bcp" tblname="bcptest" schema="dbo" type="generic_db_source">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Source>
+    <Target filename="c:\jenasoft\DatAdmin\test\data\bcptest2-ms.sql" encoding="utf-8" type="sql_file" adtype="datastore">
+      <Dialect>postgre</Dialect>
+      <StatementSeparator>;\n</StatementSeparator>
+      <TableName>TestName</TableName>
+    </Target>
+    <Transform type="identity" />
+    <CopyOptions>
+      <AllowBulkCopy>1</AllowBulkCopy>
+    </CopyOptions>
+  </Command>
+  <Command type="bulkcopy">
+    <Source dbname="betest_bcp" tblname="bcptest" schema="dbo" type="generic_db_source">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Source>
+    <Target filename="c:\jenasoft\DatAdmin\test\data\bcptest2-excel-ms.xml" encoding="utf-8" type="excel_xml_file" adtype="datastore">
+      <SheetName>Sheet1</SheetName>
+      <HeaderColor>Blue</HeaderColor>
+      <DataFormat>
+        <Param name="dataformat.date_format" value="yyyy-MM-dd" />
+        <Param name="dataformat.time_format" value="HH:mm:ss" />
+        <Param name="dataformat.datetime_format" value="yyyy-MM-dd HH:mm:ss" />
+        <Param name="dataformat.decimal_separator" value="." />
+        <Param name="dataformat.null_values" value="(NULL)" />
+        <Param name="dataformat.true_values" value="true, yes, 1, on" />
+        <Param name="dataformat.false_values" value="false, no, 0, off" />
+        <Param name="dataformat.blob_info_message" value="(BLOB)" />
+        <Param name="dataformat.blob_mode" value="infotext" />
+        <Param name="dataformat.hex_bytes_on_line" value="0" />
+      </DataFormat>
+    </Target>
+    <Transform type="identity" />
+    <CopyOptions>
+      <AllowBulkCopy>1</AllowBulkCopy>
+    </CopyOptions>
+  </Command>
+  <Command type="bulkcopy">
+    <Source dbname="betest_bcp" tblname="bcptest" schema="dbo" type="generic_db_source">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Source>
+    <Target filename="c:\jenasoft\DatAdmin\test\data\bcptestw-ms.wiki" encoding="utf-8" type="formatted_text" adtype="datastore">
+      <TextFormatter>media_wiki</TextFormatter>
+      <DataFormat>
+        <Param name="dataformat.date_format" value="yyyy-MM-dd" />
+        <Param name="dataformat.time_format" value="HH:mm:ss" />
+        <Param name="dataformat.datetime_format" value="yyyy-MM-dd HH:mm:ss" />
+        <Param name="dataformat.decimal_separator" value="." />
+        <Param name="dataformat.null_values" value="(NULL)" />
+        <Param name="dataformat.true_values" value="true, yes, 1, on" />
+        <Param name="dataformat.false_values" value="false, no, 0, off" />
+        <Param name="dataformat.blob_info_message" value="(BLOB)" />
+        <Param name="dataformat.blob_mode" value="infotext" />
+        <Param name="dataformat.hex_bytes_on_line" value="0" />
+      </DataFormat>
+    </Target>
+    <Transform type="identity" />
+    <CopyOptions>
+      <AllowBulkCopy>1</AllowBulkCopy>
+    </CopyOptions>
+  </Command>
+</Job>

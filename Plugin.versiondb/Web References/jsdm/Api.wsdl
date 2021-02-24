@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateModel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modprops" type="tns:CreateModelProps" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateModelProps">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dialect" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Versioned" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateModelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateModelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDbStructure">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbstruct" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="replace" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportDbStructureResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddModelVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="model" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="verprops" type="tns:CreateVersionProps" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateVersionProps">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ordinal" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddModelVersionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateModelSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateModel" />
+  </wsdl:message>
+  <wsdl:message name="CreateModelSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportDbStructureSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportDbStructure" />
+  </wsdl:message>
+  <wsdl:message name="ImportDbStructureSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportDbStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddModelVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddModelVersion" />
+  </wsdl:message>
+  <wsdl:message name="AddModelVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddModelVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ApiSoap">
+    <wsdl:operation name="CreateModel">
+      <wsdl:input message="tns:CreateModelSoapIn" />
+      <wsdl:output message="tns:CreateModelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportDbStructure">
+      <wsdl:input message="tns:ImportDbStructureSoapIn" />
+      <wsdl:output message="tns:ImportDbStructureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddModelVersion">
+      <wsdl:input message="tns:AddModelVersionSoapIn" />
+      <wsdl:output message="tns:AddModelVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ApiSoap" type="tns:ApiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateModel">
+      <soap:operation soapAction="http://tempuri.org/CreateModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDbStructure">
+      <soap:operation soapAction="http://tempuri.org/ImportDbStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddModelVersion">
+      <soap:operation soapAction="http://tempuri.org/AddModelVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ApiSoap12" type="tns:ApiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateModel">
+      <soap12:operation soapAction="http://tempuri.org/CreateModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportDbStructure">
+      <soap12:operation soapAction="http://tempuri.org/ImportDbStructure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddModelVersion">
+      <soap12:operation soapAction="http://tempuri.org/AddModelVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Api">
+    <wsdl:port name="ApiSoap" binding="tns:ApiSoap">
+      <soap:address location="http://localhost:49456/Web/Handlers/Api.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ApiSoap12" binding="tns:ApiSoap12">
+      <soap12:address location="http://localhost:49456/Web/Handlers/Api.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

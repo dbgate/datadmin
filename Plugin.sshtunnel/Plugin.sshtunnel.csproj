@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F71D4B32-34FA-41A5-91D0-3D35B53879DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plugin.sshtunnel</RootNamespace>
+    <AssemblyName>Plugin.sshtunnel</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DatAdmin\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\DatAdmin\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SshErrors.cs" />
+    <Compile Include="SshProviderFactory.cs" />
+    <Compile Include="SshResultSet.cs" />
+    <Compile Include="StdIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StdIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StunCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StunDefaults.cs" />
+    <Compile Include="StunProviderFactory.cs" />
+    <Compile Include="StunStoredConn.cs" />
+    <Compile Include="StunTunnellingDriver.cs" />
+    <Compile Include="StunConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StunConnectionStringBuilder.cs" />
+    <Compile Include="StunEditFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StunEditFrame.Designer.cs">
+      <DependentUpon>StunEditFrame.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatAdmin.Core\DatAdmin.Core.csproj">
+      <Project>{547419E9-1B72-4961-B69F-2B4242CDEF7C}</Project>
+      <Name>DatAdmin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Granados\granados.csproj">
+      <Project>{9780D85D-2E12-4747-9E08-DEDB95A71FC3}</Project>
+      <Name>granados</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StdIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StdIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StunEditFrame.resx">
+      <DependentUpon>StunEditFrame.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssh32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+Dobry den,
+
+na zaklade Vaseho pozadavku Vam byl vygeneroval licencni klic k programu DatAdmin na zkusebni dobu 31 dnu.
+
+Instalace:
+Ulozte prilohu tohoto e-mailu na disk.
+V Programu DatAdmin, otevrete dialog Napoveda/Licence a zvolte Instalovat licenci
+
+V pripade problemu prosim vyuzijte forum http://forum.datadmin.com .
+
+S pozdravem
+JenaSoft

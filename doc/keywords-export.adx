@@ -1,0 +1,54 @@
+<Addon type="multifile" adtype="dbwriter">
+  <File>
+    <Sql>select id, name as dialect, file from dialect</Sql>
+    <FileNameTemplate>C:\jenasoft\DatAdmin\#FILE#</FileNameTemplate>
+    <Content type="template">
+      <Code>&lt;?xml  version="1.0"?&gt;
+&lt;SyntaxDefinition name="Sql_&lt;%=_DIALECT_%&gt;" extensions=".sql"&gt;
+    &lt;Digits name="Digits" bold="false" italic="false" color="DarkBlue"/&gt;
+
+    &lt;RuleSets&gt;
+        &lt;RuleSet ignorecase="true"&gt;
+            &lt;Delimiters&gt;&amp;amp;&amp;lt;&amp;gt;~!%^*()-+=|\#/{}[]:;"' , .?&lt;@= select delimsex from dialect where id = {_ID_} @&gt;&lt;/Delimiters&gt;
+        
+			&lt;Span name="LineComment" stopateol="true" bold="false" italic="false" color="Gray" &gt;
+				&lt;Begin &gt;--&lt;/Begin&gt;
+			&lt;/Span&gt;
+
+			&lt;Span name="BlockComment" stopateol="false" bold="false" italic="false" color="Gray" &gt;
+				&lt;Begin &gt;/*&lt;/Begin&gt;
+                &lt;End&gt;*/&lt;/End&gt;
+			&lt;/Span&gt;
+        
+            &lt;Span name="Identifier" bold="false" italic="false" color="Green" stopateol="true"&gt;
+                &lt;Begin&gt;&lt;@= select idstart from dialect where id = {_ID_} @&gt;&lt;/Begin&gt;
+                &lt;End&gt;&lt;@= select idend from dialect where id = {_ID_} @&gt;&lt;/End&gt;
+            &lt;/Span&gt;
+            
+            &lt;Span name="String" bold="false" italic="false" color="Red" stopateol="false" escapecharacter='&lt;@= select stringescape from dialect where id = {_ID_} @&gt;'&gt;
+                &lt;Begin&gt;'&lt;/Begin&gt;
+                &lt;End&gt;'&lt;/End&gt;
+            &lt;/Span&gt;
+            
+            &lt;@= select marksex from dialect where id = {_ID_} @&gt;
+            
+            &lt;@ 
+            	select category.id as catid, category.name as catname, color
+            	from 
+            		category
+            		inner join style on category.style_id=style.id 
+            	where 
+            		Dialect_ID = {_ID_} 
+            @&gt;
+            &lt;KeyWords name="&lt;%=_catname_%&gt;" bold="true" italic="false" color="&lt;%=_color_%&gt;"&gt;
+            	&lt;@ select Word from Keyword where Category_ID = {_catid_} @&gt;
+            		&lt;Key word="&lt;%= _word_ %&gt;"/&gt;
+            	&lt;@ end select @&gt;
+            &lt;/KeyWords&gt;
+            &lt;@ end select @&gt;
+        &lt;/RuleSet&gt;
+    &lt;/RuleSets&gt;
+&lt;/SyntaxDefinition&gt;</Code>
+    </Content>
+  </File>
+</Addon>

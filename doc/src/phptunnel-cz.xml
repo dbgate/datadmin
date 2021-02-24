@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="PHP Tunel">
+
+<h2>Kdy použít PHP Tunel</h2>
+<p>PHP Tunel je vhodné použít tehdy, pokud máte někde (např. na freehostingovém serveru) MySQL databázi, na kterou je 
+možné se připojit pomocí PHP skriptů, ale není možný přímý přístup zvenku. Funguje to tak, že na server se nahraje PHP soubor,
+který dělá dotazy na MySQL databázi. DatAdmin pak komunikuje s tímto skriptem přes protokol HTTP. V okamžiku, kdy je nastavení 
+nakonfigurováno, už víceméně nepoznáte, jestli pracujete s databází přímo nebo přes PHP tunel.</p>
+<h2>Jak nastavit PHP Tunel</h2>
+<p>
+V menu zvolte Soubor >&gt; Připojit, vyberte "PHP Tunel" a zvolte jméno připojení. Ukáže se průvodce vytvoření připojení.
+</p>
+<h3>Základní nastavení</h3>
+<ul>
+    <li>
+        Tlačítkem "Uložit phptunne.php" uložte PHP soubor, souboru dejte indeligentní jméno s příponou .php (dále budu předpokládat, že se jmenuje 
+        phptunnel.php). Tento soubor přes nahrajte na (např. přes FTP) webový server, který má přístup na MySQL databázi.
+    </li>
+    <li>
+        Do pole URL zadejte URL včetně protokolu, které ukazuje na PHP soubor - např. http://koks.wz.cz/phptunnel.php.
+        V prohlížeči by se při přístupu na toto URL měla zobrazit hláška o tom, že slouží k PHP-tunelování.
+    </li> 
+    <li>
+        Přejděte na další stránku průvodce. Pokud předchozí nastavení nebylo provedeno správně, krok není možné provést. 
+    </li>
+    <li>
+        Do pole server zadejte adresu databázového serveru, pod jakou ho vidí webový server - nejčastěji localhost nebo 127.0.0.1 .
+    </li>
+    <li>
+        Uživatelské jméno a heslo - myslí se k databázi. 
+    </li>
+    <li>
+        Pole databáze můžeme nechat předvyplněné textem (Všechny databáze) , nebo se dá vybrat jedna databáze (pak bude mořno 
+        pracovat jen s touto jednou databází). Pozn. - pokud nemáte právo na puštění příkazu "SHOW DATABASES", je nutné jméno 
+        databáze vyplnit ručně, jinak s připojením nebude možné rozumně pracovat. 
+    </li>
+</ul>
+<h3>Pokročilé nastavení</h3>
+V tomto nastavení se dá nastavit HTTP login/heslo a nastavení proxy serveru.
+<ul>
+    <li>
+        Autentifikace - <b>Login, Password</b> - přihlašovací jméno, heslo HTTP autentifikace
+    </li>
+    <li>
+        HTTP Proxy - <b>Server</b> - adresa proxy serveru, ve formátu http://proxy.cz:port , implicitně by se měla použít adresa z defaultního prohlížeče 
+    </li>
+    <li>
+        HTTP Proxy - <b>Login, Heslo</b> - přihlašovací jméno, heslo k HTTP proxy serveru
+    </li>
+</ul>
+
+<p>
+    Toť vše, OK to vše potvrdí a přípojení je hotové. (Pokud se nezobrazí, zvolte "Obnovit" v kontextovém menu kořenového uzlu)
+</p>
+
+</help>

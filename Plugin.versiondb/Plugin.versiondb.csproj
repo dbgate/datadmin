@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42B69A15-165B-4597-967F-0D924867F420}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plugin.versiondb</RootNamespace>
+    <AssemblyName>Plugin.versiondb</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DatAdmin\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\DatAdmin\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LinqBridge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c2b14eb747628076, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\extbin\LinqBridge.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbCreatorGenerator.cs" />
+    <Compile Include="Features.cs" />
+    <Compile Include="JsdmImportCommand.cs" />
+    <Compile Include="ModelTransform\FilterByNameTransform.cs" />
+    <Compile Include="ModelTransform\FilterByNameTransformFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModelTransform\FilterByNameTransformFrame.Designer.cs">
+      <DependentUpon>FilterByNameTransformFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTransform\FilterByTypeTransform.cs" />
+    <Compile Include="ModelTransform\FilterByTypeTransformFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ModelTransform\FilterByTypeTransformFrame.Designer.cs">
+      <DependentUpon>FilterByTypeTransformFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTransform\RemoveConstraintTransform.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="VariantDef.cs" />
+    <Compile Include="VdbAppObjects.cs" />
+    <Compile Include="VdbConnection.cs" />
+    <Compile Include="VdbExtension.cs" />
+    <Compile Include="VdbFactory.cs" />
+    <Compile Include="VdbFiles.cs" />
+    <Compile Include="VdbNodes.cs" />
+    <Compile Include="VdbObjectView.cs" />
+    <Compile Include="VdbSqlGen.cs" />
+    <Compile Include="VdbUpgradeScriptFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VdbUpgradeScriptFrame.Designer.cs">
+      <DependentUpon>VdbUpgradeScriptFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VersionDb.cs" />
+    <Compile Include="VersionDbExtenders.cs" />
+    <Compile Include="VersionDbProperties.cs" />
+    <Compile Include="VersionDbPropsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VersionDbPropsForm.designer.cs">
+      <DependentUpon>VersionDbPropsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\jsdm\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatAdmin.Core\DatAdmin.Core.csproj">
+      <Project>{547419E9-1B72-4961-B69F-2B4242CDEF7C}</Project>
+      <Name>DatAdmin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatAdmin.Framework\DatAdmin.Framework.csproj">
+      <Project>{5D983A69-5556-45CF-B4E1-BF78CFF9FD15}</Project>
+      <Name>DatAdmin.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSharpCode.TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin.dbmodel\Plugin.dbmodel.csproj">
+      <Project>{7F16CBE6-D850-483E-98C3-AC0B830B48BC}</Project>
+      <Name>Plugin.dbmodel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin.diagrams\Plugin.diagrams.csproj">
+      <Project>{28C9F62F-7AA2-4B9C-87D1-318E21D4D916}</Project>
+      <Name>Plugin.diagrams</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ModelTransform\FilterByNameTransformFrame.resx">
+      <DependentUpon>FilterByNameTransformFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelTransform\FilterByTypeTransformFrame.resx">
+      <DependentUpon>FilterByTypeTransformFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VdbUpgradeScriptFrame.resx">
+      <DependentUpon>VdbUpgradeScriptFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VersionDbPropsForm.resx">
+      <DependentUpon>VersionDbPropsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:49456/Web/Handlers/Api.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\jsdm\</RelPath>
+      <UpdateFromURL>http://localhost:49456/Web/Handlers/Api.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Plugin_versiondb_jsdm_Api</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\jsdm\Api.disco" />
+    <None Include="Web References\jsdm\Api.wsdl" />
+    <None Include="Web References\jsdm\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,18 @@
+SELECT 
+	ut.name AS TABLE_SCHEMA, ot.name AS TABLE_NAME,
+	i.name AS IndexName,
+	c.name AS ColumnName,
+	k.keyno AS KeyOrder
+FROM
+	sysindexkeys k -- index columns
+	INNER JOIN sysindexes i ON k.id=i.id AND k.indid=i.indid
+	INNER JOIN sysobjects ot ON ot.id=k.id
+	INNER JOIN #SCHEMAS# ut ON ut.#SCHEMAID#=ot.uid
+	INNER JOIN syscolumns c ON c.id=ot.id AND c.colid=k.colid
+WHERE
+    #RETURNALL#=1 OR (ut.name='#SCHEMA#' AND ot.name='#TABLE#')
+AND i.name NOT IN
+ (SELECT o2.name FROM sysobjects o2
+  WHERE o2.parent_obj = i.id
+  AND objectproperty(o2.id, N'isConstraint') = 1.0)
+ORDER BY k.keyno

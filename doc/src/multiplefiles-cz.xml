@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="DatAdmin">
+<h2>Export - vícero souborů</h2>
+<ul>
+    <li>Slouží k exportu databáze do adresářové struktury</li>
+    <li>Seznam souborů zobrazuje seznam šablon jmen souborů - tedy z jedné položky v seznamu se může ve 
+        skutečnosti vytvořit více výsledných souborů, v závislosti na datech v databázi</li>
+    <li><b>Jméno souboru</b> - šabloná jména souboru. Obsahuje plnou cestu k souboru. 
+    Může obsahovat také jména sloupců ve tvaru #SLOUPEC# (jméno sloupce se převede na velká písmena) 
+    z výsledku dotazu uvedeného níže.</li>
+    <li><b>Typ souboru</b> - může obsahovat jednu z možností:
+        <ul>
+            <li>Šablona</li>
+            <li>Python</li>
+            <li>BLOB</li>
+            <li>Tabulková data</li>
+        </ul>
+    </li>
+    <li><b>Dotaz</b> - Obsahuje dotaz do exportované databáze, který je příslušný k vybranému souboru. 
+    Pro každý pro řádek výsledku dotazu se vytvoří jeden výsledný soubor (Aby se soubory nepřepisovali, 
+    je nutné ve jménu souboru použít sloupce z výsledku dotazu ve tvaru #SLOUPEC#).</li>
+</ul>
+
+<h2>Typ souboru BLOB</h2>
+Je nejjednodušším typem souboru. Do souboru se vloží obsah jednoho BLOB pole. Pole se specifikuje
+SQL dotazem. Je možné (resp. ve většině případů nutné) v dotazu použít odkazy na zdrojový sloupec
+ve formátu #SLOUPEC#.
+<h2>Typ souboru Python</h2>
+Obsahuje skript v jazyce Python. Do výsledného souboru je přesměrován stream sys.stdout, takže všechno,
+co je vypsáno příkazem print, se objeví ve výsledném souboru. Odkazy na zdrojové sloupce jsou dostupné jako 
+proměnné ve tvaru _SLOUPEC_ (písmena jsou převedena na velká). Nejobecnější formát souboru. 
+API přístupu k databázi z důvodu častých změn zatím není 
+zdokumentované, v případě zájmu se prosím zdarma obraťte na podporu DatAdmina, mail@datadmin.com .   
+<h2>Typ souboru Tabulková data</h2>
+Umožňuje exportovat do libovolného výstupního formátu pro export tabulky, který implementuje potřebné protokoly
+(např. CSV, HTML). Je nutné zadat dotaz (opět s referencemi na hodnoty sloupců ze souboru ve tvaru #SLOUPEC#).
+<h2>Typ souboru šablona</h2>
+Je skoro stejně obecný typ souboru jako Python, ale je daleko snažší na použití. Do výsledného souboru se zkopíruje
+obsah textového pole s tím, že je možné použít některé speciální tagy (podobně jako u PHP nebo ASP.NET). Často jsou použity 
+výrazy/přikazy v Pythonu. Ve všech jsou dostupné proměnné _SLOUPEC_ (veslkými písmeny) z řádku výsledku dotazu 
+zadaného u souboru.
+<ul>
+    <li>&lt;%= výraz v Pythonu %&gt; - vyhodnotí výraz a zapíše na výstup</li>
+    <li>&lt;@= select ... @&gt; - select příkaz - výstup by měl obsahovat jednu hodnotu, 
+    ta je přímo vypsána na výstup. Úseky SQL příkazu uzavřené v složených závorkách {} jsou interpretovány jako
+    výrazy v Pythonu - takto je možné přikaz SELECT parametrizovat.</li>
+    <li>&lt;@ select ... @&gt; ... sekce, která se opakuje pro každý řádek výsledku SELECTu ... &lt;@ end select @&gt;<br/>
+    Jednotlivá pole výsledku jsou dostupná pod názvem _sloupec_ (malými písmeny, takže se neplete se jmény 
+    sloupců daných dotazem u souboru). Slovo "select" musí být malými písmeny.</li>
+    <li>&lt;@ for <i>proměnná</i> in <i>výraz</i> @&gt; ... &lt;@ end for @&gt; klasický for-each cyklus. </li>
+</ul>
+
+</help>

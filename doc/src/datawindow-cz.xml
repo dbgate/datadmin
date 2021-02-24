@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="Prohlížeč dat">
+
+<p>
+Prohlížeč dat zobrazuje data aktuálně vybrané tabulky ve stromě připojení. Podporuje rychlé vyhledávání, 
+tříděni podle více sloupců najednou, stránkování, historii, zrušení načítání atd. 
+</p>
+
+<ul>
+    <li>V horní liště je k dispozici rychlé hledání (stačí vepsat hledaný text do pole vedle ikonky <coreicon name='find'/>) a stisknout Enter.
+    Hledání se provádí na datech celé tabulky, ne jen načtěné stránky (tudíž znamená dotaz na databázový server)</li>  
+    <li>Ikonka  <coreicon name='filter'/>) zobrazí nástrojová panel pro filtrování.</li>  
+    <li>Ikonka  <coreicon name='detail'/>) zobrazí tabulku s odkazovanými daty (master/detail view).</li>  
+    <li>Ikonka  <coreicon name='browse'/>) zobrazí nástrojová panel pro procházení historií (má smysl v kombinaci s master/detail pohledy).</li>  
+    <li>Ikonka  <coreicon name='reset'/>) vyresetuje pohled na tabulku (nastaví implicitní řazení, vypne filtrování).</li>  
+</ul>
+
+<h2>Nástrojový panel Filtrování</h2>
+<coreicon name='filter'/>
+<br/>
+<p>
+Tento panel umožňuje zadat podmínku WHERE pro spouštěný SQL příkaz. SQL syntaxe je shodná se syntaxí použité databáze. 
+</p>
+
+<h2>Nástrojový panel Reference</h2>
+<coreicon name='detail'/>
+<br/>
+<p>
+Tento panel umožňuje prohlížet data vztažená k aktuální řádce. Je možné zobrazit 2 typy odkazovaných dat:
+    <ul>
+        <li>Detail - v dolní tabulce se zobrazí <b>všechny řádky</b> vztažené k aktuálnímu <b>řádku</b> horní tabulky. 
+        Relace, na základě které se výběr dělá, se dá zvolit v rozbalovacím seznamu Detail.</li>
+        <li>Master - v dolní tabulce se zobrazí <b>jeden řádek</b>, na základě vybraného <b>pole</b> z hroní tabulky se zvolí cizí klíč a cílový tabulka.</li>
+        <li>Master/detail fungují jen v případě, že jsou v databází korektně definovány cizí klíče. V databázích bez možnosti definovat 
+        cizí klíče tyto pohledy nefungují.</li>
+        <li>Příkaz Jdi na <coreicon name='goto'/> - data, která jsou zobrazena v dolní tabulce, se zobrazí v horní tabulce, čímž 
+        se stanou editovatelnými a je možné takto tranzitivně prohlížet jejich závislosti.</li>
+    </ul>
+</p>
+
+<h2>Nástrojový panel Historie</h2>
+<coreicon name='browse'/>
+<br/>
+<p>
+Tento panel se umožňuje pohybovat v historii projitých odkazů pomocí příkazu Jdi na z panelu Reference. Historie je relativní 
+k tabulce vybrané ve stromě připojení. Příkaz reset <coreicon name='reset'/> tuto historii pro vybranou tabulku vymaže.
+</p>
+
+</help>

@@ -1,0 +1,19 @@
+[OPTIONS]
+Title=DatAdmin
+Auto Index=Yes
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=datadmin-en.chm
+Contents file=index-en.hhc
+Default Window=MsdnHelp
+Default topic=start-en.html
+Display compile progress=No
+Error log file=errorlog.log
+Full-text search=Yes
+Language=0x409
+;Index file=jqladmin.hhk
+
+[FILES]
+start-en.html
+
+[INFOTYPES]

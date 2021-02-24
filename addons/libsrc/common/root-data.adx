@@ -1,0 +1,23 @@
+<Object type="DatAdmin.HtmlObjectView, DatAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"><HtmlObjectView xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Original>false</Original><Conditions><CommandCondition><PropertyName>root</PropertyName><TestedValue>data</TestedValue></CommandCondition></Conditions><NodeTypeConditionsText /><PageTitle>DatAdmin</PageTitle><Position>1</Position><Language>Python</Language><Code>def open_newconn_dialog():
+    menu1 = mainwin.MainMenuStrip.Items['mnuFile']
+    menu3 = menu1.DropDownItems['mnuFileConnect']
+    menu3.PerformClick();
+
+def printvalue(name, value):
+    if value is None: return
+    print '&lt;tr&gt;&lt;td style="background-color:#CCFFFF"&gt;&lt;b&gt;%s&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%s&lt;/td&gt;&lt;/tr&gt;' % (_t(name), value)
+
+print '&lt;h2&gt;DatAdmin&lt;/h2&gt;'
+print '&lt;table width="100%" border="1" style="border-collapse:collapse; font-family:arial; font-size:9pt"&gt;'
+printvalue('s_version', core.version)
+printvalue('s_revision', core.svn_revision)
+printvalue('s_build_at', core.built_at)
+printvalue('s_edition', core.edition)
+printvalue('s_license_valid_to', core.edition_valid_to)
+print '&lt;/table&gt;'
+
+print '&lt;ul&gt;'
+print '&lt;li&gt;&lt;a href="callback://open_newconn_dialog"&gt;%s&lt;/a&gt;&lt;/li&gt;' % _t('s_create_connection')
+print '&lt;li&gt;&lt;a href="http://datadmin.com"&gt;%s&lt;/a&gt;&lt;/li&gt;' % _t('s_datadmin_on_web')
+print '&lt;/ul&gt;'
+</Code></HtmlObjectView></Object>

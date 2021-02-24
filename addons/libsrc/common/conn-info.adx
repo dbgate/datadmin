@@ -1,0 +1,30 @@
+﻿<Object type="DatAdmin.HtmlObjectView, DatAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"><HtmlObjectView xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Original>false</Original><Conditions /><NodeTypeConditionsText>DatAdmin.ConnectionTreeNode, DatAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</NodeTypeConditionsText><PageTitle>s_connection</PageTitle><Position>1</Position><Language>Python</Language><Code>def printvalue(name, value):
+    if value is None: return
+    print '&lt;tr&gt;&lt;td style="background-color:#CCFFFF"&gt;&lt;b&gt;%s&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%s&lt;/td&gt;&lt;/tr&gt;' % (_t(name), value)
+
+def printprop(title, name):
+    if name in props:
+        printvalue(title, props[name])
+
+def printstored(title, name):
+    try: value = getattr(stored, name)
+    except: return
+    printvalue(title, value)
+
+def makeniceengine(eng):
+    if eng == 'mssql': return 'Microsoft SQL Server'
+    if eng == 'mysql': return 'MySQL'
+    if eng == 'sqlite': return 'SQLite'
+    if eng == 'generic': return 'Generic provider'
+    return eng
+
+print "&lt;h2&gt;%s&lt;/h2&gt;" % _t('s_properties')
+print '&lt;table width="100%" border="1" style="border-collapse:collapse; font-family:arial; font-size:9pt"&gt;'
+printvalue('s_path', node.fspath)
+if 'dbengine' in props: 
+    printvalue('s_database_engine', makeniceengine(props['dbengine']))
+printstored('s_host', 'DataSource')
+printstored('s_database', 'SingleDatabaseName')
+printstored('s_login', 'Login')
+print '&lt;/table&gt;'
+</Code></HtmlObjectView></Object>

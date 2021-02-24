@@ -1,0 +1,123 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABDBD3A9-1A48-4BAB-AD83-9FF037CD7456}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plugin.phptunnel</RootNamespace>
+    <AssemblyName>Plugin.phptunnel</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DatAdmin\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\DatAdmin\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PtunCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PtunConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PtunConnectionStringBuilder.cs" />
+    <Compile Include="PtunDefaults.cs" />
+    <Compile Include="PtunDialect.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PtunProviderFactory.cs" />
+    <Compile Include="PtunErrors.cs" />
+    <Compile Include="PtunTunnellingDriver.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PtunStoredConn.cs" />
+    <Compile Include="StdIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StdIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PtunEditFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PtunEditFrame.Designer.cs">
+      <DependentUpon>PtunEditFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebRequests.cs" />
+    <Compile Include="WebResultBase.cs" />
+    <Compile Include="WebResultSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatAdmin.Core\DatAdmin.Core.csproj">
+      <Project>{547419E9-1B72-4961-B69F-2B4242CDEF7C}</Project>
+      <Name>DatAdmin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatAdmin.Wizard\DatAdmin.Wizard.csproj">
+      <Project>{94955608-38E0-43BE-AE73-0C16012E7445}</Project>
+      <Name>DatAdmin.Wizard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource1.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StdIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PtunEditFrame.resx">
+      <DependentUpon>PtunEditFrame.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phptunnel.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\php_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\php.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\php32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

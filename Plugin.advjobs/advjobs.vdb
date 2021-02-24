@@ -1,0 +1,9 @@
+<VersionDb>
+  <Version name="1" groupid="044d7e33-0950-467b-b13d-aee0ac164473" />
+  <Properties>
+    <GetVersionSql>SELECT Value FROM Variables WHERE Name='version'</GetVersionSql>
+    <SetVersionSql>UPDATE Variables SET Value='#VERSION#' WHERE Name='version'</SetVersionSql>
+    <Dialect>sqlite</Dialect>
+    <ForceSingleSchema>1</ForceSingleSchema>
+  </Properties>
+</VersionDb>

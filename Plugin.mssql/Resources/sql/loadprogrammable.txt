@@ -1,0 +1,6 @@
+select s.name as OBJ_NAME, u.name as OBJ_SCHEMA, c.text AS CODE_TEXT
+    from sysobjects s
+    inner join syscomments c on s.id = c.id
+    inner join #SCHEMAS# u on u.#SCHEMAID# = s.uid 
+where (#RETURNALL#=1) or (s.name = '#NAME#' and u.name='#SCHEMA#')
+order by c.colid

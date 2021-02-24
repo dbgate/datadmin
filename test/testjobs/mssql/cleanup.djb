@@ -1,0 +1,62 @@
+<Job title="drop database betest_1">
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+      <DatabaseMode>all</DatabaseMode>
+    </Connection>
+    <Sql>ALTER DATABASE [betest_1] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;USE master; DROP DATABASE [betest_1]</Sql>
+    <Database>
+    </Database>
+    <GroupId>665b36de-cb62-4b10-8689-97acdb291e6c</GroupId>
+  </Command>
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+      <DatabaseMode>all</DatabaseMode>
+    </Connection>
+    <Sql>ALTER DATABASE [betest_2] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;USE master; DROP DATABASE [betest_2]</Sql>
+    <Database>
+    </Database>
+    <GroupId>6c77ae2f-e013-468f-9f82-31cb85047e00</GroupId>
+  </Command>
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+      <DatabaseMode>all</DatabaseMode>
+    </Connection>
+    <Sql>ALTER DATABASE [betest_bcp] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;USE master; DROP DATABASE [betest_bcp]</Sql>
+    <Database>
+    </Database>
+    <GroupId>422724bb-c4e7-4b5c-8f4a-296d3e72195d</GroupId>
+  </Command>
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+      <DatabaseMode>all</DatabaseMode>
+    </Connection>
+    <Sql>ALTER DATABASE [betest1_from_mysql] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;USE master; DROP DATABASE [betest1_from_mysql]</Sql>
+    <Database>
+    </Database>
+    <GroupId>73814f12-2966-460d-879b-86b6875f750c</GroupId>
+  </Command>
+</Job>

@@ -1,0 +1,167 @@
+<?xml  version="1.0"?>
+<SyntaxDefinition name="Sql_generic" extensions=".sql">
+    <Digits name="Digits" bold="false" italic="false" color="DarkBlue"/>
+
+    <RuleSets>
+        <RuleSet ignorecase="true">
+            <Delimiters>&amp;&lt;&gt;~!%^*()-+=|\#/{}[]:;"' , .?</Delimiters>
+        
+			<Span name="LineComment" stopateol="true" bold="false" italic="false" color="Gray" >
+				<Begin >--</Begin>
+			</Span>
+
+			<Span name="BlockComment" stopateol="false" bold="false" italic="false" color="Gray" >
+				<Begin >/*</Begin>
+                <End>*/</End>
+			</Span>
+        
+            <Span name="Identifier" bold="false" italic="false" color="Green" stopateol="true">
+                <Begin>"</Begin>
+                <End>"</End>
+            </Span>
+            
+            <Span name="String" bold="false" italic="false" color="Red" stopateol="false" escapecharacter='&apos;'>
+                <Begin>'</Begin>
+                <End>'</End>
+            </Span>
+            
+            
+            
+            
+            <KeyWords name="keywords" bold="true" italic="false" color="Blue">
+            	
+            		<Key word="select"/>
+            	
+            		<Key word="update"/>
+            	
+            		<Key word="from"/>
+            	
+            		<Key word="where"/>
+            	
+            		<Key word="order"/>
+            	
+            		<Key word="by"/>
+            	
+            		<Key word="create"/>
+            	
+            		<Key word="table"/>
+            	
+            		<Key word="column"/>
+            	
+            		<Key word="delete"/>
+            	
+            		<Key word="database"/>
+            	
+            		<Key word="alter"/>
+            	
+            		<Key word="add"/>
+            	
+            		<Key word="remove"/>
+            	
+            		<Key word="index"/>
+            	
+            		<Key word="constraint"/>
+            	
+            		<Key word="drop"/>
+            	
+            		<Key word="primary"/>
+            	
+            		<Key word="foreign"/>
+            	
+            		<Key word="key"/>
+            	
+            		<Key word="inner"/>
+            	
+            		<Key word="outer"/>
+            	
+            		<Key word="full"/>
+            	
+            		<Key word="left"/>
+            	
+            		<Key word="right"/>
+            	
+            		<Key word="join"/>
+            	
+            		<Key word="on"/>
+            	
+            		<Key word="cross"/>
+            	
+            		<Key word="natural"/>
+            	
+            		<Key word="insert"/>
+            	
+            		<Key word="into"/>
+            	
+            		<Key word="go"/>
+            	
+            		<Key word="not"/>
+            	
+            		<Key word="null"/>
+            	
+            		<Key word="group"/>
+            	
+            		<Key word="view"/>
+            	
+            		<Key word="as"/>
+            	
+            		<Key word="null"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="datatypes" bold="true" italic="false" color="Teal">
+            	
+            		<Key word="int"/>
+            	
+            		<Key word="integer"/>
+            	
+            		<Key word="char"/>
+            	
+            		<Key word="character"/>
+            	
+            		<Key word="varchar"/>
+            	
+            		<Key word="varying"/>
+            	
+            		<Key word="numeric"/>
+            	
+            		<Key word="decimal"/>
+            	
+            		<Key word="bit"/>
+            	
+            		<Key word="float"/>
+            	
+            		<Key word="double"/>
+            	
+            		<Key word="real"/>
+            	
+            		<Key word="date"/>
+            	
+            		<Key word="time"/>
+            	
+            		<Key word="datetime"/>
+            	
+            		<Key word="timestamp"/>
+            	
+            		<Key word="blob"/>
+            	
+            		<Key word="text"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="functions" bold="true" italic="false" color="#FF00FF">
+            	
+            		<Key word="sum"/>
+            	
+            		<Key word="min"/>
+            	
+            		<Key word="max"/>
+            	
+            		<Key word="avg"/>
+            	
+            		<Key word="count"/>
+            	
+            </KeyWords>
+            
+        </RuleSet>
+    </RuleSets>
+</SyntaxDefinition>

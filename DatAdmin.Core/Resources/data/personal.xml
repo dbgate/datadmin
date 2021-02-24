@@ -1,0 +1,12 @@
+<Product name="personal" text="Personal" longtext="Personal Tools">
+	<ActiveTo>4000-01-01T00:00:00</ActiveTo>
+	<SupportTo>0001-01-01T00:00:00</SupportTo>
+	<UpdatesTo>4000-01-01T00:00:00</UpdatesTo>
+	
+	<Feature name="csv"/>
+	<Feature name="dbdocswriter"/>
+	<Feature name="excelexport"/>
+	<Feature name="tabletextexport"/>
+	<Feature name="generictunnel"/>
+	<Feature name="databasebackup"/>
+</Product>

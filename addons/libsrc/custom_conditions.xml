@@ -1,0 +1,3 @@
+<CustomConditions>
+    <PropertyCondition refname='view' name='dbentity' value='view'/>
+</CustomConditions>

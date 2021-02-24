@@ -1,0 +1,1 @@
+CREATE [UNIQUE] INDEX [index_name} ON [_table_name] (column1, column2)

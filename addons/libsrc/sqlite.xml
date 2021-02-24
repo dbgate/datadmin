@@ -1,0 +1,12 @@
+<Root>
+    <PropertyCondition name='dbengine' value='sqlite'/>
+    <PropertyCondition name='connected' value='1'/>
+    
+    <DbList title='s_tables' nodes='table_list|database' nodegen='0'>
+        <Code>SELECT * FROM sqlite_master WHERE type='table'</Code>
+    </DbList>
+    
+    <DbList title='s_columns' nodes='table|column_list' nodegen='0'>
+        <Code>@getschema columns $[table.name]</Code>
+    </DbList>
+</Root>

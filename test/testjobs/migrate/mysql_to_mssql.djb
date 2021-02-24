@@ -1,0 +1,51 @@
+<Job title="CREATE DATABASE [betest1_from_mysql]">
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+      <DatabaseMode>all</DatabaseMode>
+    </Connection>
+    <Sql>CREATE DATABASE [betest1_from_mysql]</Sql>
+    <Database>
+    </Database>
+    <GroupId>a0a2d8c9-54cf-4739-a647-32452006ea5e</GroupId>
+  </Command>
+  <Command type="copydb">
+    <Source dbname="betest_1" type="generic">
+      <Connection type="mysql" adtype="driver">
+        <DataSource>localhost</DataSource>
+        <Login>root</Login>
+        <Password>nGO5dWPwmmOgLTg=</Password>
+        <Port>3306</Port>
+        <DatabaseMode>all</DatabaseMode>
+      </Connection>
+    </Source>
+    <Target type="dbsource" adtype="dbwriter">
+      <Database dbname="betest1_from_mysql" type="generic">
+        <Connection type="mssql" adtype="driver">
+          <Authentization>sspi</Authentization>
+          <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+          <Login>
+          </Login>
+          <Password>
+          </Password>
+          <DatabaseMode>all</DatabaseMode>
+        </Connection>
+      </Database>
+    </Target>
+    <Options>
+      <Members table="1" schema="0" domain="0" specobject="0">
+        <LoadDependencies>1</LoadDependencies>
+      </Members>
+      <TableOptions>
+        <AllowBulkCopy>1</AllowBulkCopy>
+      </TableOptions>
+      <Mode>structureanddata</Mode>
+      <SchemaMode>explicit</SchemaMode>
+    </Options>
+  </Command>
+</Job>

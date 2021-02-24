@@ -1,0 +1,15 @@
+Licenèní smlouva s koncovým uživatelem na program DatAdmin.
+Instalací, kopírováním nebo jiným použitím programu DatAdmin potvrzujete, 
+že souhlasíte s podmínkami této smlouvy, a jste jimi vázáni. 
+Pokud s tìmito podmínkami nesouhlasíte, program DatAdmin neinstalujte, nekopírujte ani jinak nepoužívejte.
+
+DatAdmin Personal je freeware, použítí je omezeno pro nekomerèní úèely.
+DatAdmin Standard je shareware, tj. mùžete zdarma používat po dobu 30 dnù, po uplynutí této zkušební lhùty je nutné program koupit nebo odinstalovat.
+
+If you are using EffiProz, you need to purchase a EffiProz License for any non-commercial use, 
+see http://www.effiproz.com/License.aspx. 
+
+Poskytnuté záruky
+
+Program DatAdmin je licencován "JAK JE", tzn. bez jakéhokoliv druhu záruky vèetnì záruky na naprostou bezchybnost produktu, bez omezení záruk obchodovatelnosti, použití èi pro konkrétní úèel apod. 
+Výrobce programu není odpovìdný koncovému uživateli nebo jiné osobì za jakékoli pøímé, nepøímé nebo náhodné škody jakéhokoli druhu (vèetnì ušlého zisku, obchodní újmy, nebo jiné ekonomické výhody) zapøíèinìné používáním programu DatAdmin.

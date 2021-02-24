@@ -1,0 +1,12 @@
+-- GETs all triggers, for SQL server 2000
+SELECT 
+	u.name AS SchemaName, o.name AS Name, -- full trigger name
+	ut.name AS TableSchema, ot.name AS TableName --, full schema name
+	--c.text AS Definition -- SQL definition
+FROM 
+	sysobjects o 
+	--INNER JOIN syscomments c ON o.id=c.id -- trigger SQL definition
+	INNER JOIN sysusers u ON o.uid=u.uid -- trigger schema
+	INNER JOIN sysobjects ot ON o.parent_obj=ot.id -- parent table
+	INNER JOIN #SCHEMAS# ut ON ot.uid=ut.#SCHEMAID# -- parent table schema
+WHERE o.xtype in ('TR', 'TA')

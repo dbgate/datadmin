@@ -1,0 +1,51 @@
+default_value_expr[ColumnStructure col]:
+    sval=T_STRING {col.DefaultValue = new ConstStringSqlExpression(StringValue($sval.text)); }
+  | ival=T_INTEGER {col.DefaultValue = new ConstNumberSqlExpression(Int32.Parse($ival.text, CultureInfo.InvariantCulture)); }
+  | ival=T_BINARYNUM {col.DefaultValue = new ConstNumberSqlExpression(ParseBinNum($ival.text)); }
+  | fval=T_FLOAT {col.DefaultValue = new ConstNumberSqlExpression(Double.Parse($fval.text, CultureInfo.InvariantCulture)); }
+  | NULL {col.DefaultValue = null; } // default value NULL is not remembered... new NullSqlExpression();
+  | CURRENT_TIMESTAMP {col.DefaultValue = new SpecialConstantSqlExpression(SqlSpecialConstant.Current_Timestamp); }
+  | CURRENT_DATE {col.DefaultValue = new SpecialConstantSqlExpression(SqlSpecialConstant.Current_Date); }
+  ;
+
+case_expr: case_expr1 | case_expr2 ;
+case_expr1: CASE value
+    (WHEN value THEN expr)+
+    (ELSE expr)?
+    END CASE;
+case_expr2: CASE
+    (WHEN condition THEN expr)+
+    (ELSE expr)?
+    END CASE;
+
+value: T_INTEGER | T_STRING | NULL | T_FLOAT | T_BLOB | CURRENT_TIMESTAMP | UTC_TIMESTAMP;
+
+expr: condition;
+
+arg_list: LPAREN DISTINCT (ASTERISK | expr) RPAREN | LPAREN expr (COMMA expr) * RPAREN | LPAREN RPAREN; 
+func_call: (id|sysname) (DOT id)? arg_list;
+expr_elem: 
+    id (DOT id)? 
+    | func_call 
+    | value 
+    | LPAREN expr RPAREN 
+    | LPAREN select_statement RPAREN
+    | INTERVAL T_INTEGER (id | sysname)
+;
+exclamation_expr: EXCLAMATION? expr_elem;
+unary_expr: (MINUS|TILDA)? exclamation_expr;    
+pow_expr: unary_expr (ARROW_UP unary_expr)?;
+mul_expr: pow_expr ((ASTERISK | SLASH | PERCENT | DIV | MOD) pow_expr)*;
+add_expr: mul_expr ( (PLUS | MINUS) mul_expr)*;
+shift_expr: add_expr ((SHIFT_LEFT | SHIFT_RIGHT) add_expr)*;
+bitand_expr: shift_expr (AMPERSAND shift_expr)*;
+bitor_expr: bitand_expr (PIPE bitand_expr)*;
+rel_expr: bitor_expr ( (EQUALS | SAFEEQUALS | GREATER_OR_EQ | GREATER | LESS_OR_EQ | LESS 
+    | NOT_EQUALS2 | NOT_EQUALS | IS | LIKE | REGEXP | IN) bitor_expr)*; 
+between_expr: rel_expr (BETWEEN rel_expr AND rel_expr)?;
+casegroup_expr: between_expr | case_expr;
+not_expr : NOT? casegroup_expr;
+and_expr: not_expr ( (AND | DOUBLE_AMPERSAND) not_expr)*;
+xor_expr: and_expr ( XOR and_expr)*;
+or_expr : xor_expr ( (OR | DOUBLE_PIPE) xor_expr )*;
+condition : or_expr; 

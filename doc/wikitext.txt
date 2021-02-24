@@ -1,0 +1,46 @@
+{{Infobox Software
+| name                   = DatAdmin
+| logo                   = 
+| screenshot             = 
+| caption                = DatAdmin
+| author                 = JenaSoft
+| developer              = JenaSoft
+| released               = 2006
+| programming language   = 
+| operating system       = [[Windows]]
+| language               = [[#Current status|Multilingual]] (4)
+| genre                  = [[SQL]] [[Database management system|database management and development system]]
+| license                = [[Proprietary Software|Proprietary]] / [[Shareware]]
+| website                = {{URL|http://www.datadmin.com}}
+}}
+
+DatAdmin is database manager for Oracle,  MySQL, MS SQL, SQLite, PostgreSQL, EffiProz and MS Access databases. It has extensible architecture based on plugins.
+
+===History===
+DatAdmin is czech project primarily written by Jan Prochazka in 2006. It's primary purpose is to create extensible user interface platform for advanced database administration tasks. Currently Database Versioning and Data Synchronization advanced tools are offered.
+
+===Platforms and Languages===
+DatAdmin is written using .NET framework 2.0, so it runs under Windows supporting this framework (XP and higher). DatAdmin is translated into English, Czech, French and Italian.
+
+===DatAdmin Personal===
+Free for non-commercial use, supports common data base administration tasks.
+
+===DatAdmin Professional===
+Commercial license, adds more advanced tools like query designer, database models, etc...
+
+===Database versioning===
+Commercial license, offers tools for maintain versions of database model (only structure, no data)
+
+===Data Synchronization===
+Standard implementation of data synchronization task (also between different database) under DatAdmin GUI
+
+==See also==
+*[[Comparison of database tools]]
+
+==External links==
+*{{Official|http://www.datadmin.com/}}
+
+{{MySQL}}
+
+[[Category:SQL]]
+[[Category:Database administration tools]]

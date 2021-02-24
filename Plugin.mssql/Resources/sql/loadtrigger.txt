@@ -1,0 +1,8 @@
+SELECT 
+	u.name AS SchemaName, o.name AS Name, -- full trigger name
+	ut.name AS TableSchema, ot.name AS TableName --, full schema name
+FROM 
+	sysobjects o 
+	INNER JOIN #SCHEMAS# u ON o.uid=u.#SCHEMAID# -- trigger schema
+	INNER JOIN sysobjects ot ON o.parent_obj=ot.id -- parent table
+	INNER JOIN #SCHEMAS# ut ON ot.uid=ut.#SCHEMAID# -- parent table schema

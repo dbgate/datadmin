@@ -1,0 +1,100 @@
+<Install>
+    <Directory path='lang' parent='install'>
+        <CopyAll src='DatAdmin/lang'/>
+    </Directory>
+    <Directory path='lib' parent='install'>
+        <CopyAll src='DatAdmin/lib'/>
+        <File name='drivers.xml' src='addons\drivers.xml' effiproz='0'/>
+    </Directory>
+    <Directory path='lib/addons' parent='install' effiproz='1'/>
+    <Directory path='lib/win32' parent='install' platforms='windows' effiproz='0'>
+        <CopyAll src='extbin/win32'/>
+    </Directory>
+    <Directory path='lib/win64' parent='install' platforms='windows' effiproz='0'>
+        <CopyAll src='extbin/win64'/>
+    </Directory>
+    <Directory path='images' parent='install' effiproz='0'>
+        <CopyAll src='images'/>
+    </Directory>
+
+    <Directory path='' parent='install'>
+        <File name="DatAdmin.exe" src="#BIN#/DatAdmin.exe"/>
+        <File name="DatAdmin.exe.config" src="DatAdmin.install/Resources/exe32.config" effiproz='0'/>
+        <File name="DatAdmin32.exe" src="#BIN#/DatAdmin32.exe" platforms="windows" effiproz='0'/>
+        <File name="DatAdmin32.exe.config" src="DatAdmin.install/Resources/exe32.config" effiproz='0'/>
+        <File name="DatAdmin.Core.dll" src="#BIN#/DatAdmin.Core.dll"/>
+        <File name="DatAdmin.Framework.dll" src="#BIN#/DatAdmin.Framework.dll"/>
+        <File name="ICSharpCode.TextEditor.dll" src="#BIN#/ICSharpCode.TextEditor.dll"/>
+        <File name="DatAdmin.Wizard.dll" src="#BIN#/DatAdmin.Wizard.dll"/>
+        <File name="System.Drawing.Html.dll" src="#BIN#/System.Drawing.Html.dll"/>
+        <File name="Plugin.Csv.dll" src="#BIN#/Plugin.Csv.dll"/>
+        <File name="Plugin.dbf.dll" src="#BIN#/Plugin.dbf.dll"/>
+        <File name="Plugin.mssql.dll" src="#BIN#/Plugin.mssql.dll" effiproz='0'/>
+        <File name="Plugin.mysql.dll" src="#BIN#/Plugin.mysql.dll" effiproz='0'/>
+        <File name="Plugin.oracle.dll" src="#BIN#/Plugin.oracle.dll" effiproz='0'/>
+        <File name="Plugin.postgre.dll" src="#BIN#/Plugin.postgre.dll" effiproz='0'/>
+        <File name="Plugin.sqlite.dll" src="#BIN#/Plugin.sqlite.dll" effiproz='0'/>
+        <File name="Plugin.textio.dll" src="#BIN#/Plugin.textio.dll" effiproz='0'/>
+        <File name="Plugin.genericsql.dll" src="#BIN#/Plugin.genericsql.dll" effiproz='0'/>
+        <File name="Plugin.httptunnel.dll" src="#BIN#/Plugin.httptunnel.dll" effiproz='0'/>
+        <File name="Plugin.oledb.dll" src="#BIN#/Plugin.oledb.dll" effiproz='0'/>
+        <File name="Plugin.access.dll" src="#BIN#/Plugin.access.dll" effiproz='0'/>
+        <File name="Plugin.diagrams.dll" src="#BIN#/Plugin.diagrams.dll"/>
+        <File name="Plugin.dbmodel.dll" src="#BIN#/Plugin.dbmodel.dll"/>
+        <File name="Plugin.datasyn.dll" src="#BIN#/Plugin.datasyn.dll" effiproz='0'/>
+        <File name="Plugin.advjobs.dll" src="#BIN#/Plugin.advjobs.dll" effiproz='0'/>
+        <File name="Plugin.effiproz.dll" src="#BIN#/Plugin.effiproz.dll"/>
+        <File name="Plugin.versiondb.dll" src="#BIN#/Plugin.versiondb.dll" effiproz='0'/>
+        <File name="Plugin.querytool.dll" src="#BIN#/Plugin.querytool.dll" effiproz='0'/>
+        <File name="Plugin.charts.dll" src="#BIN#/Plugin.charts.dll" effiproz='0'/>
+        <File name="LumenWorks.Framework.IO.dll" src="#BIN#/LumenWorks.Framework.IO.dll"/>
+        <File name="Ionic.Zip.dll" src="extbin/Ionic.Zip.dll"/>
+        <File name="WeifenLuo.WinFormsUI.Docking.dll" src="#BIN#/WeifenLuo.WinFormsUI.Docking.dll"/>
+        <File name="SocialExplorer.FastDBF.dll" src="#BIN#/SocialExplorer.FastDBF.dll"/>
+        <File name="daci.exe" src="#BIN#/daci.exe" effiproz='0'/>
+        <File name="daci.exe.config" src="DatAdmin.install/Resources/exe32.config" effiproz='0'/>
+        <File name="daci32.exe" src="#BIN#/daci32.exe" platforms="windows" effiproz='0'/>
+        <File name="daci32.exe.config" src="DatAdmin.install/Resources/exe32.config" effiproz='0'/>
+        <File name="DatAdmin.install.exe" src="DatAdmin.install\bin\Release\DatAdmin.install.exe" platforms="windows" effiproz='0'/>
+        <File name="DatAdminService.exe" src="#BIN#/DatAdminService.exe" platforms="windows" effiproz='0'/>
+        <File name="DatAdminService.exe.config" src="DatAdmin.install/Resources/exe32.config" platforms="windows" effiproz='0'/>
+        <File name="DatAdminServiceControl.exe" src="#BIN#/DatAdminServiceControl.exe" platforms="windows" effiproz='0'/>
+        <File name="IronMath.dll" src="extbin/IronMath.dll"/>
+        <File name="IronPython.dll" src="extbin/IronPython.dll"/>
+        <File name="MySql.Data.dll" src="extbin/MySql.Data.dll" effiproz='0'/>
+        <File name="IP.Components.dll" src="extbin/IP.Components.dll"/>
+        <File name="Npgsql.dll" src="extbin/Npgsql.dll" effiproz='0'/>
+        <File name="Mono.Security.dll" src="extbin/Mono.Security.dll" effiproz='0'/>
+        <File name="NauckIT.PostgreSQLProvider.dll" src="extbin/NauckIT.PostgreSQLProvider.dll" effiproz='0'/>
+        <File name="LinqBridge.dll" src="extbin/LinqBridge.dll"/>
+        <File name="TaskScheduler.dll" src="extbin/TaskScheduler.dll" platform="windows" effiproz='0'/>
+        <File name="Menees.dll" src="extbin/Menees.dll" effiproz='0'/>
+        <File name="MeneesDiffUtils.dll" src="extbin/MeneesDiffUtils.dll" effiproz='0'/>
+        <File name="Antlr3.Runtime.dll" src="extbin/Antlr3.Runtime.dll"/>
+        <File name="Antlr3.Utility.dll" src="extbin/Antlr3.Utility.dll"/>
+        <File name="EffiProz.dll" src="extbin/EffiProz.dll"/>
+        <File name="AlpineSoft.EZRSA.dll" src="#BIN#/AlpineSoft.EZRSA.dll"/>
+        <File name="ObjectListView.dll" src="#BIN#/ObjectListView.dll"/>
+        <File name="ZedGraph.dll" src="#BIN#/ZedGraph.dll"/>
+        <CopyAll src='extbin/linux' platforms='debian linux' effiproz='0'/>
+    </Directory>
+
+    <Directory path='files' parent='install' effiproz='0'>
+        <CopyAll src='doc/files'/>
+    </Directory>
+
+    <Directory path='DatAdmin' parent='appdata'/>
+    <Directory path='DatAdmin/auto-install' parent='appdata'/>
+    <Directory path='DatAdmin/cfg' parent='appdata'/>
+    <Directory path='DatAdmin/cfg/addons' parent='appdata'/>
+    <Directory path='DatAdmin/data' parent='appdata'/>
+    <Directory path='DatAdmin/data/Samples' parent='appdata'>
+        <CopyAll src='doc/Samples'/>
+    </Directory>
+    <Directory path='' parent='root' platforms='debian linux' effiproz='0'>
+        <CopyAll src='install/linux-root'/>
+    </Directory>
+    <Directory path='' parent='root' platforms='debian' effiproz='0'>
+        <CopyAll src='install/debian-root'/>
+    </Directory>
+</Install>

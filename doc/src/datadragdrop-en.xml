@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="Drag &amp; Drop">
+
+<h2> Why and how to use the drag &amp; drop in connection tree </h2>
+<ul>
+     <li> Copy tables - drag on the table node "Tables", that you can choose the name of the new table (this way can be used also for duplicate table) </li>
+     <li> Copying data in the table - drag one table to another - dialog with column mapping will be shown</li>
+     <!--<li> Backup database to data archive - drag database to the root node "Data" or to another folder </li>-->
+     <li> Restoring the database from the data archive - drag and drop the data archive to the database </li>
+     <li> Restoring a single table from data archive - drag a table from data in the archive to database in which you want to restore table</li>
+</ul>
+
+<h2> What is "Drag &amp; Drop" panel under the connection tree? </h2>
+<p>
+You can use this panel for as place, whan objects from tree are dragged, When you drag object from this panel,
+it is the same, if you drag object from original location.
+</p>
+
+</help>

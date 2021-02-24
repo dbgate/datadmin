@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="Main window">
+
+<p>
+	
+The main window is divided into three parts
+<ul>
+     <li> Left - Connection Tree - on this tab you can see all defined database connections, data archives, diagrams,
+     in short, all the data objects. On the Addons tab is list of addons (currently using of addons tree is quite complicated).</li>
+     <li> Right - space for open documents. By default, tabs 
+     Summary (displays a summary of the currently selected node in the tree) and Data Browser (allows to display and edit table data) are open</li>
+     <li> Bottom - on the tab Data there is cell data editor allowing edit cell data in various formats. This editor shows always the contents of the last
+     cell selected from data browser (or from the table open in a separate panel). On the Log tab tehre are log reports (must be explicitly turned on in settings),
+     On the Processes tab, there is a list of running and finished processes (eg. export to data archive, export table data)</li>
+</ul>
+
+</p>
+
+</help>

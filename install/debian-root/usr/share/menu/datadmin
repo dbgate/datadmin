@@ -1,0 +1,4 @@
+?package(datadmin3):needs="x11" section="Applications/Data Management" \
+        title="DatAdmin" command="/usr/bin/datadmin" \
+        icon="/usr/share/pixmaps/datadmin.png"
+

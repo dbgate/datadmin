@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "overlay", "overlay\overlay.csproj", "{0B6FB3A0-B68C-48C9-8F4F-88B4FA89D7D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "splitter", "splitter\splitter.csproj", "{235A8C9A-1711-4E2B-809B-29BB947083FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B6FB3A0-B68C-48C9-8F4F-88B4FA89D7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B6FB3A0-B68C-48C9-8F4F-88B4FA89D7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B6FB3A0-B68C-48C9-8F4F-88B4FA89D7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B6FB3A0-B68C-48C9-8F4F-88B4FA89D7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235A8C9A-1711-4E2B-809B-29BB947083FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235A8C9A-1711-4E2B-809B-29BB947083FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235A8C9A-1711-4E2B-809B-29BB947083FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235A8C9A-1711-4E2B-809B-29BB947083FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,42 @@
+declare @PageSize float select @PageSize=v.low/1024.0 from master.dbo.spt_values v where v.number=1 and v.type='E'
+
+
+SELECT
+i.name AS [Name],
+~i.allow_page_locks AS [DisallowPageLocks],
+~i.allow_row_locks AS [DisallowRowLocks],
+CASE WHEN 'FG'=dsi.type THEN dsi.name ELSE N'' END AS [FileGroup],
+i.fill_factor AS [FillFactor],
+CAST(i.index_id AS int) AS [ID],
+i.ignore_dup_key AS [IgnoreDuplicateKeys],
+i.is_primary_key + 2*i.is_unique_constraint AS [IndexKeyType],
+CAST(CASE i.index_id WHEN 1 THEN 1 ELSE 0 END AS bit) AS [IsClustered],
+CAST(INDEXPROPERTY(i.object_id,i.name,N'IsFulltextKey') AS bit) AS [IsFullTextKey],
+CAST(ISNULL(k.is_system_named, 0) AS bit) AS [IsSystemNamed],
+CAST(OBJECTPROPERTY(i.object_id,N'IsMSShipped') AS bit) AS [IsSystemObject],
+i.is_unique AS [IsUnique],
+s.no_recompute AS [NoAutomaticRecomputation],
+CAST(INDEXPROPERTY(i.object_id, i.name, N'IsPadIndex') AS bit) AS [PadIndex],
+ISNULL((select @PageSize * SUM(a.used_pages - CASE WHEN a.type <> 1 THEN a.used_pages WHEN p.index_id < 2 THEN a.data_pages ELSE 0 END) 
+FROM sys.partitions as p
+JOIN sys.allocation_units as a ON a.container_id = p.partition_id
+WHERE p.object_id = i.object_id AND p.index_id = i.index_id),0.0) AS [SpaceUsed],
+i.is_disabled AS [IsDisabled],
+CAST(CASE WHEN 'PS'=dsi.type THEN 1 ELSE 0 END AS bit) AS [IsPartitioned],
+CAST(case when i.type=3 then 1 else 0 end AS bit) AS [IsXmlIndex],
+ISNULL(xi2.name, N'') AS [ParentXmlIndex],
+CASE WHEN 'PS'=dsi.type THEN dsi.name ELSE N'' END AS [PartitionScheme],
+case UPPER(ISNULL(xi.secondary_type,'')) when 'P' then 1 when 'V' then 2 when 'R' then 3 else 0 end AS [SecondaryXmlIndexType]
+FROM
+sys.tables AS tbl
+INNER JOIN sys.indexes AS i ON (i.index_id > 0 and i.is_hypothetical = 0) AND (i.object_id=tbl.object_id)
+LEFT OUTER JOIN sys.data_spaces AS dsi ON dsi.data_space_id = i.data_space_id
+LEFT OUTER JOIN sys.key_constraints AS k ON k.parent_object_id = i.object_id AND k.unique_index_id = i.index_id
+LEFT OUTER JOIN sys.stats AS s ON s.stats_id = i.index_id AND s.object_id = i.object_id
+LEFT OUTER JOIN sys.xml_indexes AS xi ON xi.object_id = i.object_id AND xi.index_id = i.index_id
+LEFT OUTER JOIN sys.xml_indexes AS xi2 ON xi2.object_id = xi.object_id AND xi2.index_id = xi.using_xml_index_id
+LEFT OUTER JOIN sys.schemas schem ON  tbl.schema_id=schem.schema_id
+WHERE
+(tbl.name=N'#TABLE#' and schem.name=N'#SCHEMA#' and i.name LIKE N'#INDEX#')
+ORDER BY
+[Name] ASC

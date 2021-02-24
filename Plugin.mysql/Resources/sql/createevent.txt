@@ -1,0 +1,7 @@
+CREATE EVENT
+ <event_name>
+ ON SCHEDULE EVERY '1' SECOND
+ <ON COMPLETION [NOT] PRESERVE>
+ <ENABLE | DISABLE>
+ <COMMENT 'comment'>
+ DO sql_statement

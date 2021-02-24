@@ -1,0 +1,3365 @@
+<?xml  version="1.0"?>
+<SyntaxDefinition name="Sql_mssql" extensions=".sql">
+    <Digits name="Digits" bold="false" italic="false" color="DarkBlue"/>
+
+    <RuleSets>
+        <RuleSet ignorecase="true">
+            <Delimiters>&amp;&lt;&gt;~!%^*()-+=|\#/{}[]:;"' , .?@</Delimiters>
+        
+			<Span name="LineComment" stopateol="true" bold="false" italic="false" color="Gray" >
+				<Begin >--</Begin>
+			</Span>
+
+			<Span name="BlockComment" stopateol="false" bold="false" italic="false" color="Gray" >
+				<Begin >/*</Begin>
+                <End>*/</End>
+			</Span>
+        
+            <Span name="Identifier" bold="false" italic="false" color="Green" stopateol="true">
+                <Begin>[</Begin>
+                <End>]</End>
+            </Span>
+            
+            <Span name="String" bold="false" italic="false" color="Red" stopateol="false" escapecharacter='&apos;'>
+                <Begin>'</Begin>
+                <End>'</End>
+            </Span>
+            
+            <MarkFollowing markmarker="true" bold="false" italic="false" color="Purple">@</MarkFollowing>
+            
+            
+            <KeyWords name="statements" bold="true" italic="false" color="Blue">
+            	
+            		<Key word="action"/>
+            	
+            		<Key word="add"/>
+            	
+            		<Key word="all"/>
+            	
+            		<Key word="alter"/>
+            	
+            		<Key word="any"/>
+            	
+            		<Key word="as"/>
+            	
+            		<Key word="asc"/>
+            	
+            		<Key word="authorization"/>
+            	
+            		<Key word="backup"/>
+            	
+            		<Key word="begin"/>
+            	
+            		<Key word="break"/>
+            	
+            		<Key word="browse"/>
+            	
+            		<Key word="bulk"/>
+            	
+            		<Key word="by"/>
+            	
+            		<Key word="cascade"/>
+            	
+            		<Key word="case"/>
+            	
+            		<Key word="check"/>
+            	
+            		<Key word="checkpoint"/>
+            	
+            		<Key word="close"/>
+            	
+            		<Key word="clustered"/>
+            	
+            		<Key word="coalesce"/>
+            	
+            		<Key word="collate"/>
+            	
+            		<Key word="column"/>
+            	
+            		<Key word="commit"/>
+            	
+            		<Key word="committed"/>
+            	
+            		<Key word="compute"/>
+            	
+            		<Key word="confirm"/>
+            	
+            		<Key word="constraint"/>
+            	
+            		<Key word="contains"/>
+            	
+            		<Key word="containstable"/>
+            	
+            		<Key word="continue"/>
+            	
+            		<Key word="controlrow"/>
+            	
+            		<Key word="convert"/>
+            	
+            		<Key word="create"/>
+            	
+            		<Key word="cross"/>
+            	
+            		<Key word="current"/>
+            	
+            		<Key word="current_date"/>
+            	
+            		<Key word="current_time"/>
+            	
+            		<Key word="current_timestamp"/>
+            	
+            		<Key word="current_user"/>
+            	
+            		<Key word="cursor"/>
+            	
+            		<Key word="database"/>
+            	
+            		<Key word="dbcc"/>
+            	
+            		<Key word="deallocate"/>
+            	
+            		<Key word="declare"/>
+            	
+            		<Key word="default"/>
+            	
+            		<Key word="delete"/>
+            	
+            		<Key word="deny"/>
+            	
+            		<Key word="desc"/>
+            	
+            		<Key word="disable"/>
+            	
+            		<Key word="disk"/>
+            	
+            		<Key word="distinct"/>
+            	
+            		<Key word="distributed"/>
+            	
+            		<Key word="double"/>
+            	
+            		<Key word="drop"/>
+            	
+            		<Key word="dummy"/>
+            	
+            		<Key word="dump"/>
+            	
+            		<Key word="else"/>
+            	
+            		<Key word="enable"/>
+            	
+            		<Key word="end"/>
+            	
+            		<Key word="errlvl"/>
+            	
+            		<Key word="errorexit"/>
+            	
+            		<Key word="escape"/>
+            	
+            		<Key word="except"/>
+            	
+            		<Key word="exec"/>
+            	
+            		<Key word="execute"/>
+            	
+            		<Key word="exists"/>
+            	
+            		<Key word="exit"/>
+            	
+            		<Key word="fetch"/>
+            	
+            		<Key word="file"/>
+            	
+            		<Key word="fillfactor"/>
+            	
+            		<Key word="floppy"/>
+            	
+            		<Key word="for"/>
+            	
+            		<Key word="foreign"/>
+            	
+            		<Key word="forward_only"/>
+            	
+            		<Key word="freetext"/>
+            	
+            		<Key word="freetexttable"/>
+            	
+            		<Key word="from"/>
+            	
+            		<Key word="full"/>
+            	
+            		<Key word="function"/>
+            	
+            		<Key word="go"/>
+            	
+            		<Key word="goto"/>
+            	
+            		<Key word="grant"/>
+            	
+            		<Key word="group"/>
+            	
+            		<Key word="having"/>
+            	
+            		<Key word="holdlock"/>
+            	
+            		<Key word="identity"/>
+            	
+            		<Key word="identity_insert"/>
+            	
+            		<Key word="identitycol"/>
+            	
+            		<Key word="if"/>
+            	
+            		<Key word="in"/>
+            	
+            		<Key word="index"/>
+            	
+            		<Key word="inner"/>
+            	
+            		<Key word="insert"/>
+            	
+            		<Key word="intersect"/>
+            	
+            		<Key word="into"/>
+            	
+            		<Key word="is"/>
+            	
+            		<Key word="isolation"/>
+            	
+            		<Key word="join"/>
+            	
+            		<Key word="key"/>
+            	
+            		<Key word="kill"/>
+            	
+            		<Key word="left"/>
+            	
+            		<Key word="level"/>
+            	
+            		<Key word="lineno"/>
+            	
+            		<Key word="load"/>
+            	
+            		<Key word="mirrorexit"/>
+            	
+            		<Key word="move"/>
+            	
+            		<Key word="national"/>
+            	
+            		<Key word="no"/>
+            	
+            		<Key word="nocheck"/>
+            	
+            		<Key word="nonclustered"/>
+            	
+            		<Key word="not"/>
+            	
+            		<Key word="nounload"/>
+            	
+            		<Key word="null"/>
+            	
+            		<Key word="nullif"/>
+            	
+            		<Key word="of"/>
+            	
+            		<Key word="off"/>
+            	
+            		<Key word="offsets"/>
+            	
+            		<Key word="on"/>
+            	
+            		<Key word="once"/>
+            	
+            		<Key word="only"/>
+            	
+            		<Key word="open"/>
+            	
+            		<Key word="opendatasource"/>
+            	
+            		<Key word="openquery"/>
+            	
+            		<Key word="openrowset"/>
+            	
+            		<Key word="option"/>
+            	
+            		<Key word="order"/>
+            	
+            		<Key word="outer"/>
+            	
+            		<Key word="output"/>
+            	
+            		<Key word="over"/>
+            	
+            		<Key word="percent"/>
+            	
+            		<Key word="perm"/>
+            	
+            		<Key word="permanent"/>
+            	
+            		<Key word="pipe"/>
+            	
+            		<Key word="plan"/>
+            	
+            		<Key word="precision"/>
+            	
+            		<Key word="prepare"/>
+            	
+            		<Key word="primary"/>
+            	
+            		<Key word="print"/>
+            	
+            		<Key word="privileges"/>
+            	
+            		<Key word="proc"/>
+            	
+            		<Key word="procedure"/>
+            	
+            		<Key word="processexit"/>
+            	
+            		<Key word="public"/>
+            	
+            		<Key word="raiserror"/>
+            	
+            		<Key word="read"/>
+            	
+            		<Key word="readtext"/>
+            	
+            		<Key word="read_only"/>
+            	
+            		<Key word="reconfigure"/>
+            	
+            		<Key word="recovery"/>
+            	
+            		<Key word="references"/>
+            	
+            		<Key word="repeatable"/>
+            	
+            		<Key word="replication"/>
+            	
+            		<Key word="restore"/>
+            	
+            		<Key word="restrict"/>
+            	
+            		<Key word="return"/>
+            	
+            		<Key word="returns"/>
+            	
+            		<Key word="revoke"/>
+            	
+            		<Key word="right"/>
+            	
+            		<Key word="rollback"/>
+            	
+            		<Key word="rowcount"/>
+            	
+            		<Key word="rowguidcol"/>
+            	
+            		<Key word="rule"/>
+            	
+            		<Key word="save"/>
+            	
+            		<Key word="schema"/>
+            	
+            		<Key word="select"/>
+            	
+            		<Key word="serializable"/>
+            	
+            		<Key word="session_user"/>
+            	
+            		<Key word="set"/>
+            	
+            		<Key word="setuser"/>
+            	
+            		<Key word="shutdown"/>
+            	
+            		<Key word="some"/>
+            	
+            		<Key word="statistics"/>
+            	
+            		<Key word="stats"/>
+            	
+            		<Key word="system_user"/>
+            	
+            		<Key word="table"/>
+            	
+            		<Key word="tape"/>
+            	
+            		<Key word="temp"/>
+            	
+            		<Key word="temporary"/>
+            	
+            		<Key word="textsize"/>
+            	
+            		<Key word="then"/>
+            	
+            		<Key word="to"/>
+            	
+            		<Key word="top"/>
+            	
+            		<Key word="tran"/>
+            	
+            		<Key word="transaction"/>
+            	
+            		<Key word="trigger"/>
+            	
+            		<Key word="truncate"/>
+            	
+            		<Key word="tsequal"/>
+            	
+            		<Key word="uncommitted"/>
+            	
+            		<Key word="unique"/>
+            	
+            		<Key word="update"/>
+            	
+            		<Key word="updatetext"/>
+            	
+            		<Key word="use"/>
+            	
+            		<Key word="user"/>
+            	
+            		<Key word="values"/>
+            	
+            		<Key word="varying"/>
+            	
+            		<Key word="view"/>
+            	
+            		<Key word="waitfor"/>
+            	
+            		<Key word="when"/>
+            	
+            		<Key word="where"/>
+            	
+            		<Key word="while"/>
+            	
+            		<Key word="with"/>
+            	
+            		<Key word="work"/>
+            	
+            		<Key word="writetext"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="data_types" bold="true" italic="false" color="Teal">
+            	
+            		<Key word="bigint"/>
+            	
+            		<Key word="binary"/>
+            	
+            		<Key word="bit"/>
+            	
+            		<Key word="char"/>
+            	
+            		<Key word="character"/>
+            	
+            		<Key word="datetime"/>
+            	
+            		<Key word="dec"/>
+            	
+            		<Key word="decimal"/>
+            	
+            		<Key word="float"/>
+            	
+            		<Key word="image"/>
+            	
+            		<Key word="int"/>
+            	
+            		<Key word="integer"/>
+            	
+            		<Key word="money"/>
+            	
+            		<Key word="nchar"/>
+            	
+            		<Key word="ntext"/>
+            	
+            		<Key word="numeric"/>
+            	
+            		<Key word="nvarchar"/>
+            	
+            		<Key word="real"/>
+            	
+            		<Key word="smalldatetime"/>
+            	
+            		<Key word="smallint"/>
+            	
+            		<Key word="smallmoney"/>
+            	
+            		<Key word="sql_variant"/>
+            	
+            		<Key word="sysname"/>
+            	
+            		<Key word="text"/>
+            	
+            		<Key word="timestamp"/>
+            	
+            		<Key word="tinyint"/>
+            	
+            		<Key word="uniqueidentifier"/>
+            	
+            		<Key word="varbinary"/>
+            	
+            		<Key word="varchar"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="system_tables" bold="true" italic="false" color="#00AA00">
+            	
+            		<Key word="deleted"/>
+            	
+            		<Key word="inserted"/>
+            	
+            		<Key word="sysallocations"/>
+            	
+            		<Key word="sysalternates"/>
+            	
+            		<Key word="sysaltfiles"/>
+            	
+            		<Key word="syscacheobjects"/>
+            	
+            		<Key word="syscharsets"/>
+            	
+            		<Key word="syscolumns"/>
+            	
+            		<Key word="syscomments"/>
+            	
+            		<Key word="sysconfigures"/>
+            	
+            		<Key word="sysconstraints"/>
+            	
+            		<Key word="syscurconfigs"/>
+            	
+            		<Key word="syscursorcolumns"/>
+            	
+            		<Key word="syscursorrefs"/>
+            	
+            		<Key word="syscursors"/>
+            	
+            		<Key word="syscursortables"/>
+            	
+            		<Key word="sysdatabases"/>
+            	
+            		<Key word="sysdepends"/>
+            	
+            		<Key word="sysdevices"/>
+            	
+            		<Key word="sysfilegroups"/>
+            	
+            		<Key word="sysfiles"/>
+            	
+            		<Key word="sysfiles1"/>
+            	
+            		<Key word="sysforeignkeys"/>
+            	
+            		<Key word="sysfulltextcatalogs"/>
+            	
+            		<Key word="sysindexes"/>
+            	
+            		<Key word="sysindexkeys"/>
+            	
+            		<Key word="syslanguages"/>
+            	
+            		<Key word="syslockinfo"/>
+            	
+            		<Key word="syslocks"/>
+            	
+            		<Key word="syslogins"/>
+            	
+            		<Key word="sysmembers"/>
+            	
+            		<Key word="sysmessages"/>
+            	
+            		<Key word="sysobjects"/>
+            	
+            		<Key word="sysoledbusers"/>
+            	
+            		<Key word="sysperfinfo"/>
+            	
+            		<Key word="syspermissions"/>
+            	
+            		<Key word="sysprocesses"/>
+            	
+            		<Key word="sysprotects"/>
+            	
+            		<Key word="sysreferences"/>
+            	
+            		<Key word="sysremote_catalogs"/>
+            	
+            		<Key word="sysremote_column_privileges"/>
+            	
+            		<Key word="sysremote_columns"/>
+            	
+            		<Key word="sysremote_foreign_keys"/>
+            	
+            		<Key word="sysremote_indexes"/>
+            	
+            		<Key word="sysremote_primary_keys"/>
+            	
+            		<Key word="sysremote_provider_types"/>
+            	
+            		<Key word="sysremote_schemata"/>
+            	
+            		<Key word="sysremote_statistics"/>
+            	
+            		<Key word="sysremote_table_privileges"/>
+            	
+            		<Key word="sysremote_tables"/>
+            	
+            		<Key word="sysremote_views"/>
+            	
+            		<Key word="sysremotelogins"/>
+            	
+            		<Key word="syssegments"/>
+            	
+            		<Key word="sysservers"/>
+            	
+            		<Key word="systypes"/>
+            	
+            		<Key word="sysusers"/>
+            	
+            		<Key word="sysxlogins"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="global_variables" bold="true" italic="false" color="#FF00FF">
+            	
+            		<Key word="connections"/>
+            	
+            		<Key word="cpu_busy"/>
+            	
+            		<Key word="cursor_rows"/>
+            	
+            		<Key word="datefirst"/>
+            	
+            		<Key word="dbts"/>
+            	
+            		<Key word="error"/>
+            	
+            		<Key word="fetch_status"/>
+            	
+            		<Key word="identity"/>
+            	
+            		<Key word="idle"/>
+            	
+            		<Key word="io_busy"/>
+            	
+            		<Key word="langid"/>
+            	
+            		<Key word="language"/>
+            	
+            		<Key word="lock_timeout"/>
+            	
+            		<Key word="max_connections"/>
+            	
+            		<Key word="max_precision"/>
+            	
+            		<Key word="nestlevel"/>
+            	
+            		<Key word="options"/>
+            	
+            		<Key word="pack_received"/>
+            	
+            		<Key word="pack_sent"/>
+            	
+            		<Key word="packet_errors"/>
+            	
+            		<Key word="procid"/>
+            	
+            		<Key word="remserver"/>
+            	
+            		<Key word="rowcount"/>
+            	
+            		<Key word="servername"/>
+            	
+            		<Key word="servicename"/>
+            	
+            		<Key word="spid"/>
+            	
+            		<Key word="textsize"/>
+            	
+            		<Key word="timetickstotal_errors"/>
+            	
+            		<Key word="total_read"/>
+            	
+            		<Key word="total_write"/>
+            	
+            		<Key word="trancount"/>
+            	
+            		<Key word="version"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="functions" bold="true" italic="false" color="#FF00FF">
+            	
+            		<Key word="abs"/>
+            	
+            		<Key word="acos"/>
+            	
+            		<Key word="app_name"/>
+            	
+            		<Key word="ascii"/>
+            	
+            		<Key word="asin"/>
+            	
+            		<Key word="atan"/>
+            	
+            		<Key word="atn2"/>
+            	
+            		<Key word="avg"/>
+            	
+            		<Key word="binary_checksum"/>
+            	
+            		<Key word="case"/>
+            	
+            		<Key word="cast"/>
+            	
+            		<Key word="ceiling"/>
+            	
+            		<Key word="char"/>
+            	
+            		<Key word="charindex"/>
+            	
+            		<Key word="checksum"/>
+            	
+            		<Key word="checksum_agg"/>
+            	
+            		<Key word="coalesce"/>
+            	
+            		<Key word="collationproperty"/>
+            	
+            		<Key word="col_length"/>
+            	
+            		<Key word="col_name"/>
+            	
+            		<Key word="columns_updated"/>
+            	
+            		<Key word="columnproperty"/>
+            	
+            		<Key word="convert"/>
+            	
+            		<Key word="cos"/>
+            	
+            		<Key word="cot"/>
+            	
+            		<Key word="count"/>
+            	
+            		<Key word="count_big"/>
+            	
+            		<Key word="current_timestamp"/>
+            	
+            		<Key word="current_user"/>
+            	
+            		<Key word="cursor_status"/>
+            	
+            		<Key word="databaseproperty"/>
+            	
+            		<Key word="databasepropertyex"/>
+            	
+            		<Key word="datalength"/>
+            	
+            		<Key word="dateadd"/>
+            	
+            		<Key word="datediff"/>
+            	
+            		<Key word="datename"/>
+            	
+            		<Key word="datepart"/>
+            	
+            		<Key word="day"/>
+            	
+            		<Key word="db_id"/>
+            	
+            		<Key word="db_name"/>
+            	
+            		<Key word="degrees"/>
+            	
+            		<Key word="difference"/>
+            	
+            		<Key word="exp"/>
+            	
+            		<Key word="file_id"/>
+            	
+            		<Key word="file_name"/>
+            	
+            		<Key word="filegroup_id"/>
+            	
+            		<Key word="filegroup_name"/>
+            	
+            		<Key word="filegroupproperty"/>
+            	
+            		<Key word="fileproperty"/>
+            	
+            		<Key word="floor"/>
+            	
+            		<Key word="fn_helpcollations"/>
+            	
+            		<Key word="fn_listextendedproperty"/>
+            	
+            		<Key word="fn_servershareddrives"/>
+            	
+            		<Key word="fn_trace_geteventinfo"/>
+            	
+            		<Key word="fn_trace_getfilterinfo"/>
+            	
+            		<Key word="fn_trace_getinfo"/>
+            	
+            		<Key word="fn_trace_gettable"/>
+            	
+            		<Key word="fn_virtualfilestats"/>
+            	
+            		<Key word="formatmessage"/>
+            	
+            		<Key word="fulltextcatalogproperty"/>
+            	
+            		<Key word="fulltextserviceproperty"/>
+            	
+            		<Key word="getansinull"/>
+            	
+            		<Key word="getdate"/>
+            	
+            		<Key word="getutcdate"/>
+            	
+            		<Key word="grouping"/>
+            	
+            		<Key word="has_dbaccess"/>
+            	
+            		<Key word="host_id"/>
+            	
+            		<Key word="host_name"/>
+            	
+            		<Key word="ident_current"/>
+            	
+            		<Key word="ident_incr"/>
+            	
+            		<Key word="ident_seed"/>
+            	
+            		<Key word="index_col"/>
+            	
+            		<Key word="indexkey_property"/>
+            	
+            		<Key word="indexproperty"/>
+            	
+            		<Key word="is_member"/>
+            	
+            		<Key word="is_srvrolemember"/>
+            	
+            		<Key word="isdate"/>
+            	
+            		<Key word="isnull"/>
+            	
+            		<Key word="isnumeric"/>
+            	
+            		<Key word="left"/>
+            	
+            		<Key word="len"/>
+            	
+            		<Key word="log"/>
+            	
+            		<Key word="log10"/>
+            	
+            		<Key word="lower"/>
+            	
+            		<Key word="ltrim"/>
+            	
+            		<Key word="max"/>
+            	
+            		<Key word="min"/>
+            	
+            		<Key word="month"/>
+            	
+            		<Key word="nchar"/>
+            	
+            		<Key word="newid"/>
+            	
+            		<Key word="nullif"/>
+            	
+            		<Key word="object_id"/>
+            	
+            		<Key word="object_name"/>
+            	
+            		<Key word="objectproperty"/>
+            	
+            		<Key word="parsename"/>
+            	
+            		<Key word="patindex"/>
+            	
+            		<Key word="permissions"/>
+            	
+            		<Key word="pi"/>
+            	
+            		<Key word="power"/>
+            	
+            		<Key word="quotename"/>
+            	
+            		<Key word="radians"/>
+            	
+            		<Key word="rand"/>
+            	
+            		<Key word="replace"/>
+            	
+            		<Key word="replicate"/>
+            	
+            		<Key word="reverse"/>
+            	
+            		<Key word="right"/>
+            	
+            		<Key word="round"/>
+            	
+            		<Key word="rowcount_big"/>
+            	
+            		<Key word="rtrim"/>
+            	
+            		<Key word="scope_identity"/>
+            	
+            		<Key word="serverproperty"/>
+            	
+            		<Key word="sessionproperty"/>
+            	
+            		<Key word="session_user"/>
+            	
+            		<Key word="sign"/>
+            	
+            		<Key word="sin"/>
+            	
+            		<Key word="soundex"/>
+            	
+            		<Key word="space"/>
+            	
+            		<Key word="sqare"/>
+            	
+            		<Key word="sql_variant_property"/>
+            	
+            		<Key word="sqrt"/>
+            	
+            		<Key word="stats_date"/>
+            	
+            		<Key word="stdev"/>
+            	
+            		<Key word="stdevp"/>
+            	
+            		<Key word="str"/>
+            	
+            		<Key word="stuff"/>
+            	
+            		<Key word="substring"/>
+            	
+            		<Key word="sum"/>
+            	
+            		<Key word="suser_sid"/>
+            	
+            		<Key word="suser_sname"/>
+            	
+            		<Key word="system_user"/>
+            	
+            		<Key word="tan"/>
+            	
+            		<Key word="typeproperty"/>
+            	
+            		<Key word="unicode"/>
+            	
+            		<Key word="upper"/>
+            	
+            		<Key word="user_id"/>
+            	
+            		<Key word="user_name"/>
+            	
+            		<Key word="var"/>
+            	
+            		<Key word="varp"/>
+            	
+            		<Key word="year"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="stored_procedures" bold="true" italic="false" color="DarkGray">
+            	
+            		<Key word="sp_ActiveDirectory_Obj"/>
+            	
+            		<Key word="sp_ActiveDirectory_SCP"/>
+            	
+            		<Key word="sp_ActiveDirectory_Start"/>
+            	
+            		<Key word="sp_add_agent_parameter"/>
+            	
+            		<Key word="sp_add_agent_profile"/>
+            	
+            		<Key word="sp_add_data_file_recover_suspect_db"/>
+            	
+            		<Key word="sp_add_log_file_recover_suspect_db"/>
+            	
+            		<Key word="sp_add_log_shipping_alert_job"/>
+            	
+            		<Key word="sp_add_log_shipping_primary_database"/>
+            	
+            		<Key word="sp_add_log_shipping_primary_secondary"/>
+            	
+            		<Key word="sp_add_log_shipping_secondary_database"/>
+            	
+            		<Key word="sp_add_log_shipping_secondary_primary"/>
+            	
+            		<Key word="sp_addalias"/>
+            	
+            		<Key word="sp_addapprole"/>
+            	
+            		<Key word="sp_addarticle"/>
+            	
+            		<Key word="sp_adddatatype"/>
+            	
+            		<Key word="sp_adddatatypemapping"/>
+            	
+            		<Key word="sp_adddistpublisher"/>
+            	
+            		<Key word="sp_adddistributiondb"/>
+            	
+            		<Key word="sp_adddistributor"/>
+            	
+            		<Key word="sp_adddynamicsnapshot_job"/>
+            	
+            		<Key word="sp_addextendedproc"/>
+            	
+            		<Key word="sp_addextendedproperty"/>
+            	
+            		<Key word="sp_addgroup"/>
+            	
+            		<Key word="sp_addlinkedserver"/>
+            	
+            		<Key word="sp_addlinkedsrvlogin"/>
+            	
+            		<Key word="sp_addlogin"/>
+            	
+            		<Key word="sp_addlogreader_agent"/>
+            	
+            		<Key word="sp_addmergealternatepublisher"/>
+            	
+            		<Key word="sp_addmergearticle"/>
+            	
+            		<Key word="sp_addmergefilter"/>
+            	
+            		<Key word="sp_addmergelogsettings"/>
+            	
+            		<Key word="sp_addmergepartition"/>
+            	
+            		<Key word="sp_addmergepublication"/>
+            	
+            		<Key word="sp_addmergepullsubscription"/>
+            	
+            		<Key word="sp_addmergepullsubscription_agent"/>
+            	
+            		<Key word="sp_addmergepushsubscription_agent"/>
+            	
+            		<Key word="sp_addmergesubscription"/>
+            	
+            		<Key word="sp_addmessage"/>
+            	
+            		<Key word="sp_addpublication"/>
+            	
+            		<Key word="sp_addpublication_snapshot"/>
+            	
+            		<Key word="sp_addpullsubscription"/>
+            	
+            		<Key word="sp_addpullsubscription_agent"/>
+            	
+            		<Key word="sp_addpushsubscription_agent"/>
+            	
+            		<Key word="sp_addqreader_agent"/>
+            	
+            		<Key word="sp_addqueued_artinfo"/>
+            	
+            		<Key word="sp_addremotelogin"/>
+            	
+            		<Key word="sp_addrole"/>
+            	
+            		<Key word="sp_addrolemember"/>
+            	
+            		<Key word="sp_addscriptexec"/>
+            	
+            		<Key word="sp_addserver"/>
+            	
+            		<Key word="sp_addsrvrolemember"/>
+            	
+            		<Key word="sp_addsubscriber"/>
+            	
+            		<Key word="sp_addsubscriber_schedule"/>
+            	
+            		<Key word="sp_addsubscription"/>
+            	
+            		<Key word="sp_addsynctriggers"/>
+            	
+            		<Key word="sp_addsynctriggerscore"/>
+            	
+            		<Key word="sp_addtabletocontents"/>
+            	
+            		<Key word="sp_addtype"/>
+            	
+            		<Key word="sp_addumpdevice"/>
+            	
+            		<Key word="sp_adduser"/>
+            	
+            		<Key word="sp_adjustpublisheridentityrange"/>
+            	
+            		<Key word="sp_altermessage"/>
+            	
+            		<Key word="sp_approlepassword"/>
+            	
+            		<Key word="sp_article_validation"/>
+            	
+            		<Key word="sp_articlecolumn"/>
+            	
+            		<Key word="sp_articlefilter"/>
+            	
+            		<Key word="sp_articleview"/>
+            	
+            		<Key word="sp_assemblies_rowset"/>
+            	
+            		<Key word="sp_assemblies_rowset_rmt"/>
+            	
+            		<Key word="sp_assemblies_rowset2"/>
+            	
+            		<Key word="sp_assembly_dependencies_rowset"/>
+            	
+            		<Key word="sp_assembly_dependencies_rowset_rmt"/>
+            	
+            		<Key word="sp_assembly_dependencies_rowset2"/>
+            	
+            		<Key word="sp_attach_db"/>
+            	
+            		<Key word="sp_attach_single_file_db"/>
+            	
+            		<Key word="sp_attachsubscription"/>
+            	
+            		<Key word="sp_autostats"/>
+            	
+            		<Key word="sp_bcp_dbcmptlevel"/>
+            	
+            		<Key word="sp_bindefault"/>
+            	
+            		<Key word="sp_bindrule"/>
+            	
+            		<Key word="sp_browsemergesnapshotfolder"/>
+            	
+            		<Key word="sp_browsereplcmds"/>
+            	
+            		<Key word="sp_browsesnapshotfolder"/>
+            	
+            		<Key word="sp_can_tlog_be_applied"/>
+            	
+            		<Key word="sp_catalogs"/>
+            	
+            		<Key word="sp_catalogs_rowset"/>
+            	
+            		<Key word="sp_catalogs_rowset_rmt"/>
+            	
+            		<Key word="sp_catalogs_rowset2"/>
+            	
+            		<Key word="sp_certify_removable"/>
+            	
+            		<Key word="sp_change_agent_parameter"/>
+            	
+            		<Key word="sp_change_agent_profile"/>
+            	
+            		<Key word="sp_change_log_shipping_primary_database"/>
+            	
+            		<Key word="sp_change_log_shipping_secondary_database"/>
+            	
+            		<Key word="sp_change_log_shipping_secondary_primary"/>
+            	
+            		<Key word="sp_change_subscription_properties"/>
+            	
+            		<Key word="sp_change_users_login"/>
+            	
+            		<Key word="sp_changearticle"/>
+            	
+            		<Key word="sp_changearticlecolumndatatype"/>
+            	
+            		<Key word="sp_changedbowner"/>
+            	
+            		<Key word="sp_changedistpublisher"/>
+            	
+            		<Key word="sp_changedistributiondb"/>
+            	
+            		<Key word="sp_changedistributor_password"/>
+            	
+            		<Key word="sp_changedistributor_property"/>
+            	
+            		<Key word="sp_changedynamicsnapshot_job"/>
+            	
+            		<Key word="sp_changegroup"/>
+            	
+            		<Key word="sp_changelogreader_agent"/>
+            	
+            		<Key word="sp_changemergearticle"/>
+            	
+            		<Key word="sp_changemergefilter"/>
+            	
+            		<Key word="sp_changemergelogsettings"/>
+            	
+            		<Key word="sp_changemergepublication"/>
+            	
+            		<Key word="sp_changemergepullsubscription"/>
+            	
+            		<Key word="sp_changemergesubscription"/>
+            	
+            		<Key word="sp_changeobjectowner"/>
+            	
+            		<Key word="sp_changepublication"/>
+            	
+            		<Key word="sp_changepublication_snapshot"/>
+            	
+            		<Key word="sp_changeqreader_agent"/>
+            	
+            		<Key word="sp_changereplicationserverpasswords"/>
+            	
+            		<Key word="sp_changesubscriber"/>
+            	
+            		<Key word="sp_changesubscriber_schedule"/>
+            	
+            		<Key word="sp_changesubscription"/>
+            	
+            		<Key word="sp_changesubscriptiondtsinfo"/>
+            	
+            		<Key word="sp_changesubstatus"/>
+            	
+            		<Key word="sp_check_constbytable_rowset"/>
+            	
+            		<Key word="sp_check_constbytable_rowset2"/>
+            	
+            		<Key word="sp_check_constraints_rowset"/>
+            	
+            		<Key word="sp_check_constraints_rowset2"/>
+            	
+            		<Key word="sp_check_dynamic_filters"/>
+            	
+            		<Key word="sp_check_for_sync_trigger"/>
+            	
+            		<Key word="sp_check_join_filter"/>
+            	
+            		<Key word="sp_check_log_shipping_monitor_alert"/>
+            	
+            		<Key word="sp_check_publication_access"/>
+            	
+            		<Key word="sp_check_removable"/>
+            	
+            		<Key word="sp_check_subset_filter"/>
+            	
+            		<Key word="sp_check_sync_trigger"/>
+            	
+            		<Key word="sp_checkinvalidivarticle"/>
+            	
+            		<Key word="sp_checkOraclepackageversion"/>
+            	
+            		<Key word="sp_cleanmergelogfiles"/>
+            	
+            		<Key word="sp_cleanup_log_shipping_history"/>
+            	
+            		<Key word="sp_cleanupdbreplication"/>
+            	
+            		<Key word="sp_cleanupwebtask"/>
+            	
+            		<Key word="sp_column_privileges"/>
+            	
+            		<Key word="sp_column_privileges_ex"/>
+            	
+            		<Key word="sp_column_privileges_rowset"/>
+            	
+            		<Key word="sp_column_privileges_rowset_rmt"/>
+            	
+            		<Key word="sp_column_privileges_rowset2"/>
+            	
+            		<Key word="sp_columns"/>
+            	
+            		<Key word="sp_columns_90"/>
+            	
+            		<Key word="sp_columns_90_rowset"/>
+            	
+            		<Key word="sp_columns_90_rowset_rmt"/>
+            	
+            		<Key word="sp_columns_90_rowset2"/>
+            	
+            		<Key word="sp_columns_ex"/>
+            	
+            		<Key word="sp_columns_ex_90"/>
+            	
+            		<Key word="sp_columns_rowset"/>
+            	
+            		<Key word="sp_columns_rowset_rmt"/>
+            	
+            		<Key word="sp_columns_rowset2"/>
+            	
+            		<Key word="sp_configure"/>
+            	
+            		<Key word="sp_constr_col_usage_rowset"/>
+            	
+            		<Key word="sp_constr_col_usage_rowset2"/>
+            	
+            		<Key word="sp_convertwebtasks"/>
+            	
+            		<Key word="sp_copymergesnapshot"/>
+            	
+            		<Key word="sp_copysnapshot"/>
+            	
+            		<Key word="sp_copysubscription"/>
+            	
+            		<Key word="sp_create_removable"/>
+            	
+            		<Key word="sp_createmergepalrole"/>
+            	
+            		<Key word="sp_createstats"/>
+            	
+            		<Key word="sp_createtranpalrole"/>
+            	
+            		<Key word="sp_cursor_list"/>
+            	
+            		<Key word="sp_cycle_errorlog"/>
+            	
+            		<Key word="sp_databases"/>
+            	
+            		<Key word="sp_datatype_info"/>
+            	
+            		<Key word="sp_datatype_info_90"/>
+            	
+            		<Key word="sp_db_vardecimal_storage_format"/>
+            	
+            		<Key word="sp_dbcmptlevel"/>
+            	
+            		<Key word="sp_dbfixedrolepermission"/>
+            	
+            		<Key word="sp_dbmmonitoraddmonitoring"/>
+            	
+            		<Key word="sp_dbmmonitorchangealert"/>
+            	
+            		<Key word="sp_dbmmonitorchangemonitoring"/>
+            	
+            		<Key word="sp_dbmmonitordropalert"/>
+            	
+            		<Key word="sp_dbmmonitordropmonitoring"/>
+            	
+            		<Key word="sp_dbmmonitorhelpalert"/>
+            	
+            		<Key word="sp_dbmmonitorhelpmonitoring"/>
+            	
+            		<Key word="sp_dbmmonitorresults"/>
+            	
+            		<Key word="sp_dbmmonitorupdate"/>
+            	
+            		<Key word="sp_dboption"/>
+            	
+            		<Key word="sp_dbremove"/>
+            	
+            		<Key word="sp_ddopen"/>
+            	
+            		<Key word="sp_defaultdb"/>
+            	
+            		<Key word="sp_defaultlanguage"/>
+            	
+            		<Key word="sp_delete_log_shipping_alert_job"/>
+            	
+            		<Key word="sp_delete_log_shipping_primary_database"/>
+            	
+            		<Key word="sp_delete_log_shipping_primary_secondary"/>
+            	
+            		<Key word="sp_delete_log_shipping_secondary_database"/>
+            	
+            		<Key word="sp_delete_log_shipping_secondary_primary"/>
+            	
+            		<Key word="sp_deletemergeconflictrow"/>
+            	
+            		<Key word="sp_deletepeerrequesthistory"/>
+            	
+            		<Key word="sp_deletetracertokenhistory"/>
+            	
+            		<Key word="sp_denylogin"/>
+            	
+            		<Key word="sp_depends"/>
+            	
+            		<Key word="sp_describe_cursor"/>
+            	
+            		<Key word="sp_describe_cursor_columns"/>
+            	
+            		<Key word="sp_describe_cursor_tables"/>
+            	
+            		<Key word="sp_detach_db"/>
+            	
+            		<Key word="sp_disableagentoffload"/>
+            	
+            		<Key word="sp_distcounters"/>
+            	
+            		<Key word="sp_drop_agent_parameter"/>
+            	
+            		<Key word="sp_drop_agent_profile"/>
+            	
+            		<Key word="sp_dropalias"/>
+            	
+            		<Key word="sp_dropanonymousagent"/>
+            	
+            		<Key word="sp_dropanonymoussubscription"/>
+            	
+            		<Key word="sp_dropapprole"/>
+            	
+            		<Key word="sp_droparticle"/>
+            	
+            		<Key word="sp_dropdatatypemapping"/>
+            	
+            		<Key word="sp_dropdevice"/>
+            	
+            		<Key word="sp_dropdistpublisher"/>
+            	
+            		<Key word="sp_dropdistributiondb"/>
+            	
+            		<Key word="sp_dropdistributor"/>
+            	
+            		<Key word="sp_dropdynamicsnapshot_job"/>
+            	
+            		<Key word="sp_dropextendedproc"/>
+            	
+            		<Key word="sp_dropextendedproperty"/>
+            	
+            		<Key word="sp_dropgroup"/>
+            	
+            		<Key word="sp_droplinkedsrvlogin"/>
+            	
+            		<Key word="sp_droplogin"/>
+            	
+            		<Key word="sp_dropmergealternatepublisher"/>
+            	
+            		<Key word="sp_dropmergearticle"/>
+            	
+            		<Key word="sp_dropmergefilter"/>
+            	
+            		<Key word="sp_dropmergelogsettings"/>
+            	
+            		<Key word="sp_dropmergepartition"/>
+            	
+            		<Key word="sp_dropmergepublication"/>
+            	
+            		<Key word="sp_dropmergepullsubscription"/>
+            	
+            		<Key word="sp_dropmergesubscription"/>
+            	
+            		<Key word="sp_dropmessage"/>
+            	
+            		<Key word="sp_droppublication"/>
+            	
+            		<Key word="sp_droppublisher"/>
+            	
+            		<Key word="sp_droppullsubscription"/>
+            	
+            		<Key word="sp_dropremotelogin"/>
+            	
+            		<Key word="sp_dropreplsymmetrickey"/>
+            	
+            		<Key word="sp_droprole"/>
+            	
+            		<Key word="sp_droprolemember"/>
+            	
+            		<Key word="sp_dropserver"/>
+            	
+            		<Key word="sp_dropsrvrolemember"/>
+            	
+            		<Key word="sp_dropsubscriber"/>
+            	
+            		<Key word="sp_dropsubscription"/>
+            	
+            		<Key word="sp_droptype"/>
+            	
+            		<Key word="sp_dropuser"/>
+            	
+            		<Key word="sp_dropwebtask"/>
+            	
+            		<Key word="sp_dsninfo"/>
+            	
+            		<Key word="sp_enable_heterogeneous_subscription"/>
+            	
+            		<Key word="sp_enableagentoffload"/>
+            	
+            		<Key word="sp_enum_oledb_providers"/>
+            	
+            		<Key word="sp_enumcodepages"/>
+            	
+            		<Key word="sp_enumcustomresolvers"/>
+            	
+            		<Key word="sp_enumdsn"/>
+            	
+            		<Key word="sp_enumeratependingschemachanges"/>
+            	
+            		<Key word="sp_enumerrorlogs"/>
+            	
+            		<Key word="sp_enumfullsubscribers"/>
+            	
+            		<Key word="sp_enumoledbdatasources"/>
+            	
+            		<Key word="sp_estimated_rowsize_reduction_for_vardecimal"/>
+            	
+            		<Key word="sp_expired_subscription_cleanup"/>
+            	
+            		<Key word="sp_firstonly_bitmap"/>
+            	
+            		<Key word="sp_fkeys"/>
+            	
+            		<Key word="sp_foreign_keys_rowset"/>
+            	
+            		<Key word="sp_foreign_keys_rowset_rmt"/>
+            	
+            		<Key word="sp_foreign_keys_rowset2"/>
+            	
+            		<Key word="sp_foreign_keys_rowset3"/>
+            	
+            		<Key word="sp_foreignkeys"/>
+            	
+            		<Key word="sp_fulltext_catalog"/>
+            	
+            		<Key word="sp_fulltext_column"/>
+            	
+            		<Key word="sp_fulltext_database"/>
+            	
+            		<Key word="sp_fulltext_querytimeout"/>
+            	
+            		<Key word="sp_fulltext_recycle_crawl_log"/>
+            	
+            		<Key word="sp_fulltext_service"/>
+            	
+            		<Key word="sp_fulltext_table"/>
+            	
+            		<Key word="sp_generate_agent_parameter"/>
+            	
+            		<Key word="sp_generatefilters"/>
+            	
+            		<Key word="sp_get_distributor"/>
+            	
+            		<Key word="sp_get_job_status_mergesubscription_agent"/>
+            	
+            		<Key word="sp_get_mergepublishedarticleproperties"/>
+            	
+            		<Key word="sp_get_Oracle_publisher_metadata"/>
+            	
+            		<Key word="sp_getagentparameterlist"/>
+            	
+            		<Key word="sp_getapplock"/>
+            	
+            		<Key word="sp_getdefaultdatatypemapping"/>
+            	
+            		<Key word="sp_getmergedeletetype"/>
+            	
+            		<Key word="sp_getpublisherlink"/>
+            	
+            		<Key word="sp_getqueuedarticlesynctraninfo"/>
+            	
+            		<Key word="sp_getqueuedrows"/>
+            	
+            		<Key word="sp_getsqlqueueversion"/>
+            	
+            		<Key word="sp_getsubscription_status_hsnapshot"/>
+            	
+            		<Key word="sp_getsubscriptiondtspackagename"/>
+            	
+            		<Key word="sp_grant_publication_access"/>
+            	
+            		<Key word="sp_grantdbaccess"/>
+            	
+            		<Key word="sp_grantlogin"/>
+            	
+            		<Key word="sp_help"/>
+            	
+            		<Key word="sp_help_agent_default"/>
+            	
+            		<Key word="sp_help_agent_parameter"/>
+            	
+            		<Key word="sp_help_agent_profile"/>
+            	
+            		<Key word="sp_help_datatype_mapping"/>
+            	
+            		<Key word="sp_help_fulltext_catalog_components"/>
+            	
+            		<Key word="sp_help_fulltext_catalogs"/>
+            	
+            		<Key word="sp_help_fulltext_catalogs_cursor"/>
+            	
+            		<Key word="sp_help_fulltext_columns"/>
+            	
+            		<Key word="sp_help_fulltext_columns_cursor"/>
+            	
+            		<Key word="sp_help_fulltext_system_components"/>
+            	
+            		<Key word="sp_help_fulltext_tables"/>
+            	
+            		<Key word="sp_help_fulltext_tables_cursor"/>
+            	
+            		<Key word="sp_help_log_shipping_alert_job"/>
+            	
+            		<Key word="sp_help_log_shipping_monitor"/>
+            	
+            		<Key word="sp_help_log_shipping_monitor_primary"/>
+            	
+            		<Key word="sp_help_log_shipping_monitor_secondary"/>
+            	
+            		<Key word="sp_help_log_shipping_primary_database"/>
+            	
+            		<Key word="sp_help_log_shipping_primary_secondary"/>
+            	
+            		<Key word="sp_help_log_shipping_secondary_database"/>
+            	
+            		<Key word="sp_help_log_shipping_secondary_primary"/>
+            	
+            		<Key word="sp_help_publication_access"/>
+            	
+            		<Key word="sp_helpallowmerge_publication"/>
+            	
+            		<Key word="sp_helparticle"/>
+            	
+            		<Key word="sp_helparticlecolumns"/>
+            	
+            		<Key word="sp_helparticledts"/>
+            	
+            		<Key word="sp_helpconstraint"/>
+            	
+            		<Key word="sp_helpdatatypemap"/>
+            	
+            		<Key word="sp_helpdb"/>
+            	
+            		<Key word="sp_helpdbfixedrole"/>
+            	
+            		<Key word="sp_helpdevice"/>
+            	
+            		<Key word="sp_helpdistpublisher"/>
+            	
+            		<Key word="sp_helpdistributiondb"/>
+            	
+            		<Key word="sp_helpdistributor"/>
+            	
+            		<Key word="sp_helpdistributor_properties"/>
+            	
+            		<Key word="sp_helpdynamicsnapshot_job"/>
+            	
+            		<Key word="sp_helpextendedproc"/>
+            	
+            		<Key word="sp_helpfile"/>
+            	
+            		<Key word="sp_helpfilegroup"/>
+            	
+            		<Key word="sp_helpgroup"/>
+            	
+            		<Key word="sp_helpindex"/>
+            	
+            		<Key word="sp_helplanguage"/>
+            	
+            		<Key word="sp_helplinkedsrvlogin"/>
+            	
+            		<Key word="sp_helplogins"/>
+            	
+            		<Key word="sp_helplogreader_agent"/>
+            	
+            		<Key word="sp_helpmergealternatepublisher"/>
+            	
+            		<Key word="sp_helpmergearticle"/>
+            	
+            		<Key word="sp_helpmergearticlecolumn"/>
+            	
+            		<Key word="sp_helpmergearticleconflicts"/>
+            	
+            		<Key word="sp_helpmergeconflictrows"/>
+            	
+            		<Key word="sp_helpmergedeleteconflictrows"/>
+            	
+            		<Key word="sp_helpmergefilter"/>
+            	
+            		<Key word="sp_helpmergelogfiles"/>
+            	
+            		<Key word="sp_helpmergelogfileswithdata"/>
+            	
+            		<Key word="sp_helpmergelogsettings"/>
+            	
+            		<Key word="sp_helpmergepartition"/>
+            	
+            		<Key word="sp_helpmergepublication"/>
+            	
+            		<Key word="sp_helpmergepullsubscription"/>
+            	
+            		<Key word="sp_helpmergesubscription"/>
+            	
+            		<Key word="sp_helpntgroup"/>
+            	
+            		<Key word="sp_helppeerrequests"/>
+            	
+            		<Key word="sp_helppeerresponses"/>
+            	
+            		<Key word="sp_helppublication"/>
+            	
+            		<Key word="sp_helppublication_snapshot"/>
+            	
+            		<Key word="sp_helppublicationsync"/>
+            	
+            		<Key word="sp_helppullsubscription"/>
+            	
+            		<Key word="sp_helpqreader_agent"/>
+            	
+            		<Key word="sp_helpremotelogin"/>
+            	
+            		<Key word="sp_helpreplfailovermode"/>
+            	
+            		<Key word="sp_helpreplicationdb"/>
+            	
+            		<Key word="sp_helpreplicationdboption"/>
+            	
+            		<Key word="sp_helpreplicationoption"/>
+            	
+            		<Key word="sp_helprole"/>
+            	
+            		<Key word="sp_helprolemember"/>
+            	
+            		<Key word="sp_helprotect"/>
+            	
+            		<Key word="sp_helpserver"/>
+            	
+            		<Key word="sp_helpsort"/>
+            	
+            		<Key word="sp_helpsrvrole"/>
+            	
+            		<Key word="sp_helpsrvrolemember"/>
+            	
+            		<Key word="sp_helpstats"/>
+            	
+            		<Key word="sp_helpsubscriberinfo"/>
+            	
+            		<Key word="sp_helpsubscription"/>
+            	
+            		<Key word="sp_helpsubscription_properties"/>
+            	
+            		<Key word="sp_helpsubscriptionerrors"/>
+            	
+            		<Key word="sp_helptext"/>
+            	
+            		<Key word="sp_helptracertokenhistory"/>
+            	
+            		<Key word="sp_helptracertokens"/>
+            	
+            		<Key word="sp_helptrigger"/>
+            	
+            		<Key word="sp_helpuser"/>
+            	
+            		<Key word="sp_helpxactsetjob"/>
+            	
+            		<Key word="sp_http_generate_wsdl_defaultcomplexorsimple"/>
+            	
+            		<Key word="sp_http_generate_wsdl_defaultsimpleorcomplex"/>
+            	
+            		<Key word="sp_identitycolumnforreplication"/>
+            	
+            		<Key word="sp_IH_LR_GetCacheData"/>
+            	
+            		<Key word="sp_IHadd_sync_command"/>
+            	
+            		<Key word="sp_IHarticlecolumn"/>
+            	
+            		<Key word="sp_IHget_loopback_detection"/>
+            	
+            		<Key word="sp_IHScriptIdxFile"/>
+            	
+            		<Key word="sp_IHScriptSchFile"/>
+            	
+            		<Key word="sp_IHValidateRowFilter"/>
+            	
+            		<Key word="sp_IHXactSetJob"/>
+            	
+            		<Key word="sp_indexes"/>
+            	
+            		<Key word="sp_indexes_90_rowset"/>
+            	
+            		<Key word="sp_indexes_90_rowset_rmt"/>
+            	
+            		<Key word="sp_indexes_90_rowset2"/>
+            	
+            		<Key word="sp_indexes_rowset"/>
+            	
+            		<Key word="sp_indexes_rowset_rmt"/>
+            	
+            		<Key word="sp_indexes_rowset2"/>
+            	
+            		<Key word="sp_indexoption"/>
+            	
+            		<Key word="sp_invalidate_textptr"/>
+            	
+            		<Key word="sp_ivindexhasnullcols"/>
+            	
+            		<Key word="sp_lightweightmergemetadataretentioncleanup"/>
+            	
+            		<Key word="sp_link_publication"/>
+            	
+            		<Key word="sp_linkedservers"/>
+            	
+            		<Key word="sp_linkedservers_rowset"/>
+            	
+            		<Key word="sp_linkedservers_rowset2"/>
+            	
+            		<Key word="sp_lock"/>
+            	
+            		<Key word="sp_logshippinginstallmetadata"/>
+            	
+            		<Key word="sp_lookupcustomresolver"/>
+            	
+            		<Key word="sp_makewebtask"/>
+            	
+            		<Key word="sp_mapdown_bitmap"/>
+            	
+            		<Key word="sp_markpendingschemachange"/>
+            	
+            		<Key word="sp_marksubscriptionvalidation"/>
+            	
+            		<Key word="sp_mergearticlecolumn"/>
+            	
+            		<Key word="sp_mergecleanupmetadata"/>
+            	
+            		<Key word="sp_mergedummyupdate"/>
+            	
+            		<Key word="sp_mergemetadataretentioncleanup"/>
+            	
+            		<Key word="sp_mergesubscription_cleanup"/>
+            	
+            		<Key word="sp_mergesubscriptionsummary"/>
+            	
+            		<Key word="sp_monitor"/>
+            	
+            		<Key word="sp_MS_replication_installed"/>
+            	
+            		<Key word="sp_MSacquireHeadofQueueLock"/>
+            	
+            		<Key word="sp_MSacquireserverresourcefordynamicsnapshot"/>
+            	
+            		<Key word="sp_MSacquireSlotLock"/>
+            	
+            		<Key word="sp_MSacquiresnapshotdeliverysessionlock"/>
+            	
+            		<Key word="sp_MSactivate_auto_sub"/>
+            	
+            		<Key word="sp_MSactivatelogbasedarticleobject"/>
+            	
+            		<Key word="sp_MSactivateprocedureexecutionarticleobject"/>
+            	
+            		<Key word="sp_MSadd_anonymous_agent"/>
+            	
+            		<Key word="sp_MSadd_article"/>
+            	
+            		<Key word="sp_MSadd_compensating_cmd"/>
+            	
+            		<Key word="sp_MSadd_distribution_agent"/>
+            	
+            		<Key word="sp_MSadd_distribution_history"/>
+            	
+            		<Key word="sp_MSadd_dynamic_snapshot_location"/>
+            	
+            		<Key word="sp_MSadd_filteringcolumn"/>
+            	
+            		<Key word="sp_MSadd_log_shipping_error_detail"/>
+            	
+            		<Key word="sp_MSadd_log_shipping_history_detail"/>
+            	
+            		<Key word="sp_MSadd_logreader_agent"/>
+            	
+            		<Key word="sp_MSadd_logreader_history"/>
+            	
+            		<Key word="sp_MSadd_merge_agent"/>
+            	
+            		<Key word="sp_MSadd_merge_anonymous_agent"/>
+            	
+            		<Key word="sp_MSadd_merge_history"/>
+            	
+            		<Key word="sp_MSadd_merge_history90"/>
+            	
+            		<Key word="sp_MSadd_merge_subscription"/>
+            	
+            		<Key word="sp_MSadd_mergereplcommand"/>
+            	
+            		<Key word="sp_MSadd_mergesubentry_indistdb"/>
+            	
+            		<Key word="sp_MSadd_publication"/>
+            	
+            		<Key word="sp_MSadd_qreader_agent"/>
+            	
+            		<Key word="sp_MSadd_qreader_history"/>
+            	
+            		<Key word="sp_MSadd_repl_alert"/>
+            	
+            		<Key word="sp_MSadd_repl_command"/>
+            	
+            		<Key word="sp_MSadd_repl_commands27hp"/>
+            	
+            		<Key word="sp_MSadd_repl_error"/>
+            	
+            		<Key word="sp_MSadd_replcmds_mcit"/>
+            	
+            		<Key word="sp_MSadd_replmergealert"/>
+            	
+            		<Key word="sp_MSadd_snapshot_agent"/>
+            	
+            		<Key word="sp_MSadd_snapshot_history"/>
+            	
+            		<Key word="sp_MSadd_subscriber_info"/>
+            	
+            		<Key word="sp_MSadd_subscriber_schedule"/>
+            	
+            		<Key word="sp_MSadd_subscription"/>
+            	
+            		<Key word="sp_MSadd_subscription_3rd"/>
+            	
+            		<Key word="sp_MSadd_tracer_history"/>
+            	
+            		<Key word="sp_MSadd_tracer_token"/>
+            	
+            		<Key word="sp_MSaddanonymousreplica"/>
+            	
+            		<Key word="sp_MSadddynamicsnapshotjobatdistributor"/>
+            	
+            		<Key word="sp_MSaddguidcolumn"/>
+            	
+            		<Key word="sp_MSaddguidindex"/>
+            	
+            		<Key word="sp_MSaddinitialarticle"/>
+            	
+            		<Key word="sp_MSaddinitialpublication"/>
+            	
+            		<Key word="sp_MSaddinitialschemaarticle"/>
+            	
+            		<Key word="sp_MSaddinitialsubscription"/>
+            	
+            		<Key word="sp_MSaddlightweightmergearticle"/>
+            	
+            		<Key word="sp_MSaddmergedynamicsnapshotjob"/>
+            	
+            		<Key word="sp_MSaddmergetriggers"/>
+            	
+            		<Key word="sp_MSaddmergetriggers_from_template"/>
+            	
+            		<Key word="sp_MSaddmergetriggers_internal"/>
+            	
+            		<Key word="sp_MSaddpeerlsn"/>
+            	
+            		<Key word="sp_MSaddsubscriptionarticles"/>
+            	
+            		<Key word="sp_MSadjust_pub_identity"/>
+            	
+            		<Key word="sp_MSagent_retry_stethoscope"/>
+            	
+            		<Key word="sp_MSagent_stethoscope"/>
+            	
+            		<Key word="sp_MSallocate_new_identity_range"/>
+            	
+            		<Key word="sp_MSalreadyhavegeneration"/>
+            	
+            		<Key word="sp_MSanonymous_status"/>
+            	
+            		<Key word="sp_MSarticlecleanup"/>
+            	
+            		<Key word="sp_MSbrowsesnapshotfolder"/>
+            	
+            		<Key word="sp_MScache_agent_parameter"/>
+            	
+            		<Key word="sp_MSchange_article"/>
+            	
+            		<Key word="sp_MSchange_distribution_agent_properties"/>
+            	
+            		<Key word="sp_MSchange_logreader_agent_properties"/>
+            	
+            		<Key word="sp_MSchange_merge_agent_properties"/>
+            	
+            		<Key word="sp_MSchange_mergearticle"/>
+            	
+            		<Key word="sp_MSchange_mergepublication"/>
+            	
+            		<Key word="sp_MSchange_priority"/>
+            	
+            		<Key word="sp_MSchange_publication"/>
+            	
+            		<Key word="sp_MSchange_retention"/>
+            	
+            		<Key word="sp_MSchange_retention_period_unit"/>
+            	
+            		<Key word="sp_MSchange_snapshot_agent_properties"/>
+            	
+            		<Key word="sp_MSchange_subscription_dts_info"/>
+            	
+            		<Key word="sp_MSchangearticleresolver"/>
+            	
+            		<Key word="sp_MSchangedynamicsnapshotjobatdistributor"/>
+            	
+            		<Key word="sp_MSchangedynsnaplocationatdistributor"/>
+            	
+            		<Key word="sp_MSchangeobjectowner"/>
+            	
+            		<Key word="sp_MScheck_agent_instance"/>
+            	
+            		<Key word="sp_MScheck_Jet_Subscriber"/>
+            	
+            		<Key word="sp_MScheck_logicalrecord_metadatamatch"/>
+            	
+            		<Key word="sp_MScheck_merge_subscription_count"/>
+            	
+            		<Key word="sp_MScheck_pub_identity"/>
+            	
+            		<Key word="sp_MScheck_pull_access"/>
+            	
+            		<Key word="sp_MScheck_snapshot_agent"/>
+            	
+            		<Key word="sp_MScheck_subscription"/>
+            	
+            		<Key word="sp_MScheck_subscription_expiry"/>
+            	
+            		<Key word="sp_MScheck_subscription_partition"/>
+            	
+            		<Key word="sp_MScheck_tran_retention"/>
+            	
+            		<Key word="sp_MScheckexistsgeneration"/>
+            	
+            		<Key word="sp_MScheckexistsrecguid"/>
+            	
+            		<Key word="sp_MScheckidentityrange"/>
+            	
+            		<Key word="sp_MSchecksharedagentforpublication"/>
+            	
+            		<Key word="sp_MSchecksnapshotstatus"/>
+            	
+            		<Key word="sp_MScleanup_agent_entry"/>
+            	
+            		<Key word="sp_MScleanup_conflict"/>
+            	
+            		<Key word="sp_MScleanup_publication_ADinfo"/>
+            	
+            		<Key word="sp_MScleanup_subscription_distside_entry"/>
+            	
+            		<Key word="sp_MScleanupdynamicsnapshotfolder"/>
+            	
+            		<Key word="sp_MScleanupdynsnapshotvws"/>
+            	
+            		<Key word="sp_MSCleanupForPullReinit"/>
+            	
+            		<Key word="sp_MScleanupmergepublisher"/>
+            	
+            		<Key word="sp_MScleanupmergepublisher_internal"/>
+            	
+            		<Key word="sp_MSclear_dynamic_snapshot_location"/>
+            	
+            		<Key word="sp_MSclearresetpartialsnapshotprogressbit"/>
+            	
+            		<Key word="sp_MScomputelastsentgen"/>
+            	
+            		<Key word="sp_MScomputemergearticlescreationorder"/>
+            	
+            		<Key word="sp_MScomputemergeunresolvedrefs"/>
+            	
+            		<Key word="sp_MSconflicttableexists"/>
+            	
+            		<Key word="sp_MScreate_all_article_repl_views"/>
+            	
+            		<Key word="sp_MScreate_article_repl_views"/>
+            	
+            		<Key word="sp_MScreate_dist_tables"/>
+            	
+            		<Key word="sp_MScreate_logical_record_views"/>
+            	
+            		<Key word="sp_MScreate_sub_tables"/>
+            	
+            		<Key word="sp_MScreatedisabledmltrigger"/>
+            	
+            		<Key word="sp_MScreatedummygeneration"/>
+            	
+            		<Key word="sp_MScreateglobalreplica"/>
+            	
+            		<Key word="sp_MScreatelightweightinsertproc"/>
+            	
+            		<Key word="sp_MScreatelightweightmultipurposeproc"/>
+            	
+            		<Key word="sp_MScreatelightweightprocstriggersconstraints"/>
+            	
+            		<Key word="sp_MScreatelightweightupdateproc"/>
+            	
+            		<Key word="sp_MScreatemergedynamicsnapshot"/>
+            	
+            		<Key word="sp_MScreateretry"/>
+            	
+            		<Key word="sp_MSdbuseraccess"/>
+            	
+            		<Key word="sp_MSdbuserpriv"/>
+            	
+            		<Key word="sp_MSdefer_check"/>
+            	
+            		<Key word="sp_MSdelete_tracer_history"/>
+            	
+            		<Key word="sp_MSdeletefoldercontents"/>
+            	
+            		<Key word="sp_MSdeletemetadataactionrequest"/>
+            	
+            		<Key word="sp_MSdeleteretry"/>
+            	
+            		<Key word="sp_MSdeletetranconflictrow"/>
+            	
+            		<Key word="sp_MSdelgenzero"/>
+            	
+            		<Key word="sp_MSdelrow"/>
+            	
+            		<Key word="sp_MSdelrowsbatch"/>
+            	
+            		<Key word="sp_MSdelrowsbatch_downloadonly"/>
+            	
+            		<Key word="sp_MSdelsubrows"/>
+            	
+            		<Key word="sp_MSdelsubrowsbatch"/>
+            	
+            		<Key word="sp_MSdependencies"/>
+            	
+            		<Key word="sp_MSdetect_nonlogged_shutdown"/>
+            	
+            		<Key word="sp_MSdetectinvalidpeerconfiguration"/>
+            	
+            		<Key word="sp_MSdetectinvalidpeersubscription"/>
+            	
+            		<Key word="sp_MSdist_activate_auto_sub"/>
+            	
+            		<Key word="sp_MSdist_adjust_identity"/>
+            	
+            		<Key word="sp_MSdistpublisher_cleanup"/>
+            	
+            		<Key word="sp_MSdistribution_counters"/>
+            	
+            		<Key word="sp_MSdistributoravailable"/>
+            	
+            		<Key word="sp_MSdodatabasesnapshotinitiation"/>
+            	
+            		<Key word="sp_MSdopartialdatabasesnapshotinitiation"/>
+            	
+            		<Key word="sp_MSdrop_6x_publication"/>
+            	
+            		<Key word="sp_MSdrop_6x_replication_agent"/>
+            	
+            		<Key word="sp_MSdrop_anonymous_entry"/>
+            	
+            		<Key word="sp_MSdrop_article"/>
+            	
+            		<Key word="sp_MSdrop_distribution_agent"/>
+            	
+            		<Key word="sp_MSdrop_distribution_agentid_dbowner_proxy"/>
+            	
+            		<Key word="sp_MSdrop_dynamic_snapshot_agent"/>
+            	
+            		<Key word="sp_MSdrop_logreader_agent"/>
+            	
+            		<Key word="sp_MSdrop_merge_agent"/>
+            	
+            		<Key word="sp_MSdrop_merge_subscription"/>
+            	
+            		<Key word="sp_MSdrop_publication"/>
+            	
+            		<Key word="sp_MSdrop_qreader_history"/>
+            	
+            		<Key word="sp_MSdrop_snapshot_agent"/>
+            	
+            		<Key word="sp_MSdrop_snapshot_dirs"/>
+            	
+            		<Key word="sp_MSdrop_subscriber_info"/>
+            	
+            		<Key word="sp_MSdrop_subscription"/>
+            	
+            		<Key word="sp_MSdrop_subscription_3rd"/>
+            	
+            		<Key word="sp_MSdroparticleconstraints"/>
+            	
+            		<Key word="sp_MSdroparticletombstones"/>
+            	
+            		<Key word="sp_MSdropconstraints"/>
+            	
+            		<Key word="sp_MSdropdynsnapshotvws"/>
+            	
+            		<Key word="sp_MSdropfkreferencingarticle"/>
+            	
+            		<Key word="sp_MSdropmergearticle"/>
+            	
+            		<Key word="sp_MSdropmergedynamicsnapshotjob"/>
+            	
+            		<Key word="sp_MSdropretry"/>
+            	
+            		<Key word="sp_MSdroptemptable"/>
+            	
+            		<Key word="sp_MSdummyupdate"/>
+            	
+            		<Key word="sp_MSdummyupdate_logicalrecord"/>
+            	
+            		<Key word="sp_MSdummyupdate90"/>
+            	
+            		<Key word="sp_MSdummyupdatelightweight"/>
+            	
+            		<Key word="sp_MSdynamicsnapshotjobexistsatdistributor"/>
+            	
+            		<Key word="sp_MSenable_publication_for_het_sub"/>
+            	
+            		<Key word="sp_MSensure_single_instance"/>
+            	
+            		<Key word="sp_MSenum_distribution"/>
+            	
+            		<Key word="sp_MSenum_distribution_s"/>
+            	
+            		<Key word="sp_MSenum_distribution_sd"/>
+            	
+            		<Key word="sp_MSenum_logicalrecord_changes"/>
+            	
+            		<Key word="sp_MSenum_logreader"/>
+            	
+            		<Key word="sp_MSenum_logreader_s"/>
+            	
+            		<Key word="sp_MSenum_logreader_sd"/>
+            	
+            		<Key word="sp_MSenum_merge"/>
+            	
+            		<Key word="sp_MSenum_merge_agent_properties"/>
+            	
+            		<Key word="sp_MSenum_merge_s"/>
+            	
+            		<Key word="sp_MSenum_merge_sd"/>
+            	
+            		<Key word="sp_MSenum_merge_subscriptions"/>
+            	
+            		<Key word="sp_MSenum_merge_subscriptions_90_publication"/>
+            	
+            		<Key word="sp_MSenum_merge_subscriptions_90_publisher"/>
+            	
+            		<Key word="sp_MSenum_metadataaction_requests"/>
+            	
+            		<Key word="sp_MSenum_qreader"/>
+            	
+            		<Key word="sp_MSenum_qreader_s"/>
+            	
+            		<Key word="sp_MSenum_qreader_sd"/>
+            	
+            		<Key word="sp_MSenum_replication_agents"/>
+            	
+            		<Key word="sp_MSenum_replication_job"/>
+            	
+            		<Key word="sp_MSenum_replqueues"/>
+            	
+            		<Key word="sp_MSenum_replsqlqueues"/>
+            	
+            		<Key word="sp_MSenum_snapshot"/>
+            	
+            		<Key word="sp_MSenum_snapshot_s"/>
+            	
+            		<Key word="sp_MSenum_snapshot_sd"/>
+            	
+            		<Key word="sp_MSenum_subscriptions"/>
+            	
+            		<Key word="sp_MSenumallpublications"/>
+            	
+            		<Key word="sp_MSenumallsubscriptions"/>
+            	
+            		<Key word="sp_MSenumarticleslightweight"/>
+            	
+            		<Key word="sp_MSenumchanges"/>
+            	
+            		<Key word="sp_MSenumchanges_belongtopartition"/>
+            	
+            		<Key word="sp_MSenumchanges_notbelongtopartition"/>
+            	
+            		<Key word="sp_MSenumchangesdirect"/>
+            	
+            		<Key word="sp_MSenumchangeslightweight"/>
+            	
+            		<Key word="sp_MSenumcolumns"/>
+            	
+            		<Key word="sp_MSenumcolumnslightweight"/>
+            	
+            		<Key word="sp_MSenumdeletes_forpartition"/>
+            	
+            		<Key word="sp_MSenumdeleteslightweight"/>
+            	
+            		<Key word="sp_MSenumdeletesmetadata"/>
+            	
+            		<Key word="sp_MSenumdistributionagentproperties"/>
+            	
+            		<Key word="sp_MSenumerate_PAL"/>
+            	
+            		<Key word="sp_MSenumgenerations"/>
+            	
+            		<Key word="sp_MSenumgenerations90"/>
+            	
+            		<Key word="sp_MSenumpartialchanges"/>
+            	
+            		<Key word="sp_MSenumpartialchangesdirect"/>
+            	
+            		<Key word="sp_MSenumpartialdeletes"/>
+            	
+            		<Key word="sp_MSenumpubreferences"/>
+            	
+            		<Key word="sp_MSenumreplicas"/>
+            	
+            		<Key word="sp_MSenumreplicas90"/>
+            	
+            		<Key word="sp_MSenumretries"/>
+            	
+            		<Key word="sp_MSenumschemachange"/>
+            	
+            		<Key word="sp_MSenumsubscriptions"/>
+            	
+            		<Key word="sp_MSenumthirdpartypublicationvendornames"/>
+            	
+            		<Key word="sp_MSestimatemergesnapshotworkload"/>
+            	
+            		<Key word="sp_MSestimatesnapshotworkload"/>
+            	
+            		<Key word="sp_MSevalsubscriberinfo"/>
+            	
+            		<Key word="sp_MSevaluate_change_membership_for_all_articles_in_pubid"/>
+            	
+            		<Key word="sp_MSevaluate_change_membership_for_pubid"/>
+            	
+            		<Key word="sp_MSevaluate_change_membership_for_row"/>
+            	
+            		<Key word="sp_MSexecwithlsnoutput"/>
+            	
+            		<Key word="sp_MSfast_delete_trans"/>
+            	
+            		<Key word="sp_MSfetchAdjustidentityrange"/>
+            	
+            		<Key word="sp_MSfetchidentityrange"/>
+            	
+            		<Key word="sp_MSfillupmissingcols"/>
+            	
+            		<Key word="sp_MSfilterclause"/>
+            	
+            		<Key word="sp_MSfix_6x_tasks"/>
+            	
+            		<Key word="sp_MSfixlineageversions"/>
+            	
+            		<Key word="sp_MSFixSubColumnBitmaps"/>
+            	
+            		<Key word="sp_MSfixupbeforeimagetables"/>
+            	
+            		<Key word="sp_MSflush_access_cache"/>
+            	
+            		<Key word="sp_MSforce_drop_distribution_jobs"/>
+            	
+            		<Key word="sp_MSforcereenumeration"/>
+            	
+            		<Key word="sp_MSforeach_worker"/>
+            	
+            		<Key word="sp_MSforeachdb"/>
+            	
+            		<Key word="sp_MSforeachtable"/>
+            	
+            		<Key word="sp_MSgenerateexpandproc"/>
+            	
+            		<Key word="sp_MSget_agent_names"/>
+            	
+            		<Key word="sp_MSget_attach_state"/>
+            	
+            		<Key word="sp_MSget_DDL_after_regular_snapshot"/>
+            	
+            		<Key word="sp_MSget_dynamic_snapshot_location"/>
+            	
+            		<Key word="sp_MSget_identity_range_info"/>
+            	
+            		<Key word="sp_MSget_jobstate"/>
+            	
+            		<Key word="sp_MSget_last_transaction"/>
+            	
+            		<Key word="sp_MSget_load_hint"/>
+            	
+            		<Key word="sp_MSget_log_shipping_new_sessionid"/>
+            	
+            		<Key word="sp_MSget_logicalrecord_lineage"/>
+            	
+            		<Key word="sp_MSget_max_used_identity"/>
+            	
+            		<Key word="sp_MSget_MSmerge_rowtrack_colinfo"/>
+            	
+            		<Key word="sp_MSget_new_xact_seqno"/>
+            	
+            		<Key word="sp_MSget_oledbinfo"/>
+            	
+            		<Key word="sp_MSget_partitionid_eval_proc"/>
+            	
+            		<Key word="sp_MSget_publication_from_taskname"/>
+            	
+            		<Key word="sp_MSget_publisher_rpc"/>
+            	
+            		<Key word="sp_MSget_repl_cmds_anonymous"/>
+            	
+            		<Key word="sp_MSget_repl_commands"/>
+            	
+            		<Key word="sp_MSget_repl_error"/>
+            	
+            		<Key word="sp_MSget_session_statistics"/>
+            	
+            		<Key word="sp_MSget_shared_agent"/>
+            	
+            		<Key word="sp_MSget_snapshot_history"/>
+            	
+            		<Key word="sp_MSget_subscriber_partition_id"/>
+            	
+            		<Key word="sp_MSget_subscription_dts_info"/>
+            	
+            		<Key word="sp_MSget_subscription_guid"/>
+            	
+            		<Key word="sp_MSget_synctran_commands"/>
+            	
+            		<Key word="sp_MSget_type_wrapper"/>
+            	
+            		<Key word="sp_MSgetagentoffloadinfo"/>
+            	
+            		<Key word="sp_MSgetalertinfo"/>
+            	
+            		<Key word="sp_MSgetalternaterecgens"/>
+            	
+            		<Key word="sp_MSgetarticlereinitvalue"/>
+            	
+            		<Key word="sp_MSgetchangecount"/>
+            	
+            		<Key word="sp_MSgetconflictinsertproc"/>
+            	
+            		<Key word="sp_MSgetconflicttablename"/>
+            	
+            		<Key word="sp_MSGetCurrentPrincipal"/>
+            	
+            		<Key word="sp_MSgetdatametadatabatch"/>
+            	
+            		<Key word="sp_MSgetdbversion"/>
+            	
+            		<Key word="sp_MSgetdynamicsnapshotapplock"/>
+            	
+            		<Key word="sp_MSgetdynsnapvalidationtoken"/>
+            	
+            		<Key word="sp_MSgetisvalidwindowsloginfromdistributor"/>
+            	
+            		<Key word="sp_MSgetlastrecgen"/>
+            	
+            		<Key word="sp_MSgetlastsentgen"/>
+            	
+            		<Key word="sp_MSgetlastsentrecgens"/>
+            	
+            		<Key word="sp_MSgetlastupdatedtime"/>
+            	
+            		<Key word="sp_MSgetlightweightmetadatabatch"/>
+            	
+            		<Key word="sp_MSgetmakegenerationapplock"/>
+            	
+            		<Key word="sp_MSgetmakegenerationapplock_90"/>
+            	
+            		<Key word="sp_MSgetmaxbcpgen"/>
+            	
+            		<Key word="sp_MSgetmaxsnapshottimestamp"/>
+            	
+            		<Key word="sp_MSgetmergeadminapplock"/>
+            	
+            		<Key word="sp_MSgetmetadata_changedlogicalrecordmembers"/>
+            	
+            		<Key word="sp_MSgetmetadatabatch"/>
+            	
+            		<Key word="sp_MSgetmetadatabatch90"/>
+            	
+            		<Key word="sp_MSgetmetadatabatch90new"/>
+            	
+            		<Key word="sp_MSgetonerow"/>
+            	
+            		<Key word="sp_MSgetonerowlightweight"/>
+            	
+            		<Key word="sp_MSgetpeerlsns"/>
+            	
+            		<Key word="sp_MSgetpeertopeercommands"/>
+            	
+            		<Key word="sp_MSgetpubinfo"/>
+            	
+            		<Key word="sp_MSgetreplicainfo"/>
+            	
+            		<Key word="sp_MSgetreplicastate"/>
+            	
+            		<Key word="sp_MSgetrowmetadata"/>
+            	
+            		<Key word="sp_MSgetrowmetadatalightweight"/>
+            	
+            		<Key word="sp_MSGetServerProperties"/>
+            	
+            		<Key word="sp_MSgetsetupbelong_cost"/>
+            	
+            		<Key word="sp_MSgetsubscriberinfo"/>
+            	
+            		<Key word="sp_MSgetsupportabilitysettings"/>
+            	
+            		<Key word="sp_MSgettrancftsrcrow"/>
+            	
+            		<Key word="sp_MSgettranconflictrow"/>
+            	
+            		<Key word="sp_MSgrantconnectreplication"/>
+            	
+            		<Key word="sp_MShaschangeslightweight"/>
+            	
+            		<Key word="sp_MShasdbaccess"/>
+            	
+            		<Key word="sp_MShelp_article"/>
+            	
+            		<Key word="sp_MShelp_distdb"/>
+            	
+            		<Key word="sp_MShelp_distribution_agentid"/>
+            	
+            		<Key word="sp_MShelp_identity_property"/>
+            	
+            		<Key word="sp_MShelp_logreader_agentid"/>
+            	
+            		<Key word="sp_MShelp_merge_agentid"/>
+            	
+            		<Key word="sp_MShelp_profile"/>
+            	
+            		<Key word="sp_MShelp_profilecache"/>
+            	
+            		<Key word="sp_MShelp_publication"/>
+            	
+            		<Key word="sp_MShelp_repl_agent"/>
+            	
+            		<Key word="sp_MShelp_replication_status"/>
+            	
+            		<Key word="sp_MShelp_replication_table"/>
+            	
+            		<Key word="sp_MShelp_snapshot_agent"/>
+            	
+            		<Key word="sp_MShelp_snapshot_agentid"/>
+            	
+            		<Key word="sp_MShelp_subscriber_info"/>
+            	
+            		<Key word="sp_MShelp_subscription"/>
+            	
+            		<Key word="sp_MShelp_subscription_status"/>
+            	
+            		<Key word="sp_MShelpcolumns"/>
+            	
+            		<Key word="sp_MShelpconflictpublications"/>
+            	
+            		<Key word="sp_MShelpcreatebeforetable"/>
+            	
+            		<Key word="sp_MShelpdestowner"/>
+            	
+            		<Key word="sp_MShelpdynamicsnapshotjobatdistributor"/>
+            	
+            		<Key word="sp_MShelpfulltextindex"/>
+            	
+            		<Key word="sp_MShelpfulltextscript"/>
+            	
+            		<Key word="sp_MShelpindex"/>
+            	
+            		<Key word="sp_MShelplogreader_agent"/>
+            	
+            		<Key word="sp_MShelpmergearticles"/>
+            	
+            		<Key word="sp_MShelpmergeconflictcounts"/>
+            	
+            		<Key word="sp_MShelpmergedynamicsnapshotjob"/>
+            	
+            		<Key word="sp_MShelpmergeidentity"/>
+            	
+            		<Key word="sp_MShelpmergeschemaarticles"/>
+            	
+            		<Key word="sp_MShelpobjectpublications"/>
+            	
+            		<Key word="sp_MShelpreplicationtriggers"/>
+            	
+            		<Key word="sp_MShelpsnapshot_agent"/>
+            	
+            		<Key word="sp_MShelpsummarypublication"/>
+            	
+            		<Key word="sp_MShelptracertokenhistory"/>
+            	
+            		<Key word="sp_MShelptracertokens"/>
+            	
+            		<Key word="sp_MShelptranconflictcounts"/>
+            	
+            		<Key word="sp_MShelptype"/>
+            	
+            		<Key word="sp_MShelpvalidationdate"/>
+            	
+            		<Key word="sp_MSIfExistsSubscription"/>
+            	
+            		<Key word="sp_MSindexspace"/>
+            	
+            		<Key word="sp_MSinit_publication_access"/>
+            	
+            		<Key word="sp_MSinit_subscription_agent"/>
+            	
+            		<Key word="sp_MSinitdynamicsubscriber"/>
+            	
+            		<Key word="sp_MSinsert_identity"/>
+            	
+            		<Key word="sp_MSinsertdeleteconflict"/>
+            	
+            		<Key word="sp_MSinserterrorlineage"/>
+            	
+            		<Key word="sp_MSinsertgenerationschemachanges"/>
+            	
+            		<Key word="sp_MSinsertgenhistory"/>
+            	
+            		<Key word="sp_MSinsertlightweightschemachange"/>
+            	
+            		<Key word="sp_MSinsertschemachange"/>
+            	
+            		<Key word="sp_MSinvalidate_snapshot"/>
+            	
+            		<Key word="sp_MSisnonpkukupdateinconflict"/>
+            	
+            		<Key word="sp_MSispeertopeeragent"/>
+            	
+            		<Key word="sp_MSispkupdateinconflict"/>
+            	
+            		<Key word="sp_MSispublicationqueued"/>
+            	
+            		<Key word="sp_MSisreplmergeagent"/>
+            	
+            		<Key word="sp_MSissnapshotitemapplied"/>
+            	
+            		<Key word="sp_MSkilldb"/>
+            	
+            		<Key word="sp_MSlock_auto_sub"/>
+            	
+            		<Key word="sp_MSlock_distribution_agent"/>
+            	
+            		<Key word="sp_MSlocktable"/>
+            	
+            		<Key word="sp_MSloginmappings"/>
+            	
+            		<Key word="sp_MSmakearticleprocs"/>
+            	
+            		<Key word="sp_MSmakebatchinsertproc"/>
+            	
+            		<Key word="sp_MSmakebatchupdateproc"/>
+            	
+            		<Key word="sp_MSmakeconflictinsertproc"/>
+            	
+            		<Key word="sp_MSmakectsview"/>
+            	
+            		<Key word="sp_MSmakedeleteproc"/>
+            	
+            		<Key word="sp_MSmakedynsnapshotvws"/>
+            	
+            		<Key word="sp_MSmakeexpandproc"/>
+            	
+            		<Key word="sp_MSmakegeneration"/>
+            	
+            		<Key word="sp_MSmakeinsertproc"/>
+            	
+            		<Key word="sp_MSmakemetadataselectproc"/>
+            	
+            		<Key word="sp_MSmakeselectproc"/>
+            	
+            		<Key word="sp_MSmakesystableviews"/>
+            	
+            		<Key word="sp_MSmakeupdateproc"/>
+            	
+            		<Key word="sp_MSmap_partitionid_to_generations"/>
+            	
+            		<Key word="sp_MSmarkreinit"/>
+            	
+            		<Key word="sp_MSmatchkey"/>
+            	
+            		<Key word="sp_MSmerge_alterschemaonly"/>
+            	
+            		<Key word="sp_MSmerge_altertrigger"/>
+            	
+            		<Key word="sp_MSmerge_alterview"/>
+            	
+            		<Key word="sp_MSmerge_ddldispatcher"/>
+            	
+            		<Key word="sp_MSmerge_getgencur_public"/>
+            	
+            		<Key word="sp_MSmerge_is_snapshot_required"/>
+            	
+            		<Key word="sp_MSmerge_log_identity_range_allocations"/>
+            	
+            		<Key word="sp_MSmerge_upgrade_subscriber"/>
+            	
+            		<Key word="sp_MSmergesubscribedb"/>
+            	
+            		<Key word="sp_MSmergeupdatelastsyncinfo"/>
+            	
+            		<Key word="sp_MSneedmergemetadataretentioncleanup"/>
+            	
+            		<Key word="sp_MSNonSQLDDL"/>
+            	
+            		<Key word="sp_MSNonSQLDDLForSchemaDDL"/>
+            	
+            		<Key word="sp_MSobjectprivs"/>
+            	
+            		<Key word="sp_MSpeerapplyresponse"/>
+            	
+            		<Key word="sp_MSpeerdbinfo"/>
+            	
+            		<Key word="sp_MSpeersendresponse"/>
+            	
+            		<Key word="sp_MSpeertopeerfwdingexec"/>
+            	
+            		<Key word="sp_MSpost_auto_proc"/>
+            	
+            		<Key word="sp_MSpostapplyscript_forsubscriberprocs"/>
+            	
+            		<Key word="sp_MSprep_exclusive"/>
+            	
+            		<Key word="sp_MSprepare_mergearticle"/>
+            	
+            		<Key word="sp_MSprofile_in_use"/>
+            	
+            		<Key word="sp_MSproxiedmetadata"/>
+            	
+            		<Key word="sp_MSproxiedmetadatabatch"/>
+            	
+            		<Key word="sp_MSproxiedmetadatalightweight"/>
+            	
+            		<Key word="sp_MSpub_adjust_identity"/>
+            	
+            		<Key word="sp_MSpublication_access"/>
+            	
+            		<Key word="sp_MSpublicationcleanup"/>
+            	
+            		<Key word="sp_MSpublicationview"/>
+            	
+            		<Key word="sp_MSquery_syncstates"/>
+            	
+            		<Key word="sp_MSquerysubtype"/>
+            	
+            		<Key word="sp_MSrecordsnapshotdeliveryprogress"/>
+            	
+            		<Key word="sp_MSreenable_check"/>
+            	
+            		<Key word="sp_MSrefresh_anonymous"/>
+            	
+            		<Key word="sp_MSrefresh_publisher_idrange"/>
+            	
+            		<Key word="sp_MSregenerate_mergetriggersprocs"/>
+            	
+            		<Key word="sp_MSregisterdynsnapseqno"/>
+            	
+            		<Key word="sp_MSregistermergesnappubid"/>
+            	
+            		<Key word="sp_MSregistersubscription"/>
+            	
+            		<Key word="sp_MSreinit_failed_subscriptions"/>
+            	
+            		<Key word="sp_MSreinit_hub"/>
+            	
+            		<Key word="sp_MSreinit_subscription"/>
+            	
+            		<Key word="sp_MSreinitoverlappingmergepublications"/>
+            	
+            		<Key word="sp_MSreleasedynamicsnapshotapplock"/>
+            	
+            		<Key word="sp_MSreleasemakegenerationapplock"/>
+            	
+            		<Key word="sp_MSreleasemergeadminapplock"/>
+            	
+            		<Key word="sp_MSreleaseSlotLock"/>
+            	
+            		<Key word="sp_MSreleasesnapshotdeliverysessionlock"/>
+            	
+            		<Key word="sp_MSremove_mergereplcommand"/>
+            	
+            		<Key word="sp_MSremoveoffloadparameter"/>
+            	
+            		<Key word="sp_MSrepl_agentstatussummary"/>
+            	
+            		<Key word="sp_MSrepl_backup_complete"/>
+            	
+            		<Key word="sp_MSrepl_backup_start"/>
+            	
+            		<Key word="sp_MSrepl_check_publisher"/>
+            	
+            		<Key word="sp_MSrepl_createdatatypemappings"/>
+            	
+            		<Key word="sp_MSrepl_distributionagentstatussummary"/>
+            	
+            		<Key word="sp_MSrepl_dropdatatypemappings"/>
+            	
+            		<Key word="sp_MSrepl_enumarticlecolumninfo"/>
+            	
+            		<Key word="sp_MSrepl_enumpublications"/>
+            	
+            		<Key word="sp_MSrepl_enumpublishertables"/>
+            	
+            		<Key word="sp_MSrepl_enumsubscriptions"/>
+            	
+            		<Key word="sp_MSrepl_enumtablecolumninfo"/>
+            	
+            		<Key word="sp_MSrepl_FixPALRole"/>
+            	
+            		<Key word="sp_MSrepl_getdistributorinfo"/>
+            	
+            		<Key word="sp_MSrepl_getpkfkrelation"/>
+            	
+            		<Key word="sp_MSrepl_gettype_mappings"/>
+            	
+            		<Key word="sp_MSrepl_helparticlermo"/>
+            	
+            		<Key word="sp_MSrepl_init_backup_lsns"/>
+            	
+            		<Key word="sp_MSrepl_isdbowner"/>
+            	
+            		<Key word="sp_MSrepl_IsLastPubInSharedSubscription"/>
+            	
+            		<Key word="sp_MSrepl_IsUserInAnyPAL"/>
+            	
+            		<Key word="sp_MSrepl_linkedservers_rowset"/>
+            	
+            		<Key word="sp_MSrepl_mergeagentstatussummary"/>
+            	
+            		<Key word="sp_MSrepl_PAL_rolecheck"/>
+            	
+            		<Key word="sp_MSrepl_raiserror"/>
+            	
+            		<Key word="sp_MSrepl_schema"/>
+            	
+            		<Key word="sp_MSrepl_setNFR"/>
+            	
+            		<Key word="sp_MSrepl_snapshot_helparticlecolumns"/>
+            	
+            		<Key word="sp_MSrepl_snapshot_helppublication"/>
+            	
+            		<Key word="sp_MSrepl_startup"/>
+            	
+            		<Key word="sp_MSrepl_startup_internal"/>
+            	
+            		<Key word="sp_MSrepl_subscription_rowset"/>
+            	
+            		<Key word="sp_MSrepl_testadminconnection"/>
+            	
+            		<Key word="sp_MSrepl_testconnection"/>
+            	
+            		<Key word="sp_MSreplagentjobexists"/>
+            	
+            		<Key word="sp_MSreplcheck_permission"/>
+            	
+            		<Key word="sp_MSreplcheck_pull"/>
+            	
+            		<Key word="sp_MSreplcheck_subscribe"/>
+            	
+            		<Key word="sp_MSreplcheck_subscribe_withddladmin"/>
+            	
+            		<Key word="sp_MSreplcheckoffloadserver"/>
+            	
+            		<Key word="sp_MSreplcopyscriptfile"/>
+            	
+            		<Key word="sp_MSreplraiserror"/>
+            	
+            		<Key word="sp_MSreplremoveuncdir"/>
+            	
+            		<Key word="sp_MSreplupdateschema"/>
+            	
+            		<Key word="sp_MSrequestreenumeration"/>
+            	
+            		<Key word="sp_MSrequestreenumeration_lightweight"/>
+            	
+            		<Key word="sp_MSreset_attach_state"/>
+            	
+            		<Key word="sp_MSreset_queued_reinit"/>
+            	
+            		<Key word="sp_MSreset_subscription"/>
+            	
+            		<Key word="sp_MSreset_subscription_seqno"/>
+            	
+            		<Key word="sp_MSreset_synctran_bit"/>
+            	
+            		<Key word="sp_MSreset_transaction"/>
+            	
+            		<Key word="sp_MSresetsnapshotdeliveryprogress"/>
+            	
+            		<Key word="sp_MSrestoresavedforeignkeys"/>
+            	
+            		<Key word="sp_MSretrieve_publication_attributes"/>
+            	
+            		<Key word="sp_MSscript_article_view"/>
+            	
+            		<Key word="sp_MSscript_dri"/>
+            	
+            		<Key word="sp_MSscript_pub_upd_trig"/>
+            	
+            		<Key word="sp_MSscript_sync_del_proc"/>
+            	
+            		<Key word="sp_MSscript_sync_del_trig"/>
+            	
+            		<Key word="sp_MSscript_sync_ins_proc"/>
+            	
+            		<Key word="sp_MSscript_sync_ins_trig"/>
+            	
+            		<Key word="sp_MSscript_sync_upd_proc"/>
+            	
+            		<Key word="sp_MSscript_sync_upd_trig"/>
+            	
+            		<Key word="sp_MSscriptcustomdelproc"/>
+            	
+            		<Key word="sp_MSscriptcustominsproc"/>
+            	
+            		<Key word="sp_MSscriptcustomupdproc"/>
+            	
+            		<Key word="sp_MSscriptdatabase"/>
+            	
+            		<Key word="sp_MSscriptdb_worker"/>
+            	
+            		<Key word="sp_MSscriptforeignkeyrestore"/>
+            	
+            		<Key word="sp_MSscriptsubscriberprocs"/>
+            	
+            		<Key word="sp_MSscriptviewproc"/>
+            	
+            		<Key word="sp_MSsendtosqlqueue"/>
+            	
+            		<Key word="sp_MSset_dynamic_filter_options"/>
+            	
+            		<Key word="sp_MSset_logicalrecord_metadata"/>
+            	
+            		<Key word="sp_MSset_new_identity_range"/>
+            	
+            		<Key word="sp_MSset_oledb_prop"/>
+            	
+            		<Key word="sp_MSset_snapshot_xact_seqno"/>
+            	
+            		<Key word="sp_MSset_sub_guid"/>
+            	
+            		<Key word="sp_MSset_subscription_properties"/>
+            	
+            		<Key word="sp_MSsetaccesslist"/>
+            	
+            		<Key word="sp_MSsetalertinfo"/>
+            	
+            		<Key word="sp_MSsetartprocs"/>
+            	
+            		<Key word="sp_MSsetbit"/>
+            	
+            		<Key word="sp_MSsetconflictscript"/>
+            	
+            		<Key word="sp_MSsetconflicttable"/>
+            	
+            		<Key word="sp_MSsetcontext_bypasswholeddleventbit"/>
+            	
+            		<Key word="sp_MSsetcontext_replagent"/>
+            	
+            		<Key word="sp_MSsetgentozero"/>
+            	
+            		<Key word="sp_MSsetlastrecgen"/>
+            	
+            		<Key word="sp_MSsetlastsentgen"/>
+            	
+            		<Key word="sp_MSsetreplicainfo"/>
+            	
+            		<Key word="sp_MSsetreplicaschemaversion"/>
+            	
+            		<Key word="sp_MSsetreplicastatus"/>
+            	
+            		<Key word="sp_MSsetrowmetadata"/>
+            	
+            		<Key word="sp_MSSetServerProperties"/>
+            	
+            		<Key word="sp_MSsetsubscriberinfo"/>
+            	
+            		<Key word="sp_MSsettopology"/>
+            	
+            		<Key word="sp_MSsetup_identity_range"/>
+            	
+            		<Key word="sp_MSsetup_partition_groups"/>
+            	
+            		<Key word="sp_MSsetup_use_partition_groups"/>
+            	
+            		<Key word="sp_MSsetupbelongs"/>
+            	
+            		<Key word="sp_MSsetupnosyncsubwithlsnatdist"/>
+            	
+            		<Key word="sp_MSSharedFixedDisk"/>
+            	
+            		<Key word="sp_MSSQLDMO70_version"/>
+            	
+            		<Key word="sp_MSSQLDMO80_version"/>
+            	
+            		<Key word="sp_MSSQLDMO90_version"/>
+            	
+            		<Key word="sp_MSSQLOLE_version"/>
+            	
+            		<Key word="sp_MSSQLOLE65_version"/>
+            	
+            		<Key word="sp_MSstartdistribution_agent"/>
+            	
+            		<Key word="sp_MSstartmerge_agent"/>
+            	
+            		<Key word="sp_MSstartsnapshot_agent"/>
+            	
+            		<Key word="sp_MSstopdistribution_agent"/>
+            	
+            		<Key word="sp_MSstopmerge_agent"/>
+            	
+            		<Key word="sp_MSstopsnapshot_agent"/>
+            	
+            		<Key word="sp_MSsub_check_identity"/>
+            	
+            		<Key word="sp_MSsub_set_identity"/>
+            	
+            		<Key word="sp_MSsubscription_status"/>
+            	
+            		<Key word="sp_MSsubscriptionvalidated"/>
+            	
+            		<Key word="sp_MStablechecks"/>
+            	
+            		<Key word="sp_MStablekeys"/>
+            	
+            		<Key word="sp_MStablerefs"/>
+            	
+            		<Key word="sp_MStablespace"/>
+            	
+            		<Key word="sp_MStestbit"/>
+            	
+            		<Key word="sp_MStran_ddlrepl"/>
+            	
+            		<Key word="sp_MStran_is_snapshot_required"/>
+            	
+            		<Key word="sp_MStrypurgingoldsnapshotdeliveryprogress"/>
+            	
+            		<Key word="sp_MSuniquename"/>
+            	
+            		<Key word="sp_MSunmarkifneeded"/>
+            	
+            		<Key word="sp_MSunmarkreplinfo"/>
+            	
+            		<Key word="sp_MSunmarkschemaobject"/>
+            	
+            		<Key word="sp_MSunregistersubscription"/>
+            	
+            		<Key word="sp_MSupdate_agenttype_default"/>
+            	
+            		<Key word="sp_MSupdate_singlelogicalrecordmetadata"/>
+            	
+            		<Key word="sp_MSupdate_subscriber_info"/>
+            	
+            		<Key word="sp_MSupdate_subscriber_schedule"/>
+            	
+            		<Key word="sp_MSupdate_subscriber_tracer_history"/>
+            	
+            		<Key word="sp_MSupdate_subscription"/>
+            	
+            		<Key word="sp_MSupdate_tracer_history"/>
+            	
+            		<Key word="sp_MSupdatecachedpeerlsn"/>
+            	
+            		<Key word="sp_MSupdategenhistory"/>
+            	
+            		<Key word="sp_MSupdateinitiallightweightsubscription"/>
+            	
+            		<Key word="sp_MSupdatelastsyncinfo"/>
+            	
+            		<Key word="sp_MSupdatepeerlsn"/>
+            	
+            		<Key word="sp_MSupdaterecgen"/>
+            	
+            		<Key word="sp_MSupdatereplicastate"/>
+            	
+            		<Key word="sp_MSupdatesysmergearticles"/>
+            	
+            		<Key word="sp_MSuplineageversion"/>
+            	
+            		<Key word="sp_MSuploadsupportabilitydata"/>
+            	
+            		<Key word="sp_MSuselightweightreplication"/>
+            	
+            		<Key word="sp_MSvalidate_dest_recgen"/>
+            	
+            		<Key word="sp_MSvalidate_subscription"/>
+            	
+            		<Key word="sp_MSvalidate_wellpartitioned_articles"/>
+            	
+            		<Key word="sp_MSvalidatearticle"/>
+            	
+            		<Key word="sp_MSwritemergeperfcounter"/>
+            	
+            		<Key word="sp_objectfilegroup"/>
+            	
+            		<Key word="sp_oledb_database"/>
+            	
+            		<Key word="sp_oledb_defdb"/>
+            	
+            		<Key word="sp_oledb_deflang"/>
+            	
+            		<Key word="sp_oledb_language"/>
+            	
+            		<Key word="sp_oledb_ro_usrname"/>
+            	
+            		<Key word="sp_oledbinfo"/>
+            	
+            		<Key word="sp_ORbitmap"/>
+            	
+            		<Key word="sp_password"/>
+            	
+            		<Key word="sp_pkeys"/>
+            	
+            		<Key word="sp_posttracertoken"/>
+            	
+            		<Key word="sp_primary_keys_rowset"/>
+            	
+            		<Key word="sp_primary_keys_rowset_rmt"/>
+            	
+            		<Key word="sp_primary_keys_rowset2"/>
+            	
+            		<Key word="sp_primarykeys"/>
+            	
+            		<Key word="sp_procedure_params_90_rowset"/>
+            	
+            		<Key word="sp_procedure_params_90_rowset2"/>
+            	
+            		<Key word="sp_procedure_params_managed"/>
+            	
+            		<Key word="sp_procedure_params_rowset"/>
+            	
+            		<Key word="sp_procedure_params_rowset2"/>
+            	
+            		<Key word="sp_procedures_rowset"/>
+            	
+            		<Key word="sp_procedures_rowset2"/>
+            	
+            		<Key word="sp_processlogshippingmonitorhistory"/>
+            	
+            		<Key word="sp_processlogshippingmonitorprimary"/>
+            	
+            		<Key word="sp_processlogshippingmonitorsecondary"/>
+            	
+            		<Key word="sp_processlogshippingretentioncleanup"/>
+            	
+            		<Key word="sp_processmail"/>
+            	
+            		<Key word="sp_procoption"/>
+            	
+            		<Key word="sp_prop_oledb_provider"/>
+            	
+            		<Key word="sp_provider_types_90_rowset"/>
+            	
+            		<Key word="sp_provider_types_rowset"/>
+            	
+            		<Key word="sp_publication_validation"/>
+            	
+            		<Key word="sp_publicationsummary"/>
+            	
+            		<Key word="sp_publishdb"/>
+            	
+            		<Key word="sp_publisherproperty"/>
+            	
+            		<Key word="sp_readerrorlog"/>
+            	
+            		<Key word="sp_readwebtask"/>
+            	
+            		<Key word="sp_recompile"/>
+            	
+            		<Key word="sp_refresh_heterogeneous_publisher"/>
+            	
+            		<Key word="sp_refresh_log_shipping_monitor"/>
+            	
+            		<Key word="sp_refreshsqlmodule"/>
+            	
+            		<Key word="sp_refreshsubscriptions"/>
+            	
+            		<Key word="sp_register_custom_scripting"/>
+            	
+            		<Key word="sp_registercustomresolver"/>
+            	
+            		<Key word="sp_reinitmergepullsubscription"/>
+            	
+            		<Key word="sp_reinitmergesubscription"/>
+            	
+            		<Key word="sp_reinitpullsubscription"/>
+            	
+            		<Key word="sp_reinitsubscription"/>
+            	
+            		<Key word="sp_releaseapplock"/>
+            	
+            		<Key word="sp_remoteoption"/>
+            	
+            		<Key word="sp_removedbreplication"/>
+            	
+            		<Key word="sp_removedistpublisherdbreplication"/>
+            	
+            		<Key word="sp_removesrvreplication"/>
+            	
+            		<Key word="sp_rename"/>
+            	
+            		<Key word="sp_renamedb"/>
+            	
+            		<Key word="sp_repladdcolumn"/>
+            	
+            		<Key word="sp_replcleanupccsprocs"/>
+            	
+            		<Key word="sp_repldeletequeuedtran"/>
+            	
+            		<Key word="sp_repldropcolumn"/>
+            	
+            		<Key word="sp_replgetparsedddlcmd"/>
+            	
+            		<Key word="sp_replica"/>
+            	
+            		<Key word="sp_replication_agent_checkup"/>
+            	
+            		<Key word="sp_replicationdboption"/>
+            	
+            		<Key word="sp_replincrementlsn"/>
+            	
+            		<Key word="sp_replmonitorchangepublicationthreshold"/>
+            	
+            		<Key word="sp_replmonitorhelpmergesession"/>
+            	
+            		<Key word="sp_replmonitorhelpmergesessiondetail"/>
+            	
+            		<Key word="sp_replmonitorhelpmergesubscriptionmoreinfo"/>
+            	
+            		<Key word="sp_replmonitorhelppublication"/>
+            	
+            		<Key word="sp_replmonitorhelppublicationthresholds"/>
+            	
+            		<Key word="sp_replmonitorhelppublisher"/>
+            	
+            		<Key word="sp_replmonitorhelpsubscription"/>
+            	
+            		<Key word="sp_replmonitorrefreshjob"/>
+            	
+            		<Key word="sp_replmonitorsubscriptionpendingcmds"/>
+            	
+            		<Key word="sp_replpostsyncstatus"/>
+            	
+            		<Key word="sp_replqueuemonitor"/>
+            	
+            		<Key word="sp_replrestart"/>
+            	
+            		<Key word="sp_replsetoriginator"/>
+            	
+            		<Key word="sp_replshowcmds"/>
+            	
+            		<Key word="sp_replsqlqgetrows"/>
+            	
+            		<Key word="sp_replsync"/>
+            	
+            		<Key word="sp_requestpeerresponse"/>
+            	
+            		<Key word="sp_resetsnapshotdeliveryprogress"/>
+            	
+            		<Key word="sp_resetstatus"/>
+            	
+            		<Key word="sp_resign_database"/>
+            	
+            		<Key word="sp_resolve_logins"/>
+            	
+            		<Key word="sp_restoredbreplication"/>
+            	
+            		<Key word="sp_restoremergeidentityrange"/>
+            	
+            		<Key word="sp_resyncmergesubscription"/>
+            	
+            		<Key word="sp_revoke_publication_access"/>
+            	
+            		<Key word="sp_revokedbaccess"/>
+            	
+            		<Key word="sp_revokelogin"/>
+            	
+            		<Key word="sp_runwebtask"/>
+            	
+            		<Key word="sp_schemafilter"/>
+            	
+            		<Key word="sp_schemata_rowset"/>
+            	
+            		<Key word="sp_script_reconciliation_delproc"/>
+            	
+            		<Key word="sp_script_reconciliation_insproc"/>
+            	
+            		<Key word="sp_script_reconciliation_sinsproc"/>
+            	
+            		<Key word="sp_script_reconciliation_vdelproc"/>
+            	
+            		<Key word="sp_script_reconciliation_xdelproc"/>
+            	
+            		<Key word="sp_script_synctran_commands"/>
+            	
+            		<Key word="sp_scriptdelproc"/>
+            	
+            		<Key word="sp_scriptdynamicupdproc"/>
+            	
+            		<Key word="sp_scriptinsproc"/>
+            	
+            		<Key word="sp_scriptmappedupdproc"/>
+            	
+            		<Key word="sp_scriptpublicationcustomprocs"/>
+            	
+            		<Key word="sp_scriptsinsproc"/>
+            	
+            		<Key word="sp_scriptsubconflicttable"/>
+            	
+            		<Key word="sp_scriptsupdproc"/>
+            	
+            		<Key word="sp_scriptupdproc"/>
+            	
+            		<Key word="sp_scriptvdelproc"/>
+            	
+            		<Key word="sp_scriptvupdproc"/>
+            	
+            		<Key word="sp_scriptxdelproc"/>
+            	
+            		<Key word="sp_scriptxupdproc"/>
+            	
+            		<Key word="sp_server_info"/>
+            	
+            		<Key word="sp_serveroption"/>
+            	
+            		<Key word="sp_setapprole"/>
+            	
+            		<Key word="sp_SetAutoSAPasswordAndDisable"/>
+            	
+            		<Key word="sp_setdefaultdatatypemapping"/>
+            	
+            		<Key word="sp_setnetname"/>
+            	
+            		<Key word="sp_setOraclepackageversion"/>
+            	
+            		<Key word="sp_setreplfailovermode"/>
+            	
+            		<Key word="sp_setsubscriptionxactseqno"/>
+            	
+            		<Key word="sp_settriggerorder"/>
+            	
+            		<Key word="sp_showcolv"/>
+            	
+            		<Key word="sp_showlineage"/>
+            	
+            		<Key word="sp_showpendingchanges"/>
+            	
+            		<Key word="sp_showrowreplicainfo"/>
+            	
+            		<Key word="sp_spaceused"/>
+            	
+            		<Key word="sp_special_columns"/>
+            	
+            		<Key word="sp_special_columns_90"/>
+            	
+            		<Key word="sp_sproc_columns"/>
+            	
+            		<Key word="sp_sproc_columns_90"/>
+            	
+            		<Key word="sp_sqlexec"/>
+            	
+            		<Key word="sp_srvrolepermission"/>
+            	
+            		<Key word="sp_startmergepullsubscription_agent"/>
+            	
+            		<Key word="sp_startmergepushsubscription_agent"/>
+            	
+            		<Key word="sp_startpublication_snapshot"/>
+            	
+            		<Key word="sp_startpullsubscription_agent"/>
+            	
+            		<Key word="sp_startpushsubscription_agent"/>
+            	
+            		<Key word="sp_statistics"/>
+            	
+            		<Key word="sp_stat"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="operators" bold="true" italic="false" color="Teal">
+            	
+            		<Key word="between"/>
+            	
+            		<Key word="and"/>
+            	
+            		<Key word="or"/>
+            	
+            		<Key word="union"/>
+            	
+            		<Key word="like"/>
+            	
+            </KeyWords>
+            
+        </RuleSet>
+    </RuleSets>
+</SyntaxDefinition>

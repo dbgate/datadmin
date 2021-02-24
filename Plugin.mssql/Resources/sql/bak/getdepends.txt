@@ -1,0 +1,4 @@
+select main.name as mainname, main.type as maintype, schema_name(main.schema_id) as mainschema, ref.name as refname, ref.type as reftype, schema_name(ref.schema_id) as refschema
+                from sys.sql_dependencies deps
+                inner join sys.objects main on main.object_id=deps.object_id
+                inner join sys.objects ref on ref.object_id=deps.referenced_major_id

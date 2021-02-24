@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="DatAdmin">
+<h2>Export - multiple files</h2>
+<ul>
+    <li>Can be used to export database into more files in filesystem structure</li>
+    <li>Files list - constains list of output file name templates.
+    From one item in this list can be created more output files, it depends on data in exported database.</li>
+    <li><b>File name</b> - File name template. Constains full file path. 
+    Can also contain column inmes in form #COLUMN# (uppercase) from query, which can be specified lower.</li>
+    <li><b>File type</b> - může obsahovat jednu z možností:
+        <ul>
+            <li>Template</li>
+            <li>Python</li>
+            <li>BLOB</li>
+            <li>Data store</li>
+        </ul>
+    </li>
+    <li><b>Query</b> - contains query, which is run on exported database related to selected file. 
+    For each row of query result is created on output file. 
+    To prevent overwriting files use file names with column references #COLUMN#.</li>
+</ul>
+
+<h2>File type BLOB</h2>
+Is the simplest file type. Into file is inserted content of one BLOB field, which is specified using SQL query.
+You can use references to file-defining query in form #COLUMN# (uppercase).
+<h2>File type Python</h2>
+Contains script in Python language. Python standard ouput stream sys.stdout is redirected to output file,
+so calling print command creates records in output file. Fields from file-defining query 
+are available as variables in form _COLUMN_ (uppercase). Most generic file type. 
+API is not yet documented, in case of questions please contact DatAdmin support, mail@datadmin.com.   
+<h2>File type Data Store</h2>
+Using this file type you can export data into any of DatAdmin table-export format implementing neccessary 
+protocols, eg CSV, HTML. It is neccessary to specify query, which is used as data source for output data 
+(query can containt values in form #COLUMN#).
+<h2>File type template</h2>
+Is very generic, but simplier to use than Python file type. Into output file is inserted content of text field,
+there are implemented some special tags like in PHP or ASP.NET. 
+If commands or expressions in Python are used, there is possiblity to use special variables _COLUMN_ referencing
+data from file-defining query.
+<ul>
+    <li>&lt;%= Python expression %&gt; - evaluates expression, is written to output</li>
+    <li>&lt;@= select ... @&gt; - select command - result should containt one value (one row with one column), 
+    this value is written to output. Text in braces {} is interpreted as Python expression. 
+    This is way how to parametrize SQL commands.</li>
+    <li>&lt;@ select ... @&gt; ... section, which is repeated for each result row ... &lt;@ end select @&gt;<br/>
+    Fields of result are available under variable named _column_ (lowercase, so there cannot be conflicts
+    with file-defining query columns). Word "select" must be in lowercase.</li>
+    <li>&lt;@ for <i>variable</i> in <i>expression</i> @&gt; ... &lt;@ end for @&gt; classical for-each cycle. </li>
+</ul>
+
+</help>

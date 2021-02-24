@@ -1,0 +1,16 @@
+-- GET indexes list script, suitable for SQL server 2000
+select schem.name AS TABLE_SCHEMA, o.name AS TABLE_NAME, i.name AS Name, indexproperty(o.id, i.name, 'IsUnique') AS IsUnique
+from sysobjects o join sysindexes i on i.id = o.id
+inner join #SCHEMAS# schem on o.uid=schem.#SCHEMAID#
+where i.indid between 1 and 254
+and objectproperty(o.id, 'IsUserTable') = 1
+and indexproperty(o.id, i.name, 'IsStatistics') = 0
+and indexproperty(o.id, i.name, 'IsHypothetical') = 0
+and i.name not in
+ (select o.name from sysobjects o
+  where o.parent_obj = i.id
+  and objectproperty(o.id, N'isConstraint') = 1.0)
+  and (#RETURNALL#=1 or (
+schem.name like '#SCHEMA#'
+and o.name = '#TABLE#'))
+order by o.uid, o.name, i.name 

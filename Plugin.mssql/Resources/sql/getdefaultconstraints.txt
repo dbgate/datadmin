@@ -1,0 +1,6 @@
+select cobj.name as cntname, col.name as colname, obj.name as TABLE_NAME, usr.name as TABLE_SCHEMA from sysobjects cobj
+	inner join sysconstraints cnt on cobj.id=cnt.constid
+	inner join syscolumns col on col.colid=cnt.colid and col.id=cnt.id
+	inner join sysobjects obj on col.id=obj.id 
+	inner join sysusers usr on obj.uid=usr.uid  
+	where cobj.xtype='D'

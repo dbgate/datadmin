@@ -1,0 +1,59 @@
+<Root>
+    <PropertyCondition name='dbengine' value='mssql'/>
+    <PropertyCondition name='connected' value='1'/>
+    
+    <Define name='#TABLE_SCHEMA_COND#' value="AND TABLE_SCHEMA='$[table.schema]'"/> 
+    <Define name='#SCHEMA_COND#' value=""/> 
+
+    <RunSql title='s_rename' nodes='table'>
+        <Code>execute sp_rename '$[table.name]', '$[newname]'</Code>
+        <InParam name='newname' title='s_new_name' type='String'/>
+    </RunSql>
+
+    <RunSql title='s_rename' nodes='column'>
+        <Code>execute sp_rename '$[table.name].$[column.name]', '$[newname]', 'COLUMN'</Code>
+        <InParam name='newname' title='s_new_name' type='String'/>
+    </RunSql>
+
+    <RunSql title='s_rename' nodes='constraint' lang='Python'>
+        <Code>if constraint.sql_type in ['PRIMARY KEY', 'INDEX']: objtype = 'INDEX'
+else: objtype = 'OBJECT' 
+print "execute sp_rename '%s.%s', '%s', '%s'" % (table.name, constraint.name, newname, objtype)
+</Code>
+        <InParam name='newname' title='s_new_name' type='String'/>
+    </RunSql>
+
+    <RunSql title='s_drop' nodes='column'>
+        <Code>ALTER TABLE $[table.name] DROP COLUMN $[column.name]</Code>
+    </RunSql>
+
+    <RunSql title='s_drop' nodes='constraint'>
+        <Code>ALTER TABLE $[table.q_name] DROP CONSTRAINT $[constraint.q_name]</Code>
+    </RunSql>
+
+    <RunSql title='DROP DATABASE' nodes='database'>
+        <Code>USE master;DROP DATABASE $[db.name]</Code>
+    </RunSql>
+
+    <RunSql title='FORCE DROP DATABASE' nodes='database'>
+        <Code>ALTER DATABASE $[db.name] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;USE master;DROP DATABASE $[db.name]</Code>
+    </RunSql>
+
+    <RunSql title='DUPLICATE TABLE' nodes='table'>
+        <Code>SELECT * INTO $[newtable] FROM $[table.name]</Code>
+        <InParam name='newtable' title='s_new_table' type='String'/>
+    </RunSql>
+    
+    <DbList title='s_procedures' nodes='database' image='storedproc.bmp'>
+        <Code>EXEC sp_stored_procedures</Code>
+        <ChildTitleColumn>PROCEDURE_NAME</ChildTitleColumn>
+    </DbList>
+
+    <DbList title='s_functions' nodes='database' image='storedproc.bmp'>
+        <Code>SELECT * FROM sysobjects WHERE xtype in ('FN', 'IF', 'TF')</Code>
+        <ChildTitleColumn>PROCEDURE_NAME</ChildTitleColumn>
+    </DbList>
+
+    <Use module='m-sql92.xml'/>
+    <Use module='m-sql92-ext.xml'/>
+</Root>

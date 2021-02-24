@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name = "Template" extensions = ".tpl">
+	<RuleSets>
+		<RuleSet ignorecase="true">
+			<Span name = "PythonCode" rule="Python"  bold = "false" italic = "false" color = "Black" stopateol = "false">
+				<Begin color="Black" bgcolor="Yellow">&lt;%</Begin>
+				<End color="Black" bgcolor="Yellow">%&gt;</End>
+			</Span>
+			<Span name = "SqlCode" rule="GenericSql"  bold = "false" italic = "false" color = "Black" stopateol = "false">
+				<Begin color="Black" bgcolor="Yellow">&lt;@@</Begin>
+				<End color="Black" bgcolor="Yellow">@@&gt;</End>
+			</Span>
+		</RuleSet>
+		
+		#[include python.xml,Python]
+		#[include genericsql.xml,GenericSql]
+	</RuleSets>
+</SyntaxDefinition>

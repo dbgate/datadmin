@@ -1,0 +1,4 @@
+select nspname as SchemaName, relname as SequenceName 
+from pg_class 
+inner join pg_namespace on pg_namespace.oid = pg_class.relnamespace
+where relkind='S'

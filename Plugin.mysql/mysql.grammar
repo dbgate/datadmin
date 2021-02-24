@@ -1,0 +1,21 @@
+create_view := @class(MySqlCreateView) 
+CREATE [@groupid(OrReplace) OR REPLACE] "&3n&3>"
+[@groupid(Algorithm) ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] "&3n"
+[@groupid(Definer) DEFINER = { user | CURRENT_USER }] "&3n"
+    [@groupid(SqlSecurity) SQL SECURITY { DEFINER | INVOKER }] "&3n&3<"
+    VIEW name [exprs_in_bracket] "&5n"
+    AS "&5n" {'(' select_statement ')' | select_statement } "&5n"
+    [@groupid(WithCheck) WITH [CASCADED | LOCAL] CHECK OPTION];
+
+name := @call(ParseName, SqlNameExpression);
+select_statement := @call(ParseSelect, SqlSelect);
+user := @nodeid(User) qstring '@' @nodeid(Host) qstring;
+exprs_in_bracket := @call(ParseExprInBracket, SqlExpression);
+qstring := @call(ParseQuotedString, SqlQuotedStringExpression) 
+           @args('TokenType.QuotedIdent', 'TokenType.StringSingle', 'TokenType.StringDouble');
+
+select_pre_option := [ALL | DISTINCT | DISTINCTROW ]
+      [HIGH_PRIORITY]
+      [STRAIGHT_JOIN]
+      [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]
+      [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS];

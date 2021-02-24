@@ -1,0 +1,56 @@
+<Root>
+    <PropertyCondition name='dbengine' value='mysql'/>
+    <PropertyCondition name='connected' value='1'/>
+
+    <Define name='#SCHEMA_COND#' value="AND TABLE_SCHEMA='$[dbname]'"/> 
+    <Define name='#TABLE_SCHEMA_COND#' value="AND TABLE_SCHEMA='$[dbname]'"/> 
+
+    <RunSql title='DROP DATABASE' nodes='database'>
+        <Code>USE mysql; DROP DATABASE $[db.name]</Code>
+    </RunSql>
+
+    <RunSql title='RENAME TABLE' nodes='table'>
+        <Code>RENAME TABLE $[table.name] TO $[newname]</Code>
+        <InParam name='newname' title='s_new_table_name' type='String'/>
+    </RunSql>
+
+    <RunSql title='s_drop' nodes='column'>
+        <Code>ALTER TABLE $[table.name] DROP COLUMN $[column.name]</Code>
+    </RunSql>
+
+    <DbList title='s_users' nodes='database' nodegen='0'>
+        <Code>SELECT * FROM mysql.user</Code>
+    </DbList>
+
+    <DbList title='s_variables' nodes='dbserver' nodegen='0'>
+        <Code>SHOW VARIABLES</Code>
+    </DbList>
+
+    <DbList title='PROCESSLIST' nodes='dbserver' nodegen='0'>
+        <Code>SHOW FULL PROCESSLIST</Code>
+    </DbList>
+
+    <DbList title='SHOW STATUS' nodes='dbserver' nodegen='0'>
+        <Code>SHOW STATUS</Code>
+    </DbList>
+
+    <ShowSql title='DDL' nodes='table'>
+        <Code>rows = conn.execute_rowset('SHOW CREATE TABLE `%s`' % table.name)
+print rows.read()[1]
+rows.close()</Code>
+    </ShowSql>
+
+    <ShowSql title='DDL' nodes='view'>
+        <Code>rows = conn.execute_rowset('SHOW CREATE VIEW `%s`' % objname)
+print rows.read()[1]
+rows.close()</Code>
+    </ShowSql>
+
+    <ShowSql title='DDL' nodes='database'>
+        <Code>rows = conn.execute_rowset('SHOW CREATE DATABASE `%s`' % db.name)
+print rows.read()[1]
+rows.close()</Code>
+    </ShowSql>
+
+    <Use module='m-sql92.xml'/>
+</Root>

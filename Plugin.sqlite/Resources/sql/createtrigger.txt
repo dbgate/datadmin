@@ -1,0 +1,4 @@
+CREATE TRIGGER <trigger_name> UPDATE OF <column> ON <table>
+  BEGIN
+    -- UPDATE orders SET address = new.address WHERE customer_name = old.name;
+  END;

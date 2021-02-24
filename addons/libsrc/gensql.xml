@@ -1,0 +1,24 @@
+<Root>
+    <PropertyCondition name='connected' value='1'/>
+
+    <GenSql title='CREATE TABLE' nodes='table'>
+        <Code>$[table.sql_create]</Code>
+    </GenSql>
+
+    <GenSql title='DROP TABLE' nodes='table'>
+        <Code>DROP TABLE $[table.q_name]</Code>
+    </GenSql>
+    
+    <GenSql title='SELECT COUNT' nodes='table'>
+        <Code>SELECT COUNT(*) FROM $[table.name]</Code>
+    </GenSql>
+
+    <GenSql title='SELECT ALL' nodes='table'>
+        <Code>SELECT %[for col in table.columns]$[col.name]%[sep],%[end for] FROM $[table.name]</Code>
+    </GenSql>
+    
+    <GenSql title='UPDATE' nodes='table'>
+        <Code>UPDATE $[table.q_name] SET %[for col in table.columns]$[col.name] = NULL%[sep],
+%[end for]</Code>
+    </GenSql>
+</Root>

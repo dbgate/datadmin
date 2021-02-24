@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<contents>
+<item title="DatAdmin" href="start">
+    <item title="Hlavní okno" href="mainwindow"/>
+    <item title="Prohlízec dat" href="datawindow"/>
+    <item title="Drag &amp; Drop operace" href="datadragdrop"/>
+</item>
+<item title="Export databaze">
+    <item title="Vicero souboru" href="multiplefiles"/>
+</item>
+<item title="Návody">
+    <item title="PHP Tunel" href="phptunnel"/>
+</item>
+<item title="Prikazova radka (anglicky)" href="daci"/>
+</contents>

@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D983A69-5556-45CF-B4E1-BF78CFF9FD15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DatAdmin</RootNamespace>
+    <AssemblyName>DatAdmin.Framework</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LinqBridge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c2b14eb747628076, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\extbin\LinqBridge.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\CheckedListBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FrameworkFormEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SplitContainerEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\ColorExtension.cs" />
+    <Compile Include="Extensions\ContextMenuStripExtension.cs" />
+    <Compile Include="Extensions\ControlExtension.cs" />
+    <Compile Include="Extensions\DictionaryExtension.cs" />
+    <Compile Include="Extensions\EnumerableExtension.cs" />
+    <Compile Include="Extensions\FormExtension.cs" />
+    <Compile Include="Extensions\ImageExtension.cs" />
+    <Compile Include="Extensions\IntegerExtension.cs" />
+    <Compile Include="Extensions\ListExtension.cs" />
+    <Compile Include="Extensions\LoggerExtension.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\RegistryKeyExtension.cs" />
+    <Compile Include="Extensions\StreamExtension.cs" />
+    <Compile Include="Extensions\TextBoxExtension.cs" />
+    <Compile Include="Feedback\GetEvalCode.cs" />
+    <Compile Include="Forms\BadSettingsErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BadSettingsErrorForm.Designer.cs">
+      <DependentUpon>BadSettingsErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ErrorForm.Designer.cs">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GenericDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GenericDialogForm.Designer.cs">
+      <DependentUpon>GenericDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputBox.Designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LinesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LinesDialog.Designer.cs">
+      <DependentUpon>LinesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\AddonSelectFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\AddonSelectFrame.Designer.cs">
+      <DependentUpon>AddonSelectFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\InfoBoxFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\InfoBoxFrame.Designer.cs">
+      <DependentUpon>InfoBoxFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\PropertyFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\PropertyFrame.Designer.cs">
+      <DependentUpon>PropertyFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework.cs" />
+    <Compile Include="Installation.cs" />
+    <Compile Include="Interfaces\Errors.cs" />
+    <Compile Include="Interfaces\HUsage.cs" />
+    <Compile Include="Interfaces\IAddons.cs" />
+    <Compile Include="Interfaces\IAsync.cs" />
+    <Compile Include="Interfaces\IFeature.cs" />
+    <Compile Include="Interfaces\IFrameworkMainWindow.cs" />
+    <Compile Include="Interfaces\ILogging.cs" />
+    <Compile Include="Interfaces\IMenu.cs" />
+    <Compile Include="Interfaces\IPluginHandler.cs" />
+    <Compile Include="Interfaces\IPropertyExtensions.cs" />
+    <Compile Include="Interfaces\ITexts.cs" />
+    <Compile Include="Interfaces\IVirtualFolder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StdIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StdIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\AddonBase.cs" />
+    <Compile Include="Utility\AddonSpace.cs" />
+    <Compile Include="PropGridHelpers\AddonTypeNameTypeConverter.cs" />
+    <Compile Include="PropGridHelpers\LineEndingTypeConverter.cs" />
+    <Compile Include="PropGridHelpers\LinesEditor.cs" />
+    <Compile Include="PropGridHelpers\ShortIntListTypeConverter.cs" />
+    <Compile Include="Tools\AddonTool.cs" />
+    <Compile Include="Utility\Disposing.cs" />
+    <Compile Include="Feedback\ApiDescriptor.cs" />
+    <Compile Include="Feedback\CheckAutoUpdate.cs" />
+    <Compile Include="Feedback\ErrorSendThread.cs" />
+    <Compile Include="Feedback\FeedbackTool.cs" />
+    <Compile Include="Feedback\RegNowTool.cs" />
+    <Compile Include="Feedback\SendFeedback.cs" />
+    <Compile Include="Feedback\SendUsageStatsThread.cs" />
+    <Compile Include="Feedback\UsageStats.cs" />
+    <Compile Include="Utility\Geom2D.cs" />
+    <Compile Include="Utility\Loggers.cs" />
+    <Compile Include="Utility\MenuBuilder.cs" />
+    <Compile Include="Utility\NameDefs.cs" />
+    <Compile Include="Utility\NeutralCultureObject.cs" />
+    <Compile Include="Utility\NullableKeysDictionary.cs" />
+    <Compile Include="PropGridHelpers\RegisterItemEditor.cs" />
+    <Compile Include="Utility\SettingsPageBase.cs" />
+    <Compile Include="Utility\SettingsPageCollection.cs" />
+    <Compile Include="Tools\AsyncTool.cs" />
+    <Compile Include="Tools\Errors.cs" />
+    <Compile Include="Tools\IOTool.cs" />
+    <Compile Include="Tools\LicenseTool.cs" />
+    <Compile Include="Tools\Logging.cs" />
+    <Compile Include="Tools\MachineInfo.cs" />
+    <Compile Include="Tools\ObjectDiff.cs" />
+    <Compile Include="Tools\PluginTools.cs" />
+    <Compile Include="Tools\ReflTools.cs" />
+    <Compile Include="Tools\StdDialog.cs" />
+    <Compile Include="Tools\StringTool.cs" />
+    <Compile Include="Utility\ControlInvoker.cs" />
+    <Compile Include="PropGridHelpers\CharactarTypeConverter.cs" />
+    <Compile Include="PropGridHelpers\EncodingTypeConverter.cs" />
+    <Compile Include="Utility\HashSetEx.cs" />
+    <Compile Include="PropGridHelpers\EnumDescConverter.cs" />
+    <Compile Include="PropGridHelpers\ListTypeConverter.cs" />
+    <Compile Include="PropGridHelpers\PropertyPageBase.cs" />
+    <Compile Include="Utility\PyList.cs" />
+    <Compile Include="Utility\Templates.cs" />
+    <Compile Include="Utility\Texts.cs" />
+    <Compile Include="Tools\SystemLogTool.cs" />
+    <Compile Include="Tools\XmlTool.cs" />
+    <Compile Include="Utility\Translating.cs" />
+    <Compile Include="Utility\WaitQueue.cs" />
+    <Compile Include="PropGridHelpers\YesNoTypeConverter.cs" />
+    <Compile Include="VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\BadSettingsErrorForm.resx">
+      <DependentUpon>BadSettingsErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorForm.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GenericDialogForm.resx">
+      <DependentUpon>GenericDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinesDialog.resx">
+      <DependentUpon>LinesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\AddonSelectFrame.resx">
+      <DependentUpon>AddonSelectFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\InfoBoxFrame.resx">
+      <DependentUpon>InfoBoxFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\PropertyFrame.resx">
+      <DependentUpon>PropertyFrame.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdIcons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StdIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EZRSA\AlpineSoft.EZRSA.csproj">
+      <Project>{EE475F12-4BA4-4DBD-8E69-695808C0EB71}</Project>
+      <Name>AlpineSoft.EZRSA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectListView\ObjectListView2008.csproj">
+      <Project>{18FEDA0C-D147-4286-B39A-01204808106A}</Project>
+      <Name>ObjectListView2008</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infobox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

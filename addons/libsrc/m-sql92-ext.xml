@@ -1,0 +1,9 @@
+<Module>
+    <DbList title='s_domains' nodes='database' nodegen='0'>
+        <Code>SELECT * FROM INFORMATION_SCHEMA.DOMAINS WHERE 1=1 #SCHEMA_COND#</Code>
+    </DbList>
+    
+    <DbList title='s_routines' nodes='database' nodegen='0'>
+        <Code>SELECT * FROM INFORMATION_SCHEMA.ROUTINES WHERE 1=1 #SCHEMA_COND#</Code>
+    </DbList>
+</Module>

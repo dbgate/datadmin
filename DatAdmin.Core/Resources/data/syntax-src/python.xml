@@ -1,0 +1,141 @@
+<RuleSet ignorecase="false" #RULENAME#>
+	<Delimiters>&amp;&lt;&gt;~!@$%^*()-+=|\#/{}[]:;"' ,	.?</Delimiters>
+
+	<Span name="DocLineComment" stopateol="false" bold="false" italic="false" color="Green">
+		<Begin >"""</Begin>
+		<End >"""</End>
+	</Span>
+
+	<Span name="LineComment" stopateol="true" bold="false" italic="false" color="Gray" >
+		<Begin >#</Begin>
+	</Span>
+
+	<Span name="LineComment2" stopateol="true" bold="false" italic="false" color="#999999" >
+		<Begin >//</Begin>
+	</Span>
+
+	<Span name="String" stopateol="true" bold="false" italic="false" color="Blue" escapecharacter="\">
+		<Begin >"</Begin>
+		<End >"</End>
+	</Span>
+
+	<Span name="MultiLineString" stopateol="false" bold="false" italic="false" color="Blue" >
+		<Begin >"""</Begin>
+		<End >"""</End>
+	</Span>
+
+	<Span name="Char" stopateol="true" bold="false" italic="false" color="Blue" escapecharacter="\">
+		<Begin >'</Begin>
+		<End >'</End>
+	</Span>
+
+	<Span name="MultiLineRegEx" stopateol="false" bold="false" italic="false" color="#FF6600">
+		<Begin>@@/</Begin>
+		<End>/</End>
+	</Span>
+	
+	<Span name="RegEx" stopateol="true" bold="false" italic="false" color="#FF6600">
+		<Begin>/@! @@!/@</Begin>
+		<End>/</End>
+	</Span>
+
+	<MarkPrevious bold="false" italic="false" color="MidnightBlue" >(</MarkPrevious>
+
+	<KeyWords name="Punctuation" bold="false" italic="false" color="DarkGreen" >
+		<Key word="?"/>
+		<Key word=","/>
+		<Key word="."/>
+		<Key word=";"/>
+		<Key word="("/>
+		<Key word=")"/>
+		<Key word="["/>
+		<Key word="]"/>
+		<Key word="{"/>
+		<Key word="}"/>
+		<Key word="+"/>
+		<Key word="-"/>
+		<Key word="/"/>
+		<Key word="%"/>
+		<Key word="*"/>
+		<Key word="&lt;"/>
+		<Key word="&gt;"/>
+		<Key word="^"/>
+		<Key word="="/>
+		<Key word="~"/>
+		<Key word="!"/>
+		<Key word="|"/>
+		<Key word="&amp;"/>
+	</KeyWords>
+
+	<KeyWords name="AccessKeywords" bold="true" italic="false" color="Black" >
+		<Key word="self"/>
+		<Key word="super"/>
+	</KeyWords>
+
+	<KeyWords name="OperatorKeywords" bold="true" italic="false" color="DarkCyan" >
+		<Key word="and"/>
+		<Key word="or"/>
+		<Key word="not"/>
+	</KeyWords>
+
+	<KeyWords name="SelectionStatements" bold="true" italic="false" color="Blue" >
+		<Key word="else"/>
+		<Key word="elif"/>
+		<Key word="if"/>
+		<Key word="given"/>
+		<Key word="when"/>
+		<Key word="unless"/>
+		<Key word="otherwise"/>
+	</KeyWords>
+
+	<KeyWords name="IterationStatements" bold="true" italic="false" color="Blue" >
+		<Key word="for"/>
+		<Key word="in"/>
+		<Key word="while"/>
+	</KeyWords>
+
+	<KeyWords name="JumpStatements" bold="false" italic="false" color="Navy" >
+		<Key word="break"/>
+		<Key word="continue"/>
+		<Key word="return"/>
+		<Key word="yield"/>
+		<Key word="goto" />
+	</KeyWords>
+
+	<KeyWords name="ExceptionHandlingStatements" bold="true" italic="false" color="Teal" >
+		<Key word="try"/>
+		<Key word="raise"/>
+		<Key word="except"/>
+	</KeyWords>
+
+	<KeyWords name="Types" bold="true" italic="false" color="Purple" >
+		<Key word="int"/>
+		<Key word="str"/>
+		<Key word="unicode"/>
+		<Key word="basestring"/>
+		<Key word="object"/>
+	</KeyWords>
+
+	<KeyWords name="Literals" bold="true" italic="false" color="Black" >
+		<Key word="null"/>
+		<Key word="True"/>
+		<Key word="False"/>
+	</KeyWords>
+
+	<KeyWords name="Builtins" bold="false" italic="false" color="Purple" >
+		<Key word="assert"/>
+		<Key word="zip"/>
+		<Key word="filter"/>
+		<Key word="map"/>
+		<Key word="dict"/>
+	</KeyWords>
+
+	<KeyWords name="Pass" bold="false" italic="false" color="Gray" >
+		<Key word="pass"/>
+	</KeyWords>
+
+	<KeyWords name="TypesDef" bold="true" italic="false" color="Blue" >
+		<Key word="def"/>
+		<Key word="class"/>
+	</KeyWords>
+</RuleSet>

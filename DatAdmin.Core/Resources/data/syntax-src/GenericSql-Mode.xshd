@@ -1,0 +1,8 @@
+<?xml  version="1.0"?>
+<SyntaxDefinition name="GenericSql" extensions=".sql">
+    <Digits name="Digits" bold="false" italic="false" color="DarkBlue"/>
+
+    <RuleSets>
+        #[include genericsql.xml]
+    </RuleSets>
+</SyntaxDefinition>

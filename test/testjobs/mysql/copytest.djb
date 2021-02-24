@@ -1,0 +1,104 @@
+<Job title="create database betest_1">
+  <Command type="runsql">
+    <Connection type="mysql" adtype="driver">
+      <DataSource>localhost</DataSource>
+      <Login>root</Login>
+      <Password>nGO5dWPwmmOgLTg=</Password>
+      <Port>3306</Port>
+    </Connection>
+    <Sql>create database betest_1</Sql>
+    <Database>
+    </Database>
+    <GroupId>4cc1437b-3ad8-4da7-afa4-707ef2ad7b2a</GroupId>
+  </Command>
+  <Command type="importsqldump">
+    <Loader file="C:\jenasoft\DatAdmin\test\data\vodaci.sql" type="mysqldump" adtype="dbloader" >
+        <Filename>C:\jenasoft\DatAdmin\test\data\vodaci.sql</Filename>
+    </Loader>
+    <Target dbname="betest_1" type="generic">
+      <Connection type="mysql" adtype="driver">
+        <DataSource>localhost</DataSource>
+        <Login>root</Login>
+        <Password>nGO5dWPwmmOgLTg=</Password>
+        <Port>3306</Port>
+      </Connection>
+    </Target>
+  </Command>
+  <Command type="copydb">
+    <Source dbname="betest_1" type="generic">
+      <Connection type="mysql" adtype="driver">
+        <DataSource>localhost</DataSource>
+        <Login>root</Login>
+        <Password>nGO5dWPwmmOgLTg=</Password>
+        <Port>3306</Port>
+      </Connection>
+    </Source>
+    <Target filename="c:\jenasoft\DatAdmin\test\data\vodaci.dbk" type="dbk_writer" adtype="dbwriter" />
+    <Options>
+      <Members table="1" detail.view="1" detail.procedure="1" detail.function="1" detail.trigger="1">
+        <LoadDependencies>1</LoadDependencies>
+      </Members>
+      <TableOptions>
+        <AllowBulkCopy>1</AllowBulkCopy>
+      </TableOptions>
+      <Mode>structureanddata</Mode>
+      <SchemaMode>explicit</SchemaMode>
+    </Options>
+  </Command>
+  <Command type="runsql">
+    <Connection type="mysql" adtype="driver">
+      <DataSource>localhost</DataSource>
+      <Login>root</Login>
+      <Password>nGO5dWPwmmOgLTg=</Password>
+      <Port>3306</Port>
+    </Connection>
+    <Sql>create database betest_2</Sql>
+    <Database>
+    </Database>
+    <GroupId>ba220255-6076-4289-9d8d-22311316c22e</GroupId>
+  </Command>
+  <Command type="copydb">
+    <Source file="C:\jenasoft\DatAdmin\test\data\vodaci.dbk" type="dbkreader" />
+    <Target type="dbsource" adtype="dbwriter">
+      <Database dbname="betest_2" type="generic">
+        <Connection type="mysql" adtype="driver">
+          <DataSource>localhost</DataSource>
+          <Login>root</Login>
+          <Password>nGO5dWPwmmOgLTg=</Password>
+          <Port>3306</Port>
+        </Connection>
+      </Database>
+    </Target>
+    <Options>
+      <Members table="1">
+        <LoadDependencies>1</LoadDependencies>
+      </Members>
+      <TableOptions>
+        <AllowBulkCopy>1</AllowBulkCopy>
+      </TableOptions>
+      <Mode>structureanddata</Mode>
+      <SchemaMode>explicit</SchemaMode>
+    </Options>
+  </Command>
+  <Command type="copydb">
+    <Source dbname="betest_2" type="generic">
+      <Connection type="mysql" adtype="driver">
+        <DataSource>localhost</DataSource>
+        <Login>root</Login>
+        <Password>nGO5dWPwmmOgLTg=</Password>
+        <Port>3306</Port>
+      </Connection>
+    </Source>
+    <Target filename="c:\jenasoft\DatAdmin\test\data\vodaci2.dbk" type="dbk_writer" adtype="dbwriter" />
+    <Options>
+      <Members table="1" detail.view="1" detail.procedure="1" detail.function="1" detail.trigger="1">
+        <LoadDependencies>1</LoadDependencies>
+      </Members>
+      <TableOptions>
+        <AllowBulkCopy>1</AllowBulkCopy>
+      </TableOptions>
+      <Mode>structureanddata</Mode>
+      <SchemaMode>explicit</SchemaMode>
+    </Options>
+  </Command>
+</Job>

@@ -1,0 +1,623 @@
+<?xml  version="1.0"?>
+<SyntaxDefinition name="Sql_oracle" extensions=".sql">
+    <Digits name="Digits" bold="false" italic="false" color="DarkBlue"/>
+
+    <RuleSets>
+        <RuleSet ignorecase="true">
+            <Delimiters>&amp;&lt;&gt;~!%^*()-+=|\#/{}[]:;"' , .?</Delimiters>
+        
+			<Span name="LineComment" stopateol="true" bold="false" italic="false" color="Gray" >
+				<Begin >--</Begin>
+			</Span>
+
+			<Span name="BlockComment" stopateol="false" bold="false" italic="false" color="Gray" >
+				<Begin >/*</Begin>
+                <End>*/</End>
+			</Span>
+        
+            <Span name="Identifier" bold="false" italic="false" color="Green" stopateol="true">
+                <Begin>"</Begin>
+                <End>"</End>
+            </Span>
+            
+            <Span name="String" bold="false" italic="false" color="Red" stopateol="false" escapecharacter='&apos;'>
+                <Begin>'</Begin>
+                <End>'</End>
+            </Span>
+            
+            
+            
+            
+            <KeyWords name="keywords" bold="true" italic="false" color="Blue">
+            	
+            		<Key word="ACCESS"/>
+            	
+            		<Key word="ELSE"/>
+            	
+            		<Key word="MODIFY"/>
+            	
+            		<Key word="START"/>
+            	
+            		<Key word="ADD"/>
+            	
+            		<Key word="EXCLUSIVE"/>
+            	
+            		<Key word="NOAUDIT"/>
+            	
+            		<Key word="SELECT"/>
+            	
+            		<Key word="ALL"/>
+            	
+            		<Key word="EXISTS"/>
+            	
+            		<Key word="NOCOMPRESS"/>
+            	
+            		<Key word="SESSION"/>
+            	
+            		<Key word="ALTER"/>
+            	
+            		<Key word="FILE"/>
+            	
+            		<Key word="NOT"/>
+            	
+            		<Key word="SET"/>
+            	
+            		<Key word="AND"/>
+            	
+            		<Key word="NOTFOUND"/>
+            	
+            		<Key word="SHARE"/>
+            	
+            		<Key word="ANY"/>
+            	
+            		<Key word="FOR"/>
+            	
+            		<Key word="NOWAIT"/>
+            	
+            		<Key word="SIZE"/>
+            	
+            		<Key word="ARRAYLEN"/>
+            	
+            		<Key word="FROM"/>
+            	
+            		<Key word="NULL"/>
+            	
+            		<Key word="AS"/>
+            	
+            		<Key word="GRANT"/>
+            	
+            		<Key word="SQLBUF"/>
+            	
+            		<Key word="ASC"/>
+            	
+            		<Key word="GROUP"/>
+            	
+            		<Key word="OF"/>
+            	
+            		<Key word="SUCCESSFUL"/>
+            	
+            		<Key word="AUDIT"/>
+            	
+            		<Key word="HAVING"/>
+            	
+            		<Key word="OFFLINE"/>
+            	
+            		<Key word="SYNONYM"/>
+            	
+            		<Key word="BETWEEN"/>
+            	
+            		<Key word="IDENTIFIED"/>
+            	
+            		<Key word="ON"/>
+            	
+            		<Key word="SYSDATE"/>
+            	
+            		<Key word="BY"/>
+            	
+            		<Key word="IMMEDIATE"/>
+            	
+            		<Key word="ONLINE"/>
+            	
+            		<Key word="TABLE"/>
+            	
+            		<Key word="IN"/>
+            	
+            		<Key word="OPTION"/>
+            	
+            		<Key word="THEN"/>
+            	
+            		<Key word="CHECK"/>
+            	
+            		<Key word="INCREMENT"/>
+            	
+            		<Key word="OR"/>
+            	
+            		<Key word="TO"/>
+            	
+            		<Key word="CLUSTER"/>
+            	
+            		<Key word="INDEX"/>
+            	
+            		<Key word="ORDER"/>
+            	
+            		<Key word="TRIGGER"/>
+            	
+            		<Key word="COLUMN"/>
+            	
+            		<Key word="INITIAL"/>
+            	
+            		<Key word="PCTFREE"/>
+            	
+            		<Key word="UID"/>
+            	
+            		<Key word="COMMENT"/>
+            	
+            		<Key word="INSERT"/>
+            	
+            		<Key word="PRIOR"/>
+            	
+            		<Key word="UNION"/>
+            	
+            		<Key word="COMPRESS"/>
+            	
+            		<Key word="PRIVILEGES"/>
+            	
+            		<Key word="UNIQUE"/>
+            	
+            		<Key word="CONNECT"/>
+            	
+            		<Key word="INTERSECT"/>
+            	
+            		<Key word="PUBLIC"/>
+            	
+            		<Key word="UPDATE"/>
+            	
+            		<Key word="CREATE"/>
+            	
+            		<Key word="INTO"/>
+            	
+            		<Key word="RAW"/>
+            	
+            		<Key word="USER"/>
+            	
+            		<Key word="CURRENT"/>
+            	
+            		<Key word="IS"/>
+            	
+            		<Key word="RENAME"/>
+            	
+            		<Key word="VALIDATE"/>
+            	
+            		<Key word="LEVEL"/>
+            	
+            		<Key word="RESOURCE"/>
+            	
+            		<Key word="VALUES"/>
+            	
+            		<Key word="LIKE"/>
+            	
+            		<Key word="REVOKE"/>
+            	
+            		<Key word="DEFAULT"/>
+            	
+            		<Key word="LOCK"/>
+            	
+            		<Key word="ROW"/>
+            	
+            		<Key word="DELETE"/>
+            	
+            		<Key word="VIEW"/>
+            	
+            		<Key word="DESC"/>
+            	
+            		<Key word="MAXEXTENTS"/>
+            	
+            		<Key word="ROWLABEL"/>
+            	
+            		<Key word="WHENEVER"/>
+            	
+            		<Key word="DISTINCT"/>
+            	
+            		<Key word="MINUS"/>
+            	
+            		<Key word="ROWNUM"/>
+            	
+            		<Key word="WHERE"/>
+            	
+            		<Key word="DROP"/>
+            	
+            		<Key word="MODE"/>
+            	
+            		<Key word="ROWS"/>
+            	
+            		<Key word="WITH"/>
+            	
+            		<Key word="ADMIN"/>
+            	
+            		<Key word="CURSOR"/>
+            	
+            		<Key word="FOUND"/>
+            	
+            		<Key word="MOUNT"/>
+            	
+            		<Key word="AFTER"/>
+            	
+            		<Key word="CYCLE"/>
+            	
+            		<Key word="FUNCTION"/>
+            	
+            		<Key word="NEXT"/>
+            	
+            		<Key word="ALLOCATE"/>
+            	
+            		<Key word="DATABASE"/>
+            	
+            		<Key word="GO"/>
+            	
+            		<Key word="NEW"/>
+            	
+            		<Key word="ANALYZE"/>
+            	
+            		<Key word="DATAFILE"/>
+            	
+            		<Key word="GOTO"/>
+            	
+            		<Key word="NOARCHIVELOG"/>
+            	
+            		<Key word="ARCHIVE"/>
+            	
+            		<Key word="DBA"/>
+            	
+            		<Key word="GROUPS"/>
+            	
+            		<Key word="NOCACHE"/>
+            	
+            		<Key word="ARCHIVELOG"/>
+            	
+            		<Key word="DEC"/>
+            	
+            		<Key word="INCLUDING"/>
+            	
+            		<Key word="NOCYCLE"/>
+            	
+            		<Key word="AUTHORIZATION"/>
+            	
+            		<Key word="DECLARE"/>
+            	
+            		<Key word="INDICATOR"/>
+            	
+            		<Key word="NOMAXVALUE"/>
+            	
+            		<Key word="DISABLE"/>
+            	
+            		<Key word="INITRANS"/>
+            	
+            		<Key word="NOMINVALUE"/>
+            	
+            		<Key word="BACKUP"/>
+            	
+            		<Key word="DISMOUNT"/>
+            	
+            		<Key word="INSTANCE"/>
+            	
+            		<Key word="NONE"/>
+            	
+            		<Key word="BEGIN"/>
+            	
+            		<Key word="NOORDER"/>
+            	
+            		<Key word="BECOME"/>
+            	
+            		<Key word="DUMP"/>
+            	
+            		<Key word="KEY"/>
+            	
+            		<Key word="NORESETLOGS"/>
+            	
+            		<Key word="BEFORE"/>
+            	
+            		<Key word="EACH"/>
+            	
+            		<Key word="LANGUAGE"/>
+            	
+            		<Key word="NORMAL"/>
+            	
+            		<Key word="BLOCK"/>
+            	
+            		<Key word="ENABLE"/>
+            	
+            		<Key word="LAYER"/>
+            	
+            		<Key word="NOSORT"/>
+            	
+            		<Key word="BODY"/>
+            	
+            		<Key word="END"/>
+            	
+            		<Key word="LINK"/>
+            	
+            		<Key word="CACHE"/>
+            	
+            		<Key word="ESCAPE"/>
+            	
+            		<Key word="LISTS"/>
+            	
+            		<Key word="OFF"/>
+            	
+            		<Key word="CANCEL"/>
+            	
+            		<Key word="EVENTS"/>
+            	
+            		<Key word="LOGFILE"/>
+            	
+            		<Key word="OLD"/>
+            	
+            		<Key word="CASCADE"/>
+            	
+            		<Key word="EXCEPT"/>
+            	
+            		<Key word="MANAGE"/>
+            	
+            		<Key word="ONLY"/>
+            	
+            		<Key word="CHANGE"/>
+            	
+            		<Key word="EXCEPTIONS"/>
+            	
+            		<Key word="MANUAL"/>
+            	
+            		<Key word="OPEN"/>
+            	
+            		<Key word="CHARACTER"/>
+            	
+            		<Key word="EXEC"/>
+            	
+            		<Key word="OPTIMAL"/>
+            	
+            		<Key word="CHECKPOINT"/>
+            	
+            		<Key word="EXPLAIN"/>
+            	
+            		<Key word="MAXDATAFILES"/>
+            	
+            		<Key word="OWN"/>
+            	
+            		<Key word="CLOSE"/>
+            	
+            		<Key word="EXECUTE"/>
+            	
+            		<Key word="MAXINSTANCES"/>
+            	
+            		<Key word="PACKAGE"/>
+            	
+            		<Key word="COBOL"/>
+            	
+            		<Key word="EXTENT"/>
+            	
+            		<Key word="MAXLOGFILES"/>
+            	
+            		<Key word="PARALLEL"/>
+            	
+            		<Key word="COMMIT"/>
+            	
+            		<Key word="EXTERNALLY"/>
+            	
+            		<Key word="MAXLOGHISTORY"/>
+            	
+            		<Key word="PCTINCREASE"/>
+            	
+            		<Key word="COMPILE"/>
+            	
+            		<Key word="FETCH"/>
+            	
+            		<Key word="MAXLOGMEMBERS"/>
+            	
+            		<Key word="PCTUSED"/>
+            	
+            		<Key word="CONSTRAINT"/>
+            	
+            		<Key word="FLUSH"/>
+            	
+            		<Key word="MAXTRANS"/>
+            	
+            		<Key word="PLAN"/>
+            	
+            		<Key word="CONSTRAINTS"/>
+            	
+            		<Key word="FREELIST"/>
+            	
+            		<Key word="MAXVALUE"/>
+            	
+            		<Key word="PLI"/>
+            	
+            		<Key word="CONTENTS"/>
+            	
+            		<Key word="FREELISTS"/>
+            	
+            		<Key word="PRECISION"/>
+            	
+            		<Key word="CONTINUE"/>
+            	
+            		<Key word="FORCE"/>
+            	
+            		<Key word="MINEXTENTS"/>
+            	
+            		<Key word="PRIMARY"/>
+            	
+            		<Key word="CONTROLFILE"/>
+            	
+            		<Key word="FOREIGN"/>
+            	
+            		<Key word="MINVALUE"/>
+            	
+            		<Key word="PRIVATE"/>
+            	
+            		<Key word="FORTRAN"/>
+            	
+            		<Key word="MODULE"/>
+            	
+            		<Key word="PROCEDURE"/>
+            	
+            		<Key word="PROFILE"/>
+            	
+            		<Key word="SAVEPOINT"/>
+            	
+            		<Key word="SQLSTATE"/>
+            	
+            		<Key word="TRACING"/>
+            	
+            		<Key word="QUOTA"/>
+            	
+            		<Key word="SCHEMA"/>
+            	
+            		<Key word="STATEMENT_ID"/>
+            	
+            		<Key word="TRANSACTION"/>
+            	
+            		<Key word="READ"/>
+            	
+            		<Key word="SCN"/>
+            	
+            		<Key word="STATISTICS"/>
+            	
+            		<Key word="TRIGGERS"/>
+            	
+            		<Key word="SECTION"/>
+            	
+            		<Key word="STOP"/>
+            	
+            		<Key word="TRUNCATE"/>
+            	
+            		<Key word="RECOVER"/>
+            	
+            		<Key word="SEGMENT"/>
+            	
+            		<Key word="STORAGE"/>
+            	
+            		<Key word="UNDER"/>
+            	
+            		<Key word="REFERENCES"/>
+            	
+            		<Key word="SEQUENCE"/>
+            	
+            		<Key word="UNLIMITED"/>
+            	
+            		<Key word="REFERENCING"/>
+            	
+            		<Key word="SHARED"/>
+            	
+            		<Key word="SWITCH"/>
+            	
+            		<Key word="UNTIL"/>
+            	
+            		<Key word="RESETLOGS"/>
+            	
+            		<Key word="SNAPSHOT"/>
+            	
+            		<Key word="SYSTEM"/>
+            	
+            		<Key word="USE"/>
+            	
+            		<Key word="RESTRICTED"/>
+            	
+            		<Key word="SOME"/>
+            	
+            		<Key word="TABLES"/>
+            	
+            		<Key word="USING"/>
+            	
+            		<Key word="REUSE"/>
+            	
+            		<Key word="SORT"/>
+            	
+            		<Key word="TABLESPACE"/>
+            	
+            		<Key word="WHEN"/>
+            	
+            		<Key word="ROLE"/>
+            	
+            		<Key word="SQL"/>
+            	
+            		<Key word="TEMPORARY"/>
+            	
+            		<Key word="WRITE"/>
+            	
+            		<Key word="ROLES"/>
+            	
+            		<Key word="SQLCODE"/>
+            	
+            		<Key word="THREAD"/>
+            	
+            		<Key word="WORK"/>
+            	
+            		<Key word="ROLLBACK"/>
+            	
+            		<Key word="SQLERROR"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="datatypes" bold="true" italic="false" color="Teal">
+            	
+            		<Key word="FLOAT"/>
+            	
+            		<Key word="SMALLINT"/>
+            	
+            		<Key word="NUMBER"/>
+            	
+            		<Key word="CHAR"/>
+            	
+            		<Key word="VARCHAR2"/>
+            	
+            		<Key word="VARCHAR"/>
+            	
+            		<Key word="DECIMAL"/>
+            	
+            		<Key word="INTEGER"/>
+            	
+            		<Key word="LONG"/>
+            	
+            		<Key word="ROWID"/>
+            	
+            		<Key word="DOUBLE"/>
+            	
+            		<Key word="INT"/>
+            	
+            		<Key word="NUMERIC"/>
+            	
+            		<Key word="REAL"/>
+            	
+            		<Key word="TIME"/>
+            	
+            		<Key word="DATE"/>
+            	
+            		<Key word="TIMESTAMP"/>
+            	
+            		<Key word="TIMEZONE"/>
+            	
+            		<Key word="LOCAL"/>
+            	
+            		<Key word="XMLTYPE"/>
+            	
+            		<Key word="BINARY_FLOAT"/>
+            	
+            		<Key word="BINARY_DOUBLE"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="functions" bold="true" italic="false" color="#FF00FF">
+            	
+            		<Key word="AVG"/>
+            	
+            		<Key word="SUM"/>
+            	
+            		<Key word="COUNT"/>
+            	
+            		<Key word="MAX"/>
+            	
+            		<Key word="MIN"/>
+            	
+            </KeyWords>
+            
+        </RuleSet>
+    </RuleSets>
+</SyntaxDefinition>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="DatAdmin">
+<h2>Basic functions</h2>
+<ul>
+    <li>SQL command execution, browsing results in grid</li>
+    <li>Visual database management, displaying database structure in tree, modifying table structure</li>
+    <li>Editing data in tables of any size</li>
+    <li>Native access to MySQL, SQLite and MS SQL</li>
+    <li>Support for all data types for SQLite, MySQL, MS SQL Server</li>
+    <li>Export and import tabular data from/to CSV, XML, HTML, SQL</li>
+    <li>Drag &amp; Drop operations with tables and databases, copying tables and databases also between different databases</li>
+    <li>Generating SQL templates</li>
+    <li>PHP tunnel function allows user connection to database accessible only ofrom PHP scripts</li>
+    <li>Database design, which is independend on target database. Support for database diagrams</li>
+    <li>Automatic master/detail view (based on foreign keys defined in database)</li>
+    <li>Open architecture, which allows to create addons, for most used addons there are specialized simple addon editors</li>
+</ul>
+</help>

@@ -1,0 +1,559 @@
+grammar MySQL;
+
+options {
+	language=CSharp2;
+	output=AST;
+	superClass=AntlrParser;
+}
+
+tokens {
+    F_NL;
+    F_INC;
+    F_DEC;
+    COLUMN_DEF;
+}
+
+@header {
+    using System.Globalization;
+    using DatAdmin;
+    using Plugin.mysql;
+}
+
+//command	:	create;
+//create 	:	create_table;
+
+create_table[TableStructure table, bool loadName]:
+		CREATE TEMPORARY? TABLE name=tbl_name {if (loadName) table.FullName=new NameWithSchema($name.text);} 
+        LPAREN create_definition[table] ( COMMA create_definition[table])*  RPAREN
+        table_options?;
+
+create_view_0:
+    create_view;
+	
+create_definition[TableStructure table]:
+    name=col_name 
+        {var col = new ColumnStructure(); table._Columns.Add(col); col.ColumnName=UnquoteName($name.text);} 
+    column_definition[col] -> ^(COLUMN_DEF col_name column_definition) 
+  | primary_key[table]
+  | index_definition[table]
+  | foreign_key[table]
+  | (CONSTRAINT id?)? CHECK LPAREN expr RPAREN // not used by MySQL=>ignore
+  //| (INDEX|KEY) index_name? index_type? index_cols index_option*
+  //| (CONSTRAINT id?)? UNIQUE (INDEX|KEY)?
+  //    index_name[null]? index_type[null]? index_cols[null] index_option[null]*
+  //| (FULLTEXT|SPATIAL) (INDEX|KEY)? index_name? index_cols index_option*
+  ;
+
+index_definition[TableStructure table]:
+    {var index=new IndexConstraint();table._Constraints.Add(index);}
+    (CONSTRAINT id?)? (FULLTEXT|SPATIAL)? ((UNIQUE {index.IsUnique=true;} (INDEX|KEY)?) | (INDEX|KEY))
+    (name=index_name {index.Name=UnquoteName($name.text);} )?
+    index_type[index]? index_cols[index] index_option[index]*;
+    
+primary_key[TableStructure table]:
+ (CONSTRAINT id?)?   // not used by MySQL=>ignore
+    PRIMARY KEY {var pk=new PrimaryKey();table._Constraints.Add(pk);} 
+    index_type[pk]? index_cols[pk] index_option[pk]*;  
+
+foreign_key[TableStructure table]:
+    {var fk=new ForeignKey(); table._Constraints.Add(fk);} 
+    (CONSTRAINT (name=id {fk.Name=UnquoteName($name.text);} )?)? 
+    FOREIGN KEY index_name? index_cols[fk] reference_definition[fk];
+
+index_type[Constraint cnt]: USING id {cnt.MySet("index_type", $id.text);};
+
+index_cols[ColumnsConstraint cnt]: LPAREN index_col[cnt] (COMMA index_col[cnt])* RPAREN;
+index_col[ColumnsConstraint cnt]: name=col_name 
+    {var col=new ColumnReference(UnquoteName($name.text));cnt.Columns.Add(col);} 
+    (LPAREN subpart=T_INTEGER RPAREN {col.MySet("sub_part", $subpart.text);} )? 
+    (ASC | DESC)?;
+
+fk_cols[ForeignKey fk]: LPAREN fk_col[fk] (COMMA fk_col[fk])* RPAREN;
+fk_col[ForeignKey fk]: name=col_name 
+    {var col=new ColumnReference(UnquoteName($name.text));fk.PrimaryKeyColumns.Add(col);} 
+    (LPAREN subpart=T_INTEGER RPAREN {col.MySet("sub_part", $subpart.text);} )? 
+    (ASC | DESC)?;
+
+index_option[Constraint cnt]:
+    KEY_BLOCK_SIZE EQUALS? T_INTEGER
+  | index_type[cnt]
+  | WITH PARSER id;
+
+id: T_IDENT | T_QUOTED_IDENT;
+col_name:	id;
+tbl_name:	id;
+index_name:	id;
+charset_name:   id;		 
+collation_name:   id;		 
+
+column_definition[ColumnStructure col]: 
+    data_type[col] {col.IsNullable=true;} 
+      ((NOT NULL {col.IsNullable=false;}) | (NULL {col.IsNullable=true;}))? 
+      (DEFAULT default_value_expr[col])?
+      (ON UPDATE CURRENT_TIMESTAMP)?
+      (AUTO_INCREMENT {col.DataType.SetAutoincrement(true);} )? 
+      (UNIQUE KEY? | PRIMARY? KEY)?
+      (COMMENT com=T_STRING { col.Comment=StringValue($com.text); } )?
+      (COLUMN_FORMAT (FIXED|DYNAMIC|DEFAULT))?
+      (STORAGE (DISK|MEMORY|DEFAULT))?
+      reference_definition[new ForeignKey()]? // reference definition is parsed but ignored
+      ;
+
+reference_definition[ForeignKey fk]:
+    REFERENCES dstname=tbl_name {fk.PrimaryKeyTable=new NameWithSchema(UnquoteName($dstname.text));}  
+      fk_cols[fk]
+      (MATCH FULL | MATCH PARTIAL | MATCH SIMPLE)?
+      (ON DELETE ondel=reference_option {fk.OnDeleteAction = $ondel.action;} )?
+      (ON UPDATE onupd=reference_option {fk.OnUpdateAction = $onupd.action;})?;
+
+reference_option returns [ForeignKeyAction action]:
+    RESTRICT {$action = ForeignKeyAction.Restrict;} 
+  | CASCADE {$action = ForeignKeyAction.Cascade;}  
+  | SET NULL {$action = ForeignKeyAction.SetNull;}
+  | NO ACTION {$action = ForeignKeyAction.NoAction;}
+;
+
+number_flags[MySqlTypeNumber tp]:
+    (UNSIGNED {tp.Unsigned=true;})? (ZEROFILL {tp.Zerofill=true;})?;
+
+charset_collate[ColumnStructure col]:
+      (CHARACTER SET chset=id {col.CharacterSet=$chset.text;} )?
+      (COLLATE coll=id {col.Collation=$coll.text;} )?;
+
+data_type[ColumnStructure col]	:
+    BIT {var tp=new MySqlTypeBit();} int_length[tp]? {col.DataType=tp.ToGenericType();;}
+  | TINYINT {var tp=new MySqlTypeTinyInt();} int_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}  
+  | SMALLINT {var tp=new MySqlTypeSmallInt();} int_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | MEDIUMINT {var tp=new MySqlTypeMediumInt();} int_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | INT {var tp=new MySqlTypeInt();}  int_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | INTEGER {var tp=new MySqlTypeInt();} int_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | BIGINT {var tp=new MySqlTypeBigInt();} int_length[tp]?  number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | REAL {var tp=new MySqlTypeDouble();} real_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | DOUBLE {var tp=new MySqlTypeDouble();} real_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | FLOAT {var tp=new MySqlTypeFloat();} real_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | DECIMAL {var tp=new MySqlTypeDecimal();} real_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | NUMERIC {var tp=new MySqlTypeNumeric();}  real_length[tp]? number_flags[tp] {col.DataType=tp.ToGenericType();}
+  | DATE {var tp=new MySqlTypeDate();} int_length[tp]? {col.DataType=tp.ToGenericType();} 
+  | TIME {var tp=new MySqlTypeTime();} int_length[tp]? {col.DataType=tp.ToGenericType();}
+  | TIMESTAMP {var tp=new MySqlTypeTimestamp();} int_length[tp]? {col.DataType=tp.ToGenericType();}
+  | DATETIME {var tp=new MySqlTypeDatetime();} int_length[tp]? {col.DataType=tp.ToGenericType();}
+  | YEAR {var tp=new MySqlTypeYear();} int_length[tp]? {col.DataType=tp.ToGenericType();}
+  | CHAR {var tp=new MySqlTypeChar();} char_length[tp] charset_collate[col] {col.DataType=tp.ToGenericType();}
+  | VARCHAR {var tp=new MySqlTypeVarChar();} char_length[tp] charset_collate[col] {col.DataType=tp.ToGenericType();}
+  | BINARY {var tp=new MySqlTypeBinary();} char_length[tp]? {col.DataType=tp.ToGenericType();}
+  | VARBINARY {var tp=new MySqlTypeVarBinary();} char_length[tp]? {col.DataType=tp.ToGenericType();}
+  | TINYBLOB {var tp=new MySqlTypeTinyBlob();col.DataType=tp.ToGenericType();}
+  | BLOB {var tp=new MySqlTypeBlob();col.DataType=tp.ToGenericType();}
+  | MEDIUMBLOB {var tp=new MySqlTypeMediumBlob();col.DataType=tp.ToGenericType();}
+  | LONGBLOB {var tp=new MySqlTypeLongBlob();col.DataType=tp.ToGenericType();}
+  | TINYTEXT {var tp=new MySqlTypeTinyText();}  BINARY? charset_collate[col] {col.DataType=tp.ToGenericType();}
+  | TEXT {var tp=new MySqlTypeText();}  BINARY? charset_collate[col] {col.DataType=tp.ToGenericType();}
+  | MEDIUMTEXT {var tp=new MySqlTypeMediumText();}  BINARY? charset_collate[col] {col.DataType=tp.ToGenericType();}
+  | LONGTEXT {var tp=new MySqlTypeLongText();} BINARY? charset_collate[col] {col.DataType=tp.ToGenericType();}
+  | ENUM {var tp=new MySqlTypeEnum();}  enumset_values[tp] charset_collate[col] {col.DataType=tp.ToGenericType();}
+  | SET {var tp=new MySqlTypeSet();}  enumset_values[tp] charset_collate[col] {col.DataType=tp.ToGenericType();}
+  | GEOMETRY {var tp=new MySqlTypeGeometry();col.DataType=tp.ToGenericType();}
+  | POINT {var tp=new MySqlTypePoint();col.DataType=tp.ToGenericType();}
+  | LINESTRING {var tp=new MySqlTypeLineString();col.DataType=tp.ToGenericType();}
+  | POLYGON {var tp=new MySqlTypePolygon();col.DataType=tp.ToGenericType();}
+  | MULTIPOINT {var tp=new MySqlTypeMultiPoint();col.DataType=tp.ToGenericType();}
+  | MULTILINESTRING {var tp=new MySqlTypeMultiLineString();col.DataType=tp.ToGenericType();}
+  | MULTIPOLYGON {var tp=new MySqlTypeMultiPolygon();col.DataType=tp.ToGenericType();}
+  | GEOMETRYCOLLECTION {var tp=new MySqlTypeGeometryCollection();col.DataType=tp.ToGenericType();}
+;
+
+int_length[MySqlTypeBase tp] : LPAREN len=T_INTEGER {tp.SetLength($len.text);} RPAREN;
+char_length[MySqlTypeBase tp] : LPAREN len=T_INTEGER {tp.SetLength($len.text);} RPAREN;
+real_length[MySqlTypeBase tp] :	LPAREN len=T_INTEGER {tp.SetLength($len.text);} (COMMA dec=T_INTEGER {tp.SetDecimals($dec.text);} )? RPAREN;
+
+enumset_values[MySqlTypeEnumSet tp] : LPAREN enumset_value[tp] (COMMA enumset_value[tp] )* RPAREN;
+
+enumset_value[MySqlTypeEnumSet tp]:
+	id1=id {tp.Values.Add($id.text);} | s=T_STRING {tp.Values.Add(StringValue($s.text));};
+
+table_options: table_option ( COMMA? table_option)*;
+
+table_option:
+    ENGINE EQUALS? ( id | MEMORY )
+  | TYPE EQUALS? id
+  | AUTO_INCREMENT EQUALS? T_INTEGER
+  | AVG_ROW_LENGTH EQUALS? value
+  | DEFAULT? (CHARACTER SET|CHARSET) EQUALS? charset_name
+  | CHECKSUM EQUALS? T_INTEGER
+  | DEFAULT? COLLATE EQUALS? collation_name
+  | COMMENT EQUALS? T_STRING
+  | CONNECTION EQUALS? T_STRING
+  | DATA DIRECTORY EQUALS? T_STRING
+  | DELAY_KEY_WRITE EQUALS? T_INTEGER
+  | INDEX DIRECTORY EQUALS? T_STRING
+  | INSERT_METHOD EQUALS? ( NO | FIRST | LAST )
+  | KEY_BLOCK_SIZE EQUALS? T_INTEGER
+  | MAX_ROWS EQUALS? T_INTEGER
+  | MIN_ROWS EQUALS? T_INTEGER
+  | PACK_KEYS EQUALS? (T_INTEGER | DEFAULT)
+  | PASSWORD EQUALS? T_STRING
+  | ROW_FORMAT EQUALS? (DEFAULT|DYNAMIC|FIXED|COMPRESSED|REDUNDANT|COMPACT)
+  | TABLESPACE id (STORAGE (DISK|MEMORY|DEFAULT))?
+  | UNION EQUALS? LPAREN tbl_name (COMMA tbl_name)* RPAREN;
+
+find_deps[DepsCollector dc]
+    : find_dep_item[dc]*;
+find_dep_item[DepsCollector dc]
+    : keyword | operator_no_dot | T_NSTRING | T_STRING | T_INTEGER | T_FLOAT | T_BINARYNUM | T_BLOB | 
+        name1=id { var name=new DepsName();name.AddComponent(UnquoteName($name1.text)); } 
+        (DOT DOT? name2=id { name.AddComponent(UnquoteName($name2.text));} )*
+        {dc.AddName(name); } ;
+
+#include Views.gsrc
+#include Expr.gsrc
+
+// ****************************************************************************
+// LEXER definitions
+// ****************************************************************************
+EQUALS:        '=';
+SAFEEQUALS:    '<=>';
+EQUALS2:       '==';
+NOT_EQUALS:    '!=';
+NOT_EQUALS2:   '<>';
+LESS:          '<';
+LESS_OR_EQ:    '<=';
+GREATER:       '>';
+GREATER_OR_EQ: '>=';
+SHIFT_LEFT:    '<<';
+SHIFT_RIGHT:   '>>';
+AMPERSAND:     '&';
+DOUBLE_AMPERSAND: '&&';
+PIPE:          '|';
+DOUBLE_PIPE:   '||';
+PLUS:          '+';
+MINUS:         '-';
+TILDA:         '~';
+ASTERISK:      '*';
+SLASH:         '/';
+PERCENT:       '%';
+SEMI:          ';';
+DOT:           '.';
+COMMA:         ',';
+LPAREN:        '(';
+RPAREN:        ')';
+QUESTION:      '?';
+EXCLAMATION:   '!';
+COLON:         ':';
+AT:            '@';
+DOLLAR:        '$';
+ARROW_UP:      '^';
+
+operator_no_dot :
+    EQUALS | SAFEEQUALS | EQUALS2 | NOT_EQUALS | NOT_EQUALS2 | LESS | LESS_OR_EQ
+    | GREATER | GREATER_OR_EQ | SHIFT_LEFT | SHIFT_RIGHT | AMPERSAND | DOUBLE_AMPERSAND
+    | PIPE | DOUBLE_PIPE | PLUS | MINUS | TILDA | ASTERISK | SLASH | PERCENT | SEMI
+    | COMMA | LPAREN | RPAREN | QUESTION | EXCLAMATION | COLON | AT | DOLLAR
+    | ARROW_UP;
+
+any_operator: DOT | operator_no_dot; 
+
+// http://www.antlr.org/wiki/pages/viewpage.action?pageId=1782
+fragment A:('a'|'A');
+fragment B:('b'|'B');
+fragment C:('c'|'C');
+fragment D:('d'|'D');
+fragment E:('e'|'E');
+fragment F:('f'|'F');
+fragment G:('g'|'G');
+fragment H:('h'|'H');
+fragment I:('i'|'I');
+fragment J:('j'|'J');
+fragment K:('k'|'K');
+fragment L:('l'|'L');
+fragment M:('m'|'M');
+fragment N:('n'|'N');
+fragment O:('o'|'O');
+fragment P:('p'|'P');
+fragment Q:('q'|'Q');
+fragment R:('r'|'R');
+fragment S:('s'|'S');
+fragment T:('t'|'T');
+fragment U:('u'|'U');
+fragment V:('v'|'V');
+fragment W:('w'|'W');
+fragment X:('x'|'X');
+fragment Y:('y'|'Y');
+fragment Z:('z'|'Z');
+
+
+#keywords
+ABORT
+ADD
+AFTER
+ALL
+ALTER
+ANALYZE
+AND
+AS
+ASC
+ATTACH
+AUTOINCREMENT
+BEFORE
+BEGIN
+BETWEEN
+BY
+CASCADE
+CASE
+CAST
+CHECK
+COLLATE
+COLUMN
+COMMIT
+CONFLICT
+CONSTRAINT
+CREATE
+CROSS
+DATABASE
+DEFAULT
+DEFERRABLE
+DEFERRED
+DELETE
+DESC
+DETACH
+DISTINCT
+DROP
+EACH
+ELSE
+END
+ESCAPE
+EXCEPT
+EXCLUSIVE
+EXISTS
+EXPLAIN
+FAIL
+FOR
+FOREIGN
+FROM
+GLOB
+GROUP
+HAVING
+IF
+IGNORE
+IMMEDIATE
+IN
+INDEX
+INDEXED
+INITIALLY
+INNER
+INSERT
+INSTEAD
+INTERSECT
+INTO
+IS
+ISNULL
+JOIN
+KEY
+LEFT
+LIKE
+LIMIT
+MATCH
+NATURAL
+NOT
+NOTNULL
+NULL
+OF
+OFFSET
+ON
+OR
+ORDER
+OUTER
+PLAN
+PRAGMA
+PRIMARY
+QUERY
+RAISE
+REFERENCES
+REGEXP
+REINDEX
+RELEASE
+RENAME
+REPLACE
+RESTRICT
+ROLLBACK
+ROW
+SAVEPOINT
+SELECT
+SET
+TABLE
+TEMPORARY
+TEMP
+THEN
+TO
+TRANSACTION
+TRIGGER
+UNION
+UNIQUE
+UPDATE
+USING
+VACUUM
+VALUES
+VIEW
+VIRTUAL
+WHEN
+WHERE
+DIV
+MOD
+FULLTEXT
+SPATIAL
+KEY_BLOCK_SIZE
+WITH
+PARSER
+XOR
+AUTO_INCREMENT
+COLUMN_FORMAT
+FIXED
+DYNAMIC
+STORAGE
+DISK
+MEMORY
+FULL
+PARTIAL
+SIMPLE
+NO
+ACTION
+ENGINE
+AVG_ROW_LENGTH
+CHECKSUM
+DATA
+DIRECTORY
+DELAY_KEY_WRITE
+INSERT_METHOD
+FIRST
+LAST
+MAX_ROWS
+MIN_ROWS
+PACK_KEYS
+PASSWORD
+ROW_FORMAT
+COMPRESSED
+REDUNDANT
+COMPACT
+TABLESPACE
+CHARSET
+BIT
+TINYINT
+SMALLINT
+MEDIUMINT
+INT
+INTEGER
+BIGINT
+REAL
+DOUBLE
+FLOAT
+DECIMAL
+NUMERIC
+DATE
+TIME
+TIMESTAMP
+DATETIME
+CHAR
+VARCHAR
+BINARY
+VARBINARY
+TINYBLOB
+BLOB
+MEDIUMBLOB
+LONGBLOB
+TINYTEXT
+TEXT
+MEDIUMTEXT
+LONGTEXT
+ENUM
+CHARACTER
+UNSIGNED
+ZEROFILL
+CONNECTION
+COMMENT
+GEOMETRY
+POINT
+LINESTRING
+POLYGON
+MULTIPOINT
+MULTILINESTRING
+MULTIPOLYGON
+GEOMETRYCOLLECTION
+TYPE
+RIGHT
+
+ALGORITHM
+DEFINER
+INVOKER
+SQL
+SECURITY
+CASCADED
+LOCAL
+OPTION
+DISTINCTROW
+HIGH_PRIORITY
+STRAIGHT_JOIN
+SQL_SMALL_RESULT
+SQL_BIG_RESULT
+SQL_BUFFER_RESULT
+SQL_CACHE
+SQL_NO_CACHE
+SQL_CALC_FOUND_ROWS
+ROLLUP
+SHARE
+LOCK
+MODE
+FORCE
+OJ
+USE
+INTERVAL
+#end
+
+#sysnames
+CURRENT_TIME
+CURRENT_DATE
+CURRENT_TIMESTAMP
+UTC_TIMESTAMP
+CURRENT_USER
+YEAR
+#end
+
+fragment ID_START: ('a'..'z'|'A'..'Z'|'_');
+T_IDENT: (ID_START (ID_START|'0'..'9')*);
+T_QUOTED_IDENT: '`' ( options {greedy=false;} : . )* '`';
+//TCL_ID: ID_START (ID_START|'0'..'9'|'::')* (LPAREN ( options {greedy=false;} : . )* RPAREN)?;
+//fragment ESCAPE_SEQ: '\\'  ('\"'|'\''|'\\'|'n'|'r'|'0'|'t');
+//T_STRING
+//	: '"' ( ESCAPE_SEQ | ~('\\'|'"') )* '"'
+//	| '\'' ( ESCAPE_SEQ | ~('\\'|'\'') )* '\''
+//	;
+
+T_NSTRING: 
+	('N' | 'n') 
+	  ('\'' 
+	  	( 
+	  		  options{greedy=true;}: ~('\'' | '\r' | '\n' ) | '\'' '\'' 
+	  	)* 
+	  '\'' )
+;
+T_STRING:
+	  ('\'' 
+	  	( 
+	  		  options{greedy=true;}: ~('\'' | '\r' | '\n' ) | '\'' '\'' 
+	  	)* 
+	  '\'' )
+;
+T_INTEGER: ('0'..'9')+;
+fragment FLOAT_EXP : ('e'|'E') ('+'|'-')? ('0'..'9')+ ;
+T_FLOAT
+    :   ('0'..'9')+ '.' ('0'..'9')* FLOAT_EXP?
+    |   '.' ('0'..'9')+ FLOAT_EXP?
+    |   ('0'..'9')+ FLOAT_EXP
+    ;
+T_BLOB: ('x'|'X') '\'' ('0'..'9'|'a'..'f'|'A'..'F')+ '\'';
+
+T_BINARYNUM : ('0' 'b' ('0' | '1')+ ) | 'b' '\'' ('0' | '1')+ '\'';
+
+fragment T_COMMENT: '/*' ( options {greedy=false;} : . )* '*/';
+fragment LINE_COMMENT: '--' ~('\n'|'\r')* ('\r'? '\n'|EOF);
+
+WHITESPACE: (' '|'\r'|'\t'|'\u000C'|'\n'|T_COMMENT|LINE_COMMENT) {$channel=HIDDEN;};
+

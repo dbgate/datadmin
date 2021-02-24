@@ -1,0 +1,7 @@
+﻿<Object type="DatAdmin.GenericGridObjectView, DatAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"><GenericGridObjectView xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Original>false</Original><Conditions /><NodeTypeConditionsText /><PageTitle>s_scripting_properties</PageTitle><Position>20</Position><Language>Python</Language><Code>table_data.add_column(_t('s_name'))
+table_data.add_column(_t('s_value'))
+
+for prop in props.Keys:
+    table_data.add_row(prop, props[prop])
+
+</Code><MaximumRecords>200</MaximumRecords></GenericGridObjectView></Object>

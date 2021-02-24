@@ -1,0 +1,19 @@
+END USER LICENSE AGREEMENT
+If you install or copy DatAdmin you agree with conditions of this agreement.
+If you don't agree with it, don't install nor copy DatAdmin.
+
+DatAdmin Personal is freeware for non-commercial use. 
+DatAdmin Professional is shareware, you can use it 30 days for free, than it is neccessary to buy or uninstall it.
+
+If you are using EffiProz, you need to purchase a EffiProz License for any non-commercial use, 
+see http://www.effiproz.com/License.aspx. 
+
+
+DISCLAIMER OF WARRANTY AND LIABILITY
+DatAdmin is provided "as is" without representations 
+or warranties of any kind, whether expressed or implied. 
+The USER must assume the entire risk of using the SOFTWARE, 
+and author of DatAdmin shall have no liability to the user of DatAdmin or any other 
+third-party for any damages whatsoever, including, 
+but not limited to, any economic or data loss, even if such 
+loss was foreseeable by author of DatAdmin. 

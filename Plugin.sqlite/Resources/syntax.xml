@@ -1,0 +1,377 @@
+<?xml  version="1.0"?>
+<SyntaxDefinition name="Sql_sqlite" extensions=".sql">
+    <Digits name="Digits" bold="false" italic="false" color="DarkBlue"/>
+
+    <RuleSets>
+        <RuleSet ignorecase="true">
+            <Delimiters>&amp;&lt;&gt;~!%^*()-+=|\#/{}[]:;"' , .?</Delimiters>
+        
+			<Span name="LineComment" stopateol="true" bold="false" italic="false" color="Gray" >
+				<Begin >--</Begin>
+			</Span>
+
+			<Span name="BlockComment" stopateol="false" bold="false" italic="false" color="Gray" >
+				<Begin >/*</Begin>
+                <End>*/</End>
+			</Span>
+        
+            <Span name="Identifier" bold="false" italic="false" color="Green" stopateol="true">
+                <Begin>"</Begin>
+                <End>"</End>
+            </Span>
+            
+            <Span name="String" bold="false" italic="false" color="Red" stopateol="false" escapecharacter='&apos;'>
+                <Begin>'</Begin>
+                <End>'</End>
+            </Span>
+            
+            
+            
+            
+            <KeyWords name="reserved" bold="true" italic="false" color="Blue">
+            	
+            		<Key word="ADD"/>
+            	
+            		<Key word="ALL"/>
+            	
+            		<Key word="ALTER"/>
+            	
+            		<Key word="AND"/>
+            	
+            		<Key word="AS"/>
+            	
+            		<Key word="AUTOINCREMENT"/>
+            	
+            		<Key word="BETWEEN"/>
+            	
+            		<Key word="CASE"/>
+            	
+            		<Key word="CHECK"/>
+            	
+            		<Key word="COLLATE"/>
+            	
+            		<Key word="COMMIT"/>
+            	
+            		<Key word="CONSTRAINT"/>
+            	
+            		<Key word="ADD"/>
+            	
+            		<Key word="AFTER"/>
+            	
+            		<Key word="ALL"/>
+            	
+            		<Key word="ALTER"/>
+            	
+            		<Key word="ANALYZE"/>
+            	
+            		<Key word="AND"/>
+            	
+            		<Key word="AS"/>
+            	
+            		<Key word="ASC"/>
+            	
+            		<Key word="ATTACH"/>
+            	
+            		<Key word="AUTOINCREMENT"/>
+            	
+            		<Key word="BEFORE"/>
+            	
+            		<Key word="BEGIN"/>
+            	
+            		<Key word="BETWEEN"/>
+            	
+            		<Key word="BY"/>
+            	
+            		<Key word="CASCADE"/>
+            	
+            		<Key word="CASE"/>
+            	
+            		<Key word="CAST"/>
+            	
+            		<Key word="CHECK"/>
+            	
+            		<Key word="COLLATE"/>
+            	
+            		<Key word="COLUMN"/>
+            	
+            		<Key word="COMMIT"/>
+            	
+            		<Key word="CONFLICT"/>
+            	
+            		<Key word="CONSTRAINT"/>
+            	
+            		<Key word="CREATE"/>
+            	
+            		<Key word="CROSS"/>
+            	
+            		<Key word="DEFAULT"/>
+            	
+            		<Key word="DEFERRABLE"/>
+            	
+            		<Key word="DELETE"/>
+            	
+            		<Key word="DISTINCT"/>
+            	
+            		<Key word="DROP"/>
+            	
+            		<Key word="ELSE"/>
+            	
+            		<Key word="ESCAPE"/>
+            	
+            		<Key word="EXCEPT"/>
+            	
+            		<Key word="EXISTS"/>
+            	
+            		<Key word="FOREIGN"/>
+            	
+            		<Key word="FROM"/>
+            	
+            		<Key word="FULL"/>
+            	
+            		<Key word="GROUP"/>
+            	
+            		<Key word="HAVING"/>
+            	
+            		<Key word="IN"/>
+            	
+            		<Key word="INDEX"/>
+            	
+            		<Key word="INNER"/>
+            	
+            		<Key word="INSERT"/>
+            	
+            		<Key word="INTERSECT"/>
+            	
+            		<Key word="INTO"/>
+            	
+            		<Key word="IS"/>
+            	
+            		<Key word="ISNULL"/>
+            	
+            		<Key word="JOIN"/>
+            	
+            		<Key word="LEFT"/>
+            	
+            		<Key word="LIMIT"/>
+            	
+            		<Key word="NATURAL"/>
+            	
+            		<Key word="NOT"/>
+            	
+            		<Key word="NOTNULL"/>
+            	
+            		<Key word="NULL"/>
+            	
+            		<Key word="ON"/>
+            	
+            		<Key word="OR"/>
+            	
+            		<Key word="ORDER"/>
+            	
+            		<Key word="OUTER"/>
+            	
+            		<Key word="PRIMARY"/>
+            	
+            		<Key word="REFERENCES"/>
+            	
+            		<Key word="RIGHT"/>
+            	
+            		<Key word="ROLLBACK"/>
+            	
+            		<Key word="SELECT"/>
+            	
+            		<Key word="SET"/>
+            	
+            		<Key word="TABLE"/>
+            	
+            		<Key word="THEN"/>
+            	
+            		<Key word="TO"/>
+            	
+            		<Key word="TRANSACTION"/>
+            	
+            		<Key word="UNION"/>
+            	
+            		<Key word="UNIQUE"/>
+            	
+            		<Key word="UPDATE"/>
+            	
+            		<Key word="USING"/>
+            	
+            		<Key word="VALUES"/>
+            	
+            		<Key word="WHEN"/>
+            	
+            		<Key word="WHERE"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="noreserved" bold="true" italic="false" color="DarkGray">
+            	
+            		<Key word="ABORT"/>
+            	
+            		<Key word="AFTER"/>
+            	
+            		<Key word="ANALYZE"/>
+            	
+            		<Key word="ASC"/>
+            	
+            		<Key word="ATTACH"/>
+            	
+            		<Key word="BEFORE"/>
+            	
+            		<Key word="BEGIN"/>
+            	
+            		<Key word="BY"/>
+            	
+            		<Key word="CASCADE"/>
+            	
+            		<Key word="CAST"/>
+            	
+            		<Key word="COLUMN"/>
+            	
+            		<Key word="CONFLICT"/>
+            	
+            		<Key word="CURRENT_DATE"/>
+            	
+            		<Key word="CURRENT_TIME"/>
+            	
+            		<Key word="CURRENT_TIMESTAMP"/>
+            	
+            		<Key word="DATABASE"/>
+            	
+            		<Key word="DEFERRED"/>
+            	
+            		<Key word="DESC"/>
+            	
+            		<Key word="DETACH"/>
+            	
+            		<Key word="EACH"/>
+            	
+            		<Key word="END"/>
+            	
+            		<Key word="EXCLUSIVE"/>
+            	
+            		<Key word="EXPLAIN"/>
+            	
+            		<Key word="FAIL"/>
+            	
+            		<Key word="FOR"/>
+            	
+            		<Key word="GLOB"/>
+            	
+            		<Key word="IF"/>
+            	
+            		<Key word="IGNORE"/>
+            	
+            		<Key word="IMMEDIATE"/>
+            	
+            		<Key word="INDEXED"/>
+            	
+            		<Key word="INITIALLY"/>
+            	
+            		<Key word="INSTEAD"/>
+            	
+            		<Key word="KEY"/>
+            	
+            		<Key word="LIKE"/>
+            	
+            		<Key word="MATCH"/>
+            	
+            		<Key word="OF"/>
+            	
+            		<Key word="OFFSET"/>
+            	
+            		<Key word="PLAN"/>
+            	
+            		<Key word="PRAGMA"/>
+            	
+            		<Key word="QUERY"/>
+            	
+            		<Key word="RAISE"/>
+            	
+            		<Key word="REGEXP"/>
+            	
+            		<Key word="REINDEX"/>
+            	
+            		<Key word="RELEASE"/>
+            	
+            		<Key word="RENAME"/>
+            	
+            		<Key word="REPLACE"/>
+            	
+            		<Key word="RESTRICT"/>
+            	
+            		<Key word="ROW"/>
+            	
+            		<Key word="SAVEPOINT"/>
+            	
+            		<Key word="TEMP"/>
+            	
+            		<Key word="TEMPORARY"/>
+            	
+            		<Key word="TRIGGER"/>
+            	
+            		<Key word="VACUUM"/>
+            	
+            		<Key word="VIEW"/>
+            	
+            		<Key word="VIRTUAL"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="datatypes" bold="true" italic="false" color="Teal">
+            	
+            		<Key word="INT"/>
+            	
+            		<Key word="INTEGER"/>
+            	
+            		<Key word="CHAR"/>
+            	
+            		<Key word="VARCHAR"/>
+            	
+            		<Key word="VARYING"/>
+            	
+            		<Key word="CHARACTER"/>
+            	
+            		<Key word="CLOB"/>
+            	
+            		<Key word="BLOB"/>
+            	
+            		<Key word="TEXT"/>
+            	
+            		<Key word="NUMERIC"/>
+            	
+            		<Key word="DECIMAL"/>
+            	
+            		<Key word="REAL"/>
+            	
+            		<Key word="FLOAT"/>
+            	
+            		<Key word="DOUBLE"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="sysobject" bold="true" italic="false" color="#00AA00">
+            	
+            		<Key word="_ROWID_"/>
+            	
+            		<Key word="MAIN"/>
+            	
+            		<Key word="OID"/>
+            	
+            		<Key word="ROWID"/>
+            	
+            		<Key word="SQLITE_MASTER"/>
+            	
+            		<Key word="SQLITE_SEQUENCE"/>
+            	
+            		<Key word="SQLITE_TEMP_MASTER"/>
+            	
+            		<Key word="TEMP"/>
+            	
+            </KeyWords>
+            
+        </RuleSet>
+    </RuleSets>
+</SyntaxDefinition>

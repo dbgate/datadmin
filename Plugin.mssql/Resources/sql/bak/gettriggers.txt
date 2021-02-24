@@ -1,0 +1,9 @@
+SELECT ISNULL(smtr.definition, ssmtr.definition) AS [Definition], 
+tr.name AS [Name], tbl.name AS TableName, tbl.schema_id AS SchemaName, 
+trr.is_disabled AS [IsEnabled], tr.create_date AS [CreateDate]
+FROM sys.tables AS tbl INNER JOIN sys.objects AS tr ON (tr.type in ('TR', 'TA')) AND (tr.parent_object_id=tbl.object_id)
+LEFT OUTER JOIN sys.assembly_modules AS mod ON mod.object_id = tr.object_id
+INNER JOIN sys.triggers AS trr ON trr.object_id = tr.object_id
+LEFT OUTER JOIN sys.sql_modules AS smtr ON smtr.object_id = tr.object_id
+LEFT OUTER JOIN sys.system_sql_modules AS ssmtr ON ssmtr.object_id = tr.object_id
+LEFT OUTER JOIN sys.schemas schem ON tbl.schema_id=schem.schema_id

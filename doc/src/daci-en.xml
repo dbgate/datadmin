@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="Command line interface">
+<p>
+DatAdmin has command line interface called DACI. It is used internally when running
+scheduled jobs, also it can be used by user to do various database tasks
+(export, backup, copy, syncrhonize database, running saved jobs, generating SQL from databse objects, 
+running SQL against databse) 
+</p>
+
+<h2>help command</h2>
+<p>
+DACI has inbuilt help command reflecting actual commands and its parameters. 
+While help, which you now read, tries to be a bit informal and ilustrative, 
+DACI help command writes exact information, which is really used.<br/>  
+Run "daci" without parameters to list commands, "daci help &lt;command&gt;" to get help about one command.
+</p>
+
+<h2>Specifying connection in commandline</h2>
+<p>
+Connection is specified using these parameters:
+</p>
+<ul>    
+    <li><b>dbfile</b> - file containing database, data archive (dbk extension) or database structure (ddf extension).
+    Also .con file containing stored connection is accepted. If parameter starts with "data:", file is searched in
+    DatAdmin data directory (files which you see in connection tree).</li>
+    <li><b>connection</b> - connection string to database, if given, also driver parameter must be defined</li>
+    <li><b>driver</b> - database driver. List of drivers can be obtained using command "daci list driver"</li>
+    <li><b>database</b> - database name, if it cancnot be deduced from other parameters.</li>
+    <li>Examples are bellow, with described command</li>
+</ul>
+
+<h2>exportdb command</h2>
+<p>
+Export databse into DBK or DDF file (data archive or database structure). Accepts parameter outfile.
+</p>
+<h3>Examples</h3>
+<ul>
+    <li><code>daci exportdb --dbfile database.db3 --outfile backup.dbk</code> - opens database file database.db3
+    (must be in SQLite format) and dumps it as data archive to file backup.dbk</li>
+    <li><code>daci exportdb --dbfile data:mysql-local.con --database test1 --outfile backup.ddf</code> - assumes defined connection
+    mysql-local, dumps structure of database test1 to file backup.ddf</li>
+</ul>
+
+<h2>gensql command</h2>
+<p>
+Generates SQL from any database object. Accept connection parameters, template specification 
+(what should be dumped) and object name. If not specified outfile parameter, SQL is dumped to standard output.
+</p>
+
+<h3>Parameters</h3>
+<ul>
+    <li><b>connection</b>, <b>dbfile</b>, <b>driver</b>, <b>database</b> 
+            - see section about connection in commandline</li>
+    <li><b>template</b> - SQL template which to use; Use "daci list sqlgenerator" to view possible values.
+        This is main parameter determining type of output query.</li>
+    <li><b>dialect</b> - Dialect of output SQL scripts, list can be obtained using "daci list dialect"</li>
+    <li><b>objname</b>, <b>objschema</b>, <b>objtype</b>, <b>subtype</b> - name and type of dumped objects (see following examples).</li>
+</ul>
+
+<h3>Examples</h3>
+<ul>
+    <li><code>daci gensql --dbfile data:database.db3 --template create-all --dialect sqlite > test.sql</code> 
+        - dumps creation of all database objects (tables, views, indexes...) into file test.sql</li>
+    <li><code>daci gensql --driver mysql --connection "Data Source=localhost;User ID=root;Password=PASSWORD" --database DBNAME --objname TABLENAME --template recreate-table --dialect mysql > test.sql</code> 
+        - dumps recreation of table TABLENAME. Also shows how direct connection using connection string is done.</li>
+</ul>
+
+<h2>copydb command</h2>
+<p>
+Copies database from one place to other. Source connection parameters are prefixed with "src.", destination with "dst,".
+Structure and data are copied. Each database can have different database engine.
+</p>
+<h3>Examples</h3>
+<ul>
+    <li><code>daci copydb --src.driver mysql --src.connection "Data Source=localhost;User ID=root;Password=PASSWORD" --src.database SRCDB --dst.dbfile OUTPUT.db3</code> 
+    - copies database SRCDB from mysql server at localhost into SQLite database into file OUTPUT.db3</li>
+    <li><code>daci copydb --src.dbfile: INFILE.dbk --dst.dbfile OUTFILE.db3</code> - creates SQLite database OUTFILE.db3 from data archive stored in file INFILE.dbk</li> 
+</ul>
+</help>

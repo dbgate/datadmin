@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=DatAdmin
+Comment=Database Administration for MySQL, PostgreSQL, SQLite and MS SQL
+Exec=datadmin
+Terminal=false
+Type=Application
+Icon=datadmin
+Categories=GNOME;Database;System;Development;

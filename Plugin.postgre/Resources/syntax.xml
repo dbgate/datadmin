@@ -1,0 +1,831 @@
+<?xml  version="1.0"?>
+<SyntaxDefinition name="Sql_postgre" extensions=".sql">
+    <Digits name="Digits" bold="false" italic="false" color="DarkBlue"/>
+
+    <RuleSets>
+        <RuleSet ignorecase="true">
+            <Delimiters>&amp;&lt;&gt;~!%^*()-+=|\#/{}[]:;"' , .?</Delimiters>
+        
+			<Span name="LineComment" stopateol="true" bold="false" italic="false" color="Gray" >
+				<Begin >--</Begin>
+			</Span>
+
+			<Span name="BlockComment" stopateol="false" bold="false" italic="false" color="Gray" >
+				<Begin >/*</Begin>
+                <End>*/</End>
+			</Span>
+        
+            <Span name="Identifier" bold="false" italic="false" color="Green" stopateol="true">
+                <Begin>"</Begin>
+                <End>"</End>
+            </Span>
+            
+            <Span name="String" bold="false" italic="false" color="Red" stopateol="false" escapecharacter='&apos;'>
+                <Begin>'</Begin>
+                <End>'</End>
+            </Span>
+            
+            
+            
+            
+            <KeyWords name="unreserved" bold="true" italic="false" color="DarkGray">
+            	
+            		<Key word="abort"/>
+            	
+            		<Key word="absolute"/>
+            	
+            		<Key word="access"/>
+            	
+            		<Key word="action"/>
+            	
+            		<Key word="add"/>
+            	
+            		<Key word="admin"/>
+            	
+            		<Key word="after"/>
+            	
+            		<Key word="aggregate"/>
+            	
+            		<Key word="also"/>
+            	
+            		<Key word="alter"/>
+            	
+            		<Key word="always"/>
+            	
+            		<Key word="assertion"/>
+            	
+            		<Key word="assignment"/>
+            	
+            		<Key word="at"/>
+            	
+            		<Key word="backward"/>
+            	
+            		<Key word="before"/>
+            	
+            		<Key word="begin"/>
+            	
+            		<Key word="by"/>
+            	
+            		<Key word="cache"/>
+            	
+            		<Key word="called"/>
+            	
+            		<Key word="cascade"/>
+            	
+            		<Key word="cascaded"/>
+            	
+            		<Key word="chain"/>
+            	
+            		<Key word="characteristics"/>
+            	
+            		<Key word="checkpoint"/>
+            	
+            		<Key word="class"/>
+            	
+            		<Key word="close"/>
+            	
+            		<Key word="cluster"/>
+            	
+            		<Key word="comment"/>
+            	
+            		<Key word="commit"/>
+            	
+            		<Key word="committed"/>
+            	
+            		<Key word="concurrently"/>
+            	
+            		<Key word="configuration"/>
+            	
+            		<Key word="connection"/>
+            	
+            		<Key word="constraints"/>
+            	
+            		<Key word="content"/>
+            	
+            		<Key word="conversion"/>
+            	
+            		<Key word="copy"/>
+            	
+            		<Key word="cost"/>
+            	
+            		<Key word="createdb"/>
+            	
+            		<Key word="createrole"/>
+            	
+            		<Key word="createuser"/>
+            	
+            		<Key word="csv"/>
+            	
+            		<Key word="current"/>
+            	
+            		<Key word="cursor"/>
+            	
+            		<Key word="cycle"/>
+            	
+            		<Key word="database"/>
+            	
+            		<Key word="day"/>
+            	
+            		<Key word="deallocate"/>
+            	
+            		<Key word="declare"/>
+            	
+            		<Key word="defaults"/>
+            	
+            		<Key word="deferred"/>
+            	
+            		<Key word="definer"/>
+            	
+            		<Key word="delete"/>
+            	
+            		<Key word="delimiter"/>
+            	
+            		<Key word="delimiters"/>
+            	
+            		<Key word="dictionary"/>
+            	
+            		<Key word="disable"/>
+            	
+            		<Key word="discard"/>
+            	
+            		<Key word="document"/>
+            	
+            		<Key word="domain"/>
+            	
+            		<Key word="double"/>
+            	
+            		<Key word="drop"/>
+            	
+            		<Key word="each"/>
+            	
+            		<Key word="enable"/>
+            	
+            		<Key word="encoding"/>
+            	
+            		<Key word="encrypted"/>
+            	
+            		<Key word="enum"/>
+            	
+            		<Key word="escape"/>
+            	
+            		<Key word="excluding"/>
+            	
+            		<Key word="exclusive"/>
+            	
+            		<Key word="execute"/>
+            	
+            		<Key word="explain"/>
+            	
+            		<Key word="external"/>
+            	
+            		<Key word="family"/>
+            	
+            		<Key word="fetch"/>
+            	
+            		<Key word="first"/>
+            	
+            		<Key word="force"/>
+            	
+            		<Key word="forward"/>
+            	
+            		<Key word="function"/>
+            	
+            		<Key word="global"/>
+            	
+            		<Key word="granted"/>
+            	
+            		<Key word="handler"/>
+            	
+            		<Key word="header"/>
+            	
+            		<Key word="hold"/>
+            	
+            		<Key word="hour"/>
+            	
+            		<Key word="if"/>
+            	
+            		<Key word="immediate"/>
+            	
+            		<Key word="immutable"/>
+            	
+            		<Key word="implicit"/>
+            	
+            		<Key word="including"/>
+            	
+            		<Key word="increment"/>
+            	
+            		<Key word="index"/>
+            	
+            		<Key word="indexes"/>
+            	
+            		<Key word="inherit"/>
+            	
+            		<Key word="inherits"/>
+            	
+            		<Key word="input"/>
+            	
+            		<Key word="insensitive"/>
+            	
+            		<Key word="insert"/>
+            	
+            		<Key word="instead"/>
+            	
+            		<Key word="invoker"/>
+            	
+            		<Key word="isolation"/>
+            	
+            		<Key word="key"/>
+            	
+            		<Key word="lancompiler"/>
+            	
+            		<Key word="language"/>
+            	
+            		<Key word="large"/>
+            	
+            		<Key word="last"/>
+            	
+            		<Key word="level"/>
+            	
+            		<Key word="listen"/>
+            	
+            		<Key word="load"/>
+            	
+            		<Key word="local"/>
+            	
+            		<Key word="location"/>
+            	
+            		<Key word="lock"/>
+            	
+            		<Key word="login"/>
+            	
+            		<Key word="mapping"/>
+            	
+            		<Key word="match"/>
+            	
+            		<Key word="maxvalue"/>
+            	
+            		<Key word="minute"/>
+            	
+            		<Key word="minvalue"/>
+            	
+            		<Key word="mode"/>
+            	
+            		<Key word="month"/>
+            	
+            		<Key word="move"/>
+            	
+            		<Key word="name"/>
+            	
+            		<Key word="names"/>
+            	
+            		<Key word="next"/>
+            	
+            		<Key word="no"/>
+            	
+            		<Key word="nocreatedb"/>
+            	
+            		<Key word="nocreaterole"/>
+            	
+            		<Key word="nocreateuser"/>
+            	
+            		<Key word="noinherit"/>
+            	
+            		<Key word="nologin"/>
+            	
+            		<Key word="nosuperuser"/>
+            	
+            		<Key word="nothing"/>
+            	
+            		<Key word="notify"/>
+            	
+            		<Key word="nowait"/>
+            	
+            		<Key word="nulls"/>
+            	
+            		<Key word="object"/>
+            	
+            		<Key word="of"/>
+            	
+            		<Key word="oids"/>
+            	
+            		<Key word="operator"/>
+            	
+            		<Key word="option"/>
+            	
+            		<Key word="owned"/>
+            	
+            		<Key word="owner"/>
+            	
+            		<Key word="parser"/>
+            	
+            		<Key word="partial"/>
+            	
+            		<Key word="password"/>
+            	
+            		<Key word="plans"/>
+            	
+            		<Key word="prepare"/>
+            	
+            		<Key word="prepared"/>
+            	
+            		<Key word="preserve"/>
+            	
+            		<Key word="prior"/>
+            	
+            		<Key word="privileges"/>
+            	
+            		<Key word="procedural"/>
+            	
+            		<Key word="procedure"/>
+            	
+            		<Key word="quote"/>
+            	
+            		<Key word="read"/>
+            	
+            		<Key word="reassign"/>
+            	
+            		<Key word="recheck"/>
+            	
+            		<Key word="reindex"/>
+            	
+            		<Key word="relative"/>
+            	
+            		<Key word="release"/>
+            	
+            		<Key word="rename"/>
+            	
+            		<Key word="repeatable"/>
+            	
+            		<Key word="replace"/>
+            	
+            		<Key word="replica"/>
+            	
+            		<Key word="reset"/>
+            	
+            		<Key word="restart"/>
+            	
+            		<Key word="restrict"/>
+            	
+            		<Key word="returns"/>
+            	
+            		<Key word="revoke"/>
+            	
+            		<Key word="role"/>
+            	
+            		<Key word="rollback"/>
+            	
+            		<Key word="rows"/>
+            	
+            		<Key word="rule"/>
+            	
+            		<Key word="savepoint"/>
+            	
+            		<Key word="schema"/>
+            	
+            		<Key word="scroll"/>
+            	
+            		<Key word="search"/>
+            	
+            		<Key word="second"/>
+            	
+            		<Key word="security"/>
+            	
+            		<Key word="sequence"/>
+            	
+            		<Key word="serializable"/>
+            	
+            		<Key word="session"/>
+            	
+            		<Key word="set"/>
+            	
+            		<Key word="share"/>
+            	
+            		<Key word="show"/>
+            	
+            		<Key word="simple"/>
+            	
+            		<Key word="stable"/>
+            	
+            		<Key word="standalone"/>
+            	
+            		<Key word="start"/>
+            	
+            		<Key word="statement"/>
+            	
+            		<Key word="statistics"/>
+            	
+            		<Key word="stdin"/>
+            	
+            		<Key word="stdout"/>
+            	
+            		<Key word="storage"/>
+            	
+            		<Key word="strict"/>
+            	
+            		<Key word="strip"/>
+            	
+            		<Key word="superuser"/>
+            	
+            		<Key word="sysid"/>
+            	
+            		<Key word="system"/>
+            	
+            		<Key word="tablespace"/>
+            	
+            		<Key word="temp"/>
+            	
+            		<Key word="template"/>
+            	
+            		<Key word="temporary"/>
+            	
+            		<Key word="text"/>
+            	
+            		<Key word="transaction"/>
+            	
+            		<Key word="trigger"/>
+            	
+            		<Key word="truncate"/>
+            	
+            		<Key word="trusted"/>
+            	
+            		<Key word="type"/>
+            	
+            		<Key word="uncommitted"/>
+            	
+            		<Key word="unencrypted"/>
+            	
+            		<Key word="unknown"/>
+            	
+            		<Key word="unlisten"/>
+            	
+            		<Key word="until"/>
+            	
+            		<Key word="update"/>
+            	
+            		<Key word="vacuum"/>
+            	
+            		<Key word="valid"/>
+            	
+            		<Key word="validator"/>
+            	
+            		<Key word="value"/>
+            	
+            		<Key word="varying"/>
+            	
+            		<Key word="version"/>
+            	
+            		<Key word="view"/>
+            	
+            		<Key word="volatile"/>
+            	
+            		<Key word="whitespace"/>
+            	
+            		<Key word="without"/>
+            	
+            		<Key word="work"/>
+            	
+            		<Key word="write"/>
+            	
+            		<Key word="xml"/>
+            	
+            		<Key word="year"/>
+            	
+            		<Key word="yes"/>
+            	
+            		<Key word="zone"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="reserved" bold="true" italic="false" color="Blue">
+            	
+            		<Key word="all"/>
+            	
+            		<Key word="analyse"/>
+            	
+            		<Key word="analyze"/>
+            	
+            		<Key word="and"/>
+            	
+            		<Key word="any"/>
+            	
+            		<Key word="array"/>
+            	
+            		<Key word="as"/>
+            	
+            		<Key word="asc"/>
+            	
+            		<Key word="asymmetric"/>
+            	
+            		<Key word="both"/>
+            	
+            		<Key word="case"/>
+            	
+            		<Key word="cast"/>
+            	
+            		<Key word="check"/>
+            	
+            		<Key word="collate"/>
+            	
+            		<Key word="column"/>
+            	
+            		<Key word="connect"/>
+            	
+            		<Key word="constraint"/>
+            	
+            		<Key word="convert"/>
+            	
+            		<Key word="create"/>
+            	
+            		<Key word="current_date"/>
+            	
+            		<Key word="current_role"/>
+            	
+            		<Key word="current_time"/>
+            	
+            		<Key word="current_timestamp"/>
+            	
+            		<Key word="current_user"/>
+            	
+            		<Key word="default"/>
+            	
+            		<Key word="deferrable"/>
+            	
+            		<Key word="desc"/>
+            	
+            		<Key word="distinct"/>
+            	
+            		<Key word="do"/>
+            	
+            		<Key word="else"/>
+            	
+            		<Key word="end"/>
+            	
+            		<Key word="except"/>
+            	
+            		<Key word="exec"/>
+            	
+            		<Key word="false"/>
+            	
+            		<Key word="for"/>
+            	
+            		<Key word="foreign"/>
+            	
+            		<Key word="from"/>
+            	
+            		<Key word="grant"/>
+            	
+            		<Key word="group"/>
+            	
+            		<Key word="having"/>
+            	
+            		<Key word="in"/>
+            	
+            		<Key word="initially"/>
+            	
+            		<Key word="intersect"/>
+            	
+            		<Key word="into"/>
+            	
+            		<Key word="leading"/>
+            	
+            		<Key word="limit"/>
+            	
+            		<Key word="localtime"/>
+            	
+            		<Key word="localtimestamp"/>
+            	
+            		<Key word="long"/>
+            	
+            		<Key word="minus"/>
+            	
+            		<Key word="new"/>
+            	
+            		<Key word="nocache"/>
+            	
+            		<Key word="not"/>
+            	
+            		<Key word="null"/>
+            	
+            		<Key word="number"/>
+            	
+            		<Key word="off"/>
+            	
+            		<Key word="offset"/>
+            	
+            		<Key word="old"/>
+            	
+            		<Key word="on"/>
+            	
+            		<Key word="only"/>
+            	
+            		<Key word="or"/>
+            	
+            		<Key word="order"/>
+            	
+            		<Key word="package"/>
+            	
+            		<Key word="placing"/>
+            	
+            		<Key word="pls_integer"/>
+            	
+            		<Key word="primary"/>
+            	
+            		<Key word="raw"/>
+            	
+            		<Key word="references"/>
+            	
+            		<Key word="return"/>
+            	
+            		<Key word="returning"/>
+            	
+            		<Key word="select"/>
+            	
+            		<Key word="session_user"/>
+            	
+            		<Key word="smalldatetime"/>
+            	
+            		<Key word="smallfloat"/>
+            	
+            		<Key word="smallmoney"/>
+            	
+            		<Key word="some"/>
+            	
+            		<Key word="symmetric"/>
+            	
+            		<Key word="sysdate"/>
+            	
+            		<Key word="systimestamp"/>
+            	
+            		<Key word="table"/>
+            	
+            		<Key word="then"/>
+            	
+            		<Key word="tinyint"/>
+            	
+            		<Key word="tinytext"/>
+            	
+            		<Key word="to"/>
+            	
+            		<Key word="trailing"/>
+            	
+            		<Key word="true"/>
+            	
+            		<Key word="union"/>
+            	
+            		<Key word="unique"/>
+            	
+            		<Key word="user"/>
+            	
+            		<Key word="using"/>
+            	
+            		<Key word="varchar2"/>
+            	
+            		<Key word="when"/>
+            	
+            		<Key word="where"/>
+            	
+            		<Key word="with"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="type_func_name" bold="true" italic="false" color="#FF00FF">
+            	
+            		<Key word="authorization"/>
+            	
+            		<Key word="between"/>
+            	
+            		<Key word="binary"/>
+            	
+            		<Key word="cross"/>
+            	
+            		<Key word="freeze"/>
+            	
+            		<Key word="full"/>
+            	
+            		<Key word="ilike"/>
+            	
+            		<Key word="inner"/>
+            	
+            		<Key word="is"/>
+            	
+            		<Key word="isnull"/>
+            	
+            		<Key word="join"/>
+            	
+            		<Key word="left"/>
+            	
+            		<Key word="like"/>
+            	
+            		<Key word="natural"/>
+            	
+            		<Key word="notnull"/>
+            	
+            		<Key word="outer"/>
+            	
+            		<Key word="overlaps"/>
+            	
+            		<Key word="right"/>
+            	
+            		<Key word="similar"/>
+            	
+            		<Key word="verbose"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="col_name" bold="true" italic="false" color="Teal">
+            	
+            		<Key word="bigint"/>
+            	
+            		<Key word="bit"/>
+            	
+            		<Key word="boolean"/>
+            	
+            		<Key word="char"/>
+            	
+            		<Key word="character"/>
+            	
+            		<Key word="coalesce"/>
+            	
+            		<Key word="dec"/>
+            	
+            		<Key word="decimal"/>
+            	
+            		<Key word="exists"/>
+            	
+            		<Key word="extract"/>
+            	
+            		<Key word="float"/>
+            	
+            		<Key word="greatest"/>
+            	
+            		<Key word="inout"/>
+            	
+            		<Key word="int"/>
+            	
+            		<Key word="integer"/>
+            	
+            		<Key word="interval"/>
+            	
+            		<Key word="least"/>
+            	
+            		<Key word="national"/>
+            	
+            		<Key word="nchar"/>
+            	
+            		<Key word="none"/>
+            	
+            		<Key word="nullif"/>
+            	
+            		<Key word="numeric"/>
+            	
+            		<Key word="out"/>
+            	
+            		<Key word="overlay"/>
+            	
+            		<Key word="position"/>
+            	
+            		<Key word="precision"/>
+            	
+            		<Key word="real"/>
+            	
+            		<Key word="row"/>
+            	
+            		<Key word="setof"/>
+            	
+            		<Key word="smallint"/>
+            	
+            		<Key word="substring"/>
+            	
+            		<Key word="time"/>
+            	
+            		<Key word="timestamp"/>
+            	
+            		<Key word="treat"/>
+            	
+            		<Key word="trim"/>
+            	
+            		<Key word="values"/>
+            	
+            		<Key word="varchar"/>
+            	
+            		<Key word="xmlattributes"/>
+            	
+            		<Key word="xmlconcat"/>
+            	
+            		<Key word="xmlelement"/>
+            	
+            		<Key word="xmlforest"/>
+            	
+            		<Key word="xmlparse"/>
+            	
+            		<Key word="xmlpi"/>
+            	
+            		<Key word="xmlroot"/>
+            	
+            		<Key word="xmlserialize"/>
+            	
+            </KeyWords>
+            
+        </RuleSet>
+    </RuleSets>
+</SyntaxDefinition>

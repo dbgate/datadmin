@@ -1,0 +1,144 @@
+<Products>
+    <Product 
+		shareit_id="300362697" 
+		longtext="Professional Tools" 
+		text="Professional" 
+		name='pro' 
+		hides='personal,trial'
+		hidepurchaselinks='1'
+    >
+		
+        <Active forever="1"/>
+        <Updates unit="day" count="365"/>
+        <Support unit="day" count="365"/>
+		
+		<Feature name="pro"/>
+		
+		<Feature name="jobs"/>
+		<Feature name="querydesigner"/>
+		<Feature name="queryhistory"/>
+		<Feature name="dxdriver"/>
+		<Feature name="mssql_backup"/>
+		<Feature name="multifileexport"/>
+		<Feature name="multitableexport"/>
+		<Feature name="textimport"/>
+		<Feature name="diagrams"/>
+		<Feature name="dbsyn"/>
+		<Feature name="depbrowse"/>
+		<Feature name="advjobs"/>
+		<Feature name="advperspectives"/>
+		<Feature name="customdashboards"/>
+		<Feature name="extendedfileplaces"/>
+		<Feature name="masterdetail"/>
+		<Feature name="databasemodels"/>
+		<Feature name="codecompletion"/>
+	</Product>
+
+	<Product 
+    shareit_id="300413171" 
+    text="Database versioning" 
+    name='versiondb' 
+    hides='personal'
+		hidepurchaselinks='1'
+    >
+		<Active unit="year" count="1"/>
+		<Updates unit="year" count="1"/>
+		<Support unit="year" count="1"/>
+
+		<Feature name="versiondb"/>
+		<Feature name="diagrams"/>
+		<Feature name="dbsyn"/>
+		<Feature name="depbrowse"/>
+		<Feature name="databasemodels"/>
+	</Product>
+
+	<Product 
+    shareit_id="300413172" 
+    text="Data synchronization" 
+    name='datasyn' 
+    hides='personal'
+		hidepurchaselinks='1'
+    >
+		<Active unit="year" count="1"/>
+		<Updates unit="year" count="1"/>
+		<Support unit="year" count="1"/>
+
+		<Feature name="datasyn"/>
+        <Feature name="advjobs"/>
+        <Feature name="jobs"/>
+		<Feature name="dbsyn"/>
+	</Product>
+
+	<Product 
+    shareit_id="300413173" 
+    text="Application builder" 
+    name='appbuilder' 
+    hides='personal'
+		hidepurchaselinks='1'
+    >
+		<Active unit="year" count="1"/>
+		<Updates unit="year" count="1"/>
+		<Support unit="year" count="1"/>
+
+		<Feature name="appbuilder"/>
+	</Product>
+
+
+    <Product 
+      shareit_id="300362779" 
+      text="Ultimate" 
+      name='ultimate' 
+      hides='personal,pro,trial'
+      hidepurchaselinks='1'
+      >
+        <Active unit="year" count="1"/>
+        <Updates unit="year" count="1"/>
+        <Support unit="year" count="1"/>
+		
+		<Feature name="all"/>
+	</Product>
+
+	<Product text="Professional-EVAL" name='pro-eval' hides='personal' use='Product[@name="pro"]'>
+		<Active unit="day" count="31"/>
+		<Updates unit="day" count="31"/>
+		<Support unit="day" count="0"/>
+	</Product>
+
+	<Product text="Database versioning-EVAL" name='versiondb-eval' hides='personal' use='Product[@name="versiondb"]'>
+		<Active unit="day" count="31"/>
+		<Updates unit="day" count="31"/>
+		<Support unit="day" count="0"/>
+	</Product>
+
+	<Product text="Data synchronization-EVAL" name='datasyn-eval' hides='personal' use='Product[@name="datasyn"]'>
+		<Active unit="day" count="31"/>
+		<Updates unit="day" count="31"/>
+		<Support unit="day" count="0"/>
+	</Product>
+
+	<Product text="Trial" name='trial' hides='personal'>
+        <Active unit="day" count="31"/>
+        <Updates unit="day" count="31"/>
+        <Support unit="day" count="0"/>
+
+		<Feature name="all"/>
+	</Product>
+
+	<Product text="Testing" name='testing' hides='personal'>
+		<Active unit="month" count="6"/>
+		<Updates unit="month" count="6"/>
+		<Support unit="month" count="6"/>
+
+		<Feature name="all"/>
+	</Product>
+
+
+	<Product text="Universal" name='universal' hides='personal' longtext="Universal" hidepurchaselinks='1'>
+     <Active forever="1"/>
+     <Updates unit="day" count="365"/>
+     <Support unit="day" count="365"/>
+
+		<Feature name="all"/>
+	</Product>
+
+</Products>

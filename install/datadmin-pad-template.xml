@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>3.01</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>PADManager 2.0.46</MASTER_PAD_EDITOR>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <RoboSoft>
+    <Company_UIN>CMP-0099159DD56</Company_UIN>
+    <Company_Description></Company_Description>
+    <Product_UIN>APP-009915797AE</Product_UIN>
+    <Publish_on_CD>FALSE</Publish_on_CD>
+    <Search_String></Search_String>
+    <Press_Release_Search_String></Press_Release_Search_String>
+    <NewsFeed_Search_String></NewsFeed_Search_String>
+    <Search_Engine_Search_String></Search_Engine_Search_String>
+    <Web_Directories_Search_String></Web_Directories_Search_String>
+    <Search_String_Unique></Search_String_Unique>
+    <Comments_For_Reviewer></Comments_For_Reviewer>
+    <Additional_Categories></Additional_Categories>
+    <Backlink></Backlink>
+  </RoboSoft>
+  <Company_Info>
+    <Company_Name>JenaSoft</Company_Name>
+    <Address_1>Padovska 585/10</Address_1>
+    <Address_2>Praha 111</Address_2>
+    <City_Town>Prague</City_Town>
+    <State_Province></State_Province>
+    <Zip_Postal_Code>10900</Zip_Postal_Code>
+    <Country>Czech</Country>
+    <Company_WebSite_URL>http://datadmin.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Contact_First_Name>Jan</Contact_First_Name>
+      <Contact_Last_Name>Prochazka</Contact_Last_Name>
+      <Contact_Email>software@datadmin.com</Contact_Email>
+      <Author_First_Name>Jan</Author_First_Name>
+      <Author_Last_Name>Prochazka</Author_Last_Name>
+      <Author_Email>software@datadmin.com</Author_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>software@datadmin.com</Sales_Email>
+      <Support_Email>software@datadmin.com</Support_Email>
+      <General_Email>software@datadmin.com</General_Email>
+      <Sales_Phone></Sales_Phone>
+      <Support_Phone></Support_Phone>
+      <General_Phone></General_Phone>
+      <Fax_Phone></Fax_Phone>
+    </Support_Info>
+  </Company_Info>
+  <NewsFeed>
+    <NewsFeed_FORM>Y</NewsFeed_FORM>
+    <NewsFeed_VERSION>1.0</NewsFeed_VERSION>
+    <NewsFeed_URL>http://datadmin.com/en/taxonomy/term/5/0/feed</NewsFeed_URL>
+    <NewsFeed_Type>RSS 0.90</NewsFeed_Type>
+    <NewsFeed_Language>English</NewsFeed_Language>
+    <NewsFeed_Purpose>News</NewsFeed_Purpose>
+    <NewsFeed_Author_Email>software@datadmin.com</NewsFeed_Author_Email>
+    <NewsFeed_Author_First_Name>Jan</NewsFeed_Author_First_Name>
+    <NewsFeed_Author_Last_Name>Prochazka</NewsFeed_Author_Last_Name>
+    <NewsFeed_DESCRIPTION></NewsFeed_DESCRIPTION>
+    <NewsFeed_Feed_URL></NewsFeed_Feed_URL>
+    <NewsFeed_Site_Name></NewsFeed_Site_Name>
+    <NewsFeed_Site_URL></NewsFeed_Site_URL>
+    <NewsFeed_Title></NewsFeed_Title>
+    <NewsFeed_Description_70></NewsFeed_Description_70>
+    <NewsFeed_Description_250></NewsFeed_Description_250>
+  </NewsFeed>
+  <Site>
+    <Site_FORM>Y</Site_FORM>
+    <Site_VERSION>1.0</Site_VERSION>
+    <Site_URL>http://Submit-Everywhere.com/extensions/Site.htm</Site_URL>
+    <Site_DESCRIPTION>This PAD extension allows you to add your site info into your PAD file. This info can be used by site submission software or by web directories themselves.</Site_DESCRIPTION>
+    <Site_Contact_Email>software@datadmin.com</Site_Contact_Email>
+    <Site_Contact_First_Name>Jan</Site_Contact_First_Name>
+    <Site_Contact_Last_Name>Prochazka</Site_Contact_Last_Name>
+    <Site_Description_100>Database tools - administration, data synchronization, database versioning</Site_Description_100>
+    <Site_Description_250>Database tools - administration, query designer, database model editor, data synchronization, database versioning. Custom plugin development.</Site_Description_250>
+    <Site_Description_450>Database tools - administration, query designer, database model editor, data synchronization, database versioning. Custom plugin development.</Site_Description_450>
+    <Site_Site_URL>http://datadmin.com</Site_Site_URL>
+    <Site_Site_Title>DatAdmin Personal</Site_Site_Title>
+    <Site_Keywords>database, manager, organizer, explorer, oracle, mysql, mssql, sqlite, effiproz, sqlserver, jet, access, postgre, tsql, sql, backup</Site_Keywords>
+  </Site>
+  <Program_Info>
+    <Program_Name>DatAdmin Personal</Program_Name>
+    <Program_Version>#VERSION#</Program_Version>
+    <Program_Release_Month>#MONTH#</Program_Release_Month>
+    <Program_Release_Day>#DAY#</Program_Release_Day>
+    <Program_Release_Year>#YEAR#</Program_Release_Year>
+    <Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>Major Update</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>Win98,Win2000,WinXP,WinServer,WinVista,WinVista x64,Win7 x32,Win7 x64</Program_OS_Support>
+    <Program_Language>English,Czech,Italian,French</Program_Language>
+    <Program_Change_Info>EffiProz support. New query builder with condition builder. Query history.</Program_Change_Info>
+    <Program_System_Requirements>Microsoft .NET Framework 2.0</Program_System_Requirements>
+    <Program_Category_Class>Business::Databases &amp; Tools</Program_Category_Class>
+    <File_Info>
+      <File_Size_Bytes>#SIZE_BYTES#</File_Size_Bytes>
+      <File_Size_K>#SIZE_KBYTES#</File_Size_K>
+      <File_Size_MB>#SIZE_MBYTES#</File_Size_MB>
+      <Filename_Versioned></Filename_Versioned>
+      <Filename_Previous></Filename_Previous>
+      <Filename_Generic></Filename_Generic>
+      <Filename_Long></Filename_Long>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Count></Expire_Count>
+      <Expire_Other_Info></Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+      <Expire_Year></Expire_Year>
+    </Expire_Info>
+    <Program_Categories>Business &amp; Finance :: Database Managers,Programming :: Databases &amp; Networks,Programming :: SQL</Program_Categories>
+    <Limitations>No limitations</Limitations>
+    <Program_Cost_Other_Code></Program_Cost_Other_Code>
+    <Program_Cost_Other></Program_Cost_Other>
+    <Awards></Awards>
+    <Program_Specific_Category></Program_Specific_Category>
+    <Includes_JAVA_VM></Includes_JAVA_VM>
+    <Includes_VB_Runtime></Includes_VB_Runtime>
+    <Includes_DirectX></Includes_DirectX>
+  </Program_Info>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>http://datadmin.com</Application_Info_URL>
+      <Application_Screenshot_URL>http://datadmin.com/img/scrshot/datagrid.png</Application_Screenshot_URL>
+      <Application_Icon_URL>http://datadmin.com/img/datadmin-icon.gif</Application_Icon_URL>
+      <Application_XML_File_URL>http://datadmin.com/datadmin-pad.xml</Application_XML_File_URL>
+      <Application_Order_URL></Application_Order_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>http://datadmin.com/datadmin-install.exe</Primary_Download_URL>
+      <Secondary_Download_URL>http://datadmin.jenasoft.com/datadmin-install.exe</Secondary_Download_URL>
+      <Additional_Download_URL_1></Additional_Download_URL_1>
+      <Additional_Download_URL_2></Additional_Download_URL_2>
+    </Download_URLs>
+  </Web_Info>
+  <Permissions>
+    <Distribution_Permissions>The Personal edition of DatAdmin can be freely distributed over the internet in an unchaged form</Distribution_Permissions>
+    <EULA>END USER LICENSE AGREEMENT
+If you install or copy DatAdmin you agree with conditions of this agreement.
+If you don't agree with it, don't install nor copy DatAdmin.
+
+DatAdmin Personal is freeware for non-commercial use. 
+DatAdmin Professional is shareware, you can use it 30 days for free, than it is neccessary to buy or uninstall it.
+
+DISCLAIMER OF WARRANTY AND LIABILITY
+DatAdmin is provided "as is" without representations 
+or warranties of any kind, whether expressed or implied. 
+The USER must assume the entire risk of using the SOFTWARE, 
+and author of DatAdmin shall have no liability to the user of DatAdmin or any other 
+third-party for any damages whatsoever, including, 
+but not limited to, any economic or data loss, even if such 
+loss was foreseeable by author of DatAdmin.</EULA>
+  </Permissions>
+  <Press_Release>
+    <Press_Release>&lt;b&gt;Prague, Czech Republic, August 12, 2009&lt;/b&gt;
+
+JenaSoft today announced release 3.2 of new generation cross-platform database administration tool, DatAdmin. DatAdmin offers easy and quick to use database administration tools in intuitive enviroment. It can be used to browse and change database structure, run and generate SQL queries, edit table data, backup and restore database, export table and database structure into various formats, synchronize database structure, visually build queries, create database diagrams, maintain database model.
+
+DatAdmin supports Oracle, MySQL, MS SQL, Postgre SQL, SQLite, EffiProz and MS Access databases. DatAdmin is primarily developed for Windows, but the newest version can run also under Linux using mono platform.
+
+New version adds support for Linux, new advanced exports (batch export of BLOB fields into more files, batch export of mutliple tables) and imports (import from text using regular expressions), command line interface, new wizards, support of events for MySQL 5.1 and easy connectivity to MySQL over PHP tunnel.
+
+DatAdmin is available in two editions: Personal, which is free, and Professional for $60 per installation.
+
+For more informations please visit DatAdmin homepage, http://datadmin.com
+
+JenaSoft is a Czech software company founded in 2006, specialized in database software.</Press_Release>
+    <Headline>DatAdmin 3.2.2, new database management tool, is released</Headline>
+    <Summary>JenaSoft today announced release 3.2 of new generation cross-platform database administration tool, DatAdmin. DatAdmin offers easy and quick to use database administration tools in intuitive enviroment</Summary>
+  </Press_Release>
+  <Program_Descriptions>
+    <English>
+      <Keywords>database, manager, organizer, explorer, oracle, mysql, mssql, sqlite, sqlserver, jet, access, postgre, tsql, sql, backup</Keywords>
+      <Char_Desc_45>Quick and easy database administration</Char_Desc_45>
+      <Char_Desc_80>Quick and easy database administration for Windows for many popular engines</Char_Desc_80>
+      <Char_Desc_250>Quick and easy database administration, natively supports Oracle, MSSQL, MySQL, SQLite, Postgre SQL, MS Access, EffiProz. Main features: Creating and restoring backups. Transfer data between databases, tables and data files or edit database schema.</Char_Desc_250>
+      <Char_Desc_450>Quick and easy database administration, natively supports Oracle, MSSQL, MySQL, SQLite, Postgre SQL, MS Access, EffiProz. Main features: Creating and restoring backups. Transfer data between databases, tables and data files (supported formats are XML, CSV, HTML, Excel). Edit database schema, tables, views and other db objects. Run queries, generate SQL. View, edit, filter and sort data in tables. More features in Proffesional edition.</Char_Desc_450>
+      <Char_Desc_2000>
+Quick and easy database administration, natively supports Oracle, MSSQL, MySQL, SQLite, Postgre SQL, MS Access, EffiProz. 
+Main features: 
+  Creating and restoring backups. 
+  Transfer data between databases, tables and data files (supported formats are XML, CSV, HTML, Excel). 
+  Edit database schema, tables, views, view, triggers, stored procedures.
+  Run queries, generating query templates. 
+  View, edit, filter and sort data in tables.
+  Cell data viewers and editors (text, XML, image, hexa) 
+  Display data from referenced tables. 
+  Command-line interface. 
+  Migrate database between all supported platforms. 
+  SQL script manager. 
+  Table perspectives, view related columns in data browser.
+</Char_Desc_2000>
+    </English>
+    <Czech>
+      <Keywords>database, manager, organizer, explorer, oracle, mysql, mssql, sqlite, sqlserver, jet, access, postgre, tsql, sql, backup</Keywords>
+      <Char_Desc_45>Jednoduchá a rychlá správa databáze</Char_Desc_45>
+      <Char_Desc_80>Jednoduchá a rychlá správa databáze, podpora mnoha populárních databází</Char_Desc_80>
+      <Char_Desc_250>Jednoduchá a rychlá správa databáze pro Oracle, MySQL, MS SQL, SQLite, Postgre SQL, MS Access, EffiProz. Kromě úpravy dat a struktury databáze zvládá také zálohování a obnovu databáze, export a import z/do textových a XML souborů</Char_Desc_250>
+      <Char_Desc_450>Jednoduchá a rychlá správa databáze pro Oracle, MySQL, MS SQL, SQLite, Postgre SQL, MS Access, EffiProz. Kromě úpravy dat a struktury databáze zvládá také zálohování a obnovu databáze, export a import z/do textových a XML souborů, návrh tabulek nezávisle na databázi. Díky podpoře ODBC je s omezenými možnostmi možné se připojit téměr k jakékoliv databázi.</Char_Desc_450>
+      <Char_Desc_2000>Jednoduchá a rychlá správa databáze pro Oracle, MySQL, MS SQL, SQLite, Postgre SQL, MS Access, EffiProz. Kromě úpravy dat a struktury databáze zvládá také zálohování a obnovu databáze, export a import z/do textových a XML souborů, návrh tabulek nezávisle na databázi. Díky podpoře ODBC je s omezenými možnostmi možné se připojit téměr k jakékoliv databázi. Generátor dotazů generuje kostry dotazů relativních k tabulce (CREATE, DROP, SELECT, UPDATE). Úprava ostatních databázových objektů (pohledy, triggery, uložené procedury). Možnost stornovat déletrvající operace. Správce SQL skriptů. Další funkce jsou k dispozici v edicích Proffesional a Ultimate.</Char_Desc_2000>
+    </Czech>
+    <Italian>
+      <Keywords>database, manager, organizer, explorer, oracle, mysql, mssql, sqlite, sqlserver, jet, access, postgre, tsql, sql, backup</Keywords>
+      <Char_Desc_45>Gestore database facile e veloce</Char_Desc_45>
+      <Char_Desc_80>Gestore database facile e veloce</Char_Desc_80>
+      <Char_Desc_250>Gestore database facile e veloce per Oracle, MySQL, MS SQL, SQLite, Postgre SQL, MS Access, EffiProz. Funzioni principali: Backup e Restore. Trasferimento dati fra database. Editazione tabelle e schema database</Char_Desc_250>
+      <Char_Desc_450>Gestore database facile e veloce per Oracle, MySQL, MS SQL, SQLite, Postgre SQL, MS Access, EffiProz. Funzioni principali: Backup e Restore. Trasferimento dati fra database. Editazione tabelle e schema database, (sono supportati i formati XML, CSV, HTML, Excel). Modifica dello schema, tabelle, viste e altri oggetti. Esecuzione query, generazione modelli query.Visualizzazione,editazione,filtro e ordinamento dati,Altre funzioni nella versione professionale</Char_Desc_450>
+      <Char_Desc_2000>Gestore database facile e veloce per Oracle, MySQL, MS SQL, SQLite, Postgre SQL, MS Access, EffiProz. Funzioni principali: Backup e Restore. Trasferimento dati fra database. Editazione tabelle e schema database, (sono supportati i formati XML, CSV, HTML, Excel). Modifica dello schema, tabelle, viste e altri oggetti. Esecuzione query, generazione modelli query. Visualizzazione, editazione, filtro e ordinamento dati, Visualizzazione dati dalle tabelle referenziate. Interfaccia a linea di comando. Modellazione e reverse engineering. Migrazione dati fra i database supportati. Altre funzioni nella versione professionale. </Char_Desc_2000>
+    </Italian>
+  </Program_Descriptions>
+</XML_DIZ_INFO>

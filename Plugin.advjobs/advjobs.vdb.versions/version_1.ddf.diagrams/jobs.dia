@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Diagram>
+  <Table groupid="d44a9326-0ed2-4ad4-9e79-38ecf9bcb40c" name="Job" x="82" y="8">
+    <Column groupid="8bd0484e-4e0e-4c53-a2f4-a229bd9c0b4e" name="ID" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="3f330c5a-58be-4f5a-9c64-26558e4e5143" name="JobFile" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="428b2e53-22ee-471d-a6d5-4aec7731e6d3" name="Minutes" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1">
+      <Default type="string" value="*" />
+    </Column>
+    <Column groupid="b1e00329-c35a-4375-aa36-e2dd2a917519" name="Hours" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1">
+      <Default type="string" value="*" />
+    </Column>
+    <Column groupid="d014e8c9-1aca-4556-a195-7d0146201ec7" name="DaysOfWeek" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1">
+      <Default type="string" value="*" />
+    </Column>
+    <Column groupid="f6ee55a4-7d0c-466a-a957-124b4c6a83d7" name="DaysOfMonth" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1">
+      <Default type="string" value="*" />
+    </Column>
+    <Column groupid="1b0068e5-2c61-49c9-9d26-7a0e1c51b904" name="Months" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1">
+      <Default type="string" value="*" />
+    </Column>
+    <PrimaryKey groupid="3b17ad23-d5b3-423d-bb5a-29bb0951bc8d" name="PK_Job">
+      <Column name="ID" />
+    </PrimaryKey>
+  </Table>
+  <Table groupid="e01c6334-3d4c-4fb9-8b8a-05595aaa99e3" name="JobExecute" x="390" y="121">
+    <Column groupid="5653c7ef-9f0b-48e3-9508-8587dcfd8ae2" name="ID" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="1eca4d36-2560-40d0-b2be-287452d5ec24" name="Job_ID" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <Column groupid="f6dcbb6b-8179-4ee6-9076-37375850a218" name="StartedAt" nullable="0" datatype="datetime" subtype="datetime" hastimezone="0" />
+    <Column groupid="9b3c9ec6-03f6-45f3-a77f-9065f0a622a6" name="FinishedAt" nullable="1" datatype="datetime" subtype="datetime" hastimezone="0" />
+    <PrimaryKey groupid="f1554a91-b232-4f2b-aac3-41e834debc0b" name="PK_JobExecute">
+      <Column name="ID" />
+    </PrimaryKey>
+    <ForeignKey pktable="Job" groupid="b56c28f4-4f2b-4a3c-8e4d-9b58c196c503" ondelete="undefined" onupdate="undefined" name="FK_JobExecute_Job_ID">
+      <Column name="Job_ID" />
+      <PkColumn name="ID" />
+    </ForeignKey>
+  </Table>
+  <Table groupid="76d9fdb0-d3bf-453b-a812-7866acc2e8b4" name="JobLogEntry" x="360" y="261">
+    <Column groupid="a514757f-6e54-4136-bbe2-778d7e884bd1" name="ID" nullable="0" datatype="int" bytes="4" autoincrement="1" unsigned="0" />
+    <Column groupid="41bbabe9-bb78-4e53-a130-cbe55bcc0c1b" name="Level" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="b8c65b8c-4234-42dc-aa91-4c72246d600f" name="ThreadName" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="e902555e-7d70-4073-9381-c85ae9d324fa" name="CreatedAt" nullable="0" datatype="datetime" subtype="datetime" hastimezone="0" />
+    <Column groupid="90f7cf88-d2c2-461f-a0ed-35b172cacc05" name="Message" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="531d4300-532a-4c64-9ccb-367af9cce549" name="Detail" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="43f6707a-4433-4b7d-a88d-86f0ddf45bc4" name="JobExecute_ID" nullable="0" datatype="int" bytes="4" autoincrement="0" unsigned="0" />
+    <PrimaryKey groupid="cae8da3b-07de-44f7-9387-490b9a487266">
+      <Column name="ID" />
+    </PrimaryKey>
+    <ForeignKey pktable="JobExecute" groupid="13bd5fa0-8105-4ab9-bbb3-092b86ad5c63" ondelete="undefined" onupdate="undefined" name="FK_JobLogEntry_JobExecute_ID">
+      <Column name="JobExecute_ID" />
+      <PkColumn name="ID" />
+    </ForeignKey>
+    <Param name="mysql.engine">InnoDB</Param>
+    <Param name="mysql.auto_increment">333443</Param>
+    <Param name="mysql.collation">latin2_general_ci</Param>
+    <Comment>InnoDB free: 929792 kB; (`ErrorReport_ID`) REFER `jenasoftcom04/ErrorReport`(`ID</Comment>
+  </Table>
+  <Table groupid="1f285289-8752-4086-9164-684d9608a228" name="Variables" x="621" y="33">
+    <Column groupid="75fe26ee-ced0-465a-ac21-4d6bea8eb625" name="Name" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <Column groupid="7b9e0409-7a41-4c6e-b45a-6067ea4c12e8" name="Value" nullable="0" datatype="string" length="0" unicode="0" binary="0" varlength="1" />
+    <PrimaryKey groupid="93bd00bb-13bf-4c19-9592-60fa6b731e20" name="PK_Variables">
+      <Column name="Name" />
+    </PrimaryKey>
+    <FixedData>
+      <Row>
+        <Name t="str">version</Name>
+        <Value t="str">0</Value>
+      </Row>
+    </FixedData>
+  </Table>
+  <Style>
+    <Member name="DefaulEntity">
+      <Member name="RowStyleSet">
+        <Member name="PrimaryKey">
+          <List name="Cells">
+            <Item index="0">
+              <Property name="Data" value="None" />
+              <Member name="Image">
+                <Property name="CoreIcon" value="primary_key" />
+              </Member>
+            </Item>
+            <Item index="1">
+              <Property name="Data" value="ColumnName" />
+              <Member name="Font">
+                <Property name="FontSize" value="9.75" />
+                <Property name="Bold" value="True" />
+              </Member>
+            </Item>
+            <Item index="2">
+              <Property name="Data" value="TypeName" />
+            </Item>
+          </List>
+        </Member>
+        <Member name="Null">
+          <List name="Cells">
+            <Item index="0">
+              <Property name="Data" value="None" />
+            </Item>
+            <Item index="1">
+              <Property name="Data" value="ColumnName" />
+            </Item>
+            <Item index="2">
+              <Property name="Data" value="TypeName" />
+            </Item>
+          </List>
+        </Member>
+        <Member name="NotNull">
+          <List name="Cells">
+            <Item index="0">
+              <Property name="Data" value="None" />
+            </Item>
+            <Item index="1">
+              <Property name="Data" value="ColumnName" />
+              <Member name="Font">
+                <Property name="FontSize" value="9.75" />
+                <Property name="Bold" value="True" />
+              </Member>
+            </Item>
+            <Item index="2">
+              <Property name="Data" value="TypeName" />
+            </Item>
+          </List>
+        </Member>
+        <Member name="FkNull">
+          <List name="Cells">
+            <Item index="0">
+              <Property name="Data" value="None" />
+              <Member name="Image">
+                <Property name="CoreIcon" value="foreign_key" />
+              </Member>
+            </Item>
+            <Item index="1">
+              <Property name="Data" value="ColumnName" />
+            </Item>
+            <Item index="2">
+              <Property name="Data" value="TypeName" />
+            </Item>
+          </List>
+        </Member>
+        <Member name="FkNotNull">
+          <List name="Cells">
+            <Item index="0">
+              <Property name="Data" value="None" />
+              <Member name="Image">
+                <Property name="CoreIcon" value="foreign_key" />
+              </Member>
+            </Item>
+            <Item index="1">
+              <Property name="Data" value="ColumnName" />
+              <Member name="Font">
+                <Property name="FontSize" value="9.75" />
+                <Property name="Bold" value="True" />
+              </Member>
+            </Item>
+            <Item index="2">
+              <Property name="Data" value="TypeName" />
+            </Item>
+          </List>
+        </Member>
+      </Member>
+      <Member name="Header">
+        <List name="Cells">
+          <Item index="0">
+            <Property name="Colspan" value="3" />
+            <Member name="Font">
+              <Property name="FontSize" value="12" />
+              <Property name="Bold" value="True" />
+            </Member>
+            <Property name="TextAlign" value="MiddleCenter" />
+          </Item>
+        </List>
+        <Property name="BgColor" value="PaleTurquoise" />
+        <Member name="BottomBorder">
+          <Property name="Color" value="Silver" />
+          <Property name="Width" value="2" />
+        </Member>
+      </Member>
+    </Member>
+  </Style>
+</Diagram>

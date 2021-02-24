@@ -1,0 +1,27 @@
+<Object type="DatAdmin.DbDriverSet, DatAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <DbDriverSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Drivers>
+            <DbDriverDefinition>
+                <InvariantName>MySQL</InvariantName>
+                <Name>MySQL</Name>
+                <AssemblyPath>MySql.Data.dll</AssemblyPath>
+                <FactoryType>MySql.Data.MySqlClient.MySqlClientFactory</FactoryType>
+                <IsSystem>false</IsSystem>
+            </DbDriverDefinition>
+            <DbDriverDefinition>
+                <InvariantName>PostgreSQL</InvariantName>
+                <Name>Postgre SQL</Name>
+                <AssemblyPath>Npgsql.dll</AssemblyPath>
+                <FactoryType>Npgsql.NpgsqlFactory</FactoryType>
+                <IsSystem>false</IsSystem>
+            </DbDriverDefinition>
+            <DbDriverDefinition>
+                <InvariantName>SQLite</InvariantName>
+                <Name>SQLite</Name>
+                <AssemblyPath>System.Data.SQLite.DLL</AssemblyPath>
+                <FactoryType>System.Data.SQLite.SQLiteFactory</FactoryType>
+                <IsSystem>false</IsSystem>
+            </DbDriverDefinition>
+        </Drivers>
+    </DbDriverSet>
+</Object>

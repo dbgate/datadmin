@@ -1,0 +1,28 @@
+<Module>
+    <RunSql title='DELETE ALL' nodes='table'>
+        <Code>DELETE FROM $[table.q_name]</Code>
+    </RunSql>
+
+    <RunSql title='CREATE DATABASE' nodes='database_list'>
+        <Code>CREATE DATABASE $[dbname]</Code>
+        <InParam name='dbname' title='s_database_name' type='String'/>
+    </RunSql>
+
+    <DbList title='s_columns' nodes='table|column_list' image='column.bmp' nodegen='0' position='5'>
+        <Code>SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='$[table.name]' #TABLE_SCHEMA_COND#</Code>
+    </DbList>
+
+    <DbList title='s_tables' nodes='database|table_list' image='table.bmp' nodegen='0' position='5'>
+        <Code>SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' #SCHEMA_COND#</Code>
+    </DbList>
+
+!--
+    <DbList title='s_views' nodes='database' dbentity='view' image='view.bmp' name='views'>
+        <Code>SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE LIKE '%VIEW%' #SCHEMA_COND#</Code>
+        <ChildTitleColumn>TABLE_NAME</ChildTitleColumn>
+    </DbList>
+
+    <DbList title='s_databases' nodes='dbserver' image='database.bmp' nodegen='0'>
+        <Code>@getschema databases</Code>
+    </DbList>
+</Module>

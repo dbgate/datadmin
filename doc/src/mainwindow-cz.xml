@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="Hlavní okno">
+
+<p>
+Hlavní okno je rozděleno do tří částí
+<ul>
+    <li>Vlevo - strom připojení - na kartě Strom jsou vidět všechna nadefinovaná databázová připojení, datové archivy, diagramy, 
+    zkrátka všechny datové objekty. Na kartě Rozšíření je seznam addonů (momentálně je použití poměrně technicky náročné).</li>
+    <li>Vpravo - prostor pro otevřené dokumenty. Implicitně jsou otevřené záložky 
+    Přehled (zobrazuje souhrnné informace o právě vybraném uzlu ve stromě) a Prohlížeč dat
+    (umožňuje zobrazovat a editovat data tabulek)</li>
+    <li>Dole - na kartě data je k dispozici editor dat buňky v různých formátech. Tento editor zobrazuje vždy obsah poslední
+    vybrané buňky z prohližeče dat (příp. z tabulky otevřené v samostatném panelu). Na kartě Log jsou logovací výpisy (musejí se zapnout v nastavení),
+    na kartě Procesy je seznam bežících a doběhlých procesů (např. export do datového archivu, export dat tabulky)</li>   
+</ul>
+
+</p>
+
+</help>

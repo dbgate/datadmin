@@ -1,0 +1,115 @@
+create_view:
+		CREATE (OR REPLACE)? f_inc 
+        (f_nl ALGORITHM EQUALS id)?
+        (f_nl DEFINER EQUALS user)?
+        (f_nl SQL SECURITY (DEFINER|INVOKER))?
+        f_dec f_nl VIEW id ( LPAREN id (COMMA id)* RPAREN)?
+        AS f_nl (select_statement | LPAREN select_statement RPAREN) 
+        (WITH (CASCADED | LOCAL)? CHECK OPTION)?;
+
+// SELECT
+
+f_nl: -> F_NL;
+f_dec: -> F_DEC;
+f_inc: -> F_INC;
+
+select_statement: 
+    select_statement_component 
+    (f_nl UNION ALL? f_nl select_statement_component)*
+    
+    (f_nl ORDER BY selectby_expr (COMMA selectby_expr)*)?
+    (f_nl LIMIT ((T_INTEGER COMMA)? INTEGER | INTEGER OFFSET INTEGER ))? 
+    (f_nl FOR UPDATE | LOCK IN SHARE MODE)?
+    ; 
+    
+select_statement_component:
+        SELECT
+        (ALL | DISTINCT | DISTINCTROW)?
+        HIGH_PRIORITY?
+        STRAIGHT_JOIN?
+        SQL_SMALL_RESULT? SQL_BIG_RESULT? SQL_BUFFER_RESULT?
+        (SQL_CACHE | SQL_NO_CACHE)? SQL_CALC_FOUND_ROWS?
+    f_inc f_nl select_expr (COMMA f_nl select_expr)* f_dec f_nl 
+    (f_nl FROM table_references)?
+    (f_nl WHERE condition)?
+    (f_nl GROUP BY selectby_expr (COMMA selectby_expr)* (WITH ROLLUP)?)? 
+    (f_nl HAVING condition)?
+    ;
+
+selectby_expr: expr (ASC|DESC)?;
+
+select_expr:
+    expr (AS? id)?
+    | id DOT ASTERISK  
+    | ASTERISK
+;
+            
+table_references:
+    f_inc table_reference (COMMA table_reference)* f_dec
+    ;
+
+
+table_reference:
+    table_factor join_table*;
+ 
+table_factor:
+    id (AS? id)? index_hint?
+    | table_subquery AS? id
+    | LPAREN table_references RPAREN
+    | OJ table_factor LEFT OUTER JOIN table_factor ON condition 
+;
+
+join_table:
+    f_nl (
+        INNER | CROSS | LEFT OUTER? | RIGHT OUTER? 
+        | NATURAL ((LEFT|RIGHT) OUTER?)? 
+    )? 
+    (JOIN|STRAIGHT_JOIN) table_factor join_condition?
+;
+
+//table_reference:
+//    id (AS? id)? index_hint?
+//    | table_subquery AS? id
+//    | LPAREN table_references RPAREN
+//    | OJ table_reference LEFT OUTER JOIN table_reference ON condition
+//;
+
+
+//table_reference options {backtrack=true;memoize=true;}:
+//    table_factor | join_table
+//    ;
+
+//table_factor options {backtrack=true;memoize=true;}:
+//    id (AS? id)? index_hint?
+//  | table_subquery AS? id
+//  | LPAREN table_references RPAREN
+//  | OJ table_reference LEFT OUTER JOIN table_reference ON condition
+//;
+
+//join_table options {backtrack=true;memoize=true;}: table_factor join_table_2;
+
+//join_table_2 options {backtrack=true;memoize=true;}:
+//    (INNER | CROSS)? JOIN table_factor join_condition?
+//    | STRAIGHT_JOIN table_factor (ON condition)?
+//    | (LEFT|RIGHT) OUTER? JOIN table_reference join_condition
+//    | NATURAL ((LEFT|RIGHT) OUTER?)? JOIN table_factor
+//;
+
+join_condition:
+    ON condition
+  | USING LPAREN id (COMMA id)* RPAREN
+  ;
+
+index_hint:
+    USE (INDEX|KEY) (FOR JOIN)? LPAREN id (COMMA id)* RPAREN
+  | IGNORE (INDEX|KEY) (FOR JOIN)? LPAREN id (COMMA id)* RPAREN
+  | FORCE (INDEX|KEY) (FOR JOIN)? LPAREN id (COMMA id)* RPAREN
+  ;
+
+table_subquery:
+    LPAREN select_statement RPAREN; 
+
+user:
+    CURRENT_USER ( LPAREN RPAREN )? |
+    id AT id
+;

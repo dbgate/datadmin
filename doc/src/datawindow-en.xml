@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="Data browser">
+
+
+<p>
+Data Browser displays the data of table currectly selected in connection tree. Supports quick search,
+sorting, paging, history, canceling of loading, etc.
+</p>
+
+<ul>
+     <li> In the upper bar is available quick search (just enter the search text box next to the icon <coreicon name='find'/>) and press Enter.
+     Search is performed on data of whole table, rather than loaded page data (so there is request database server) </li>
+     <li> Icon <coreicon name='filter'/>) displays tool panel for filtering. </li>
+     <li> Icon <coreicon name='detail'/>) displays tool panel  table with referenced data (master / detail view). </li>
+     <li> Icon <coreicon name='browse'/>) displays tool panel for browsing history (it makes sense in combination with a master / detail views). </li>
+     <li> Icon <coreicon name='reset'/>) resets view (sets the default sorting, filtering is turned off). </li>
+</ul>
+
+<h2> Filtering Tool Bar </h2>
+<coreicon name='filter'/>
+<br/>
+<p>
+This panel allows you to specify the WHERE condition to run SQL command. SQL syntax is the same as syntax used by database.
+</p>
+
+<h2> Reference Tool Bar </h2>
+<coreicon name='detail'/>
+<br/>
+<p>
+This panel allows to view data related to the current row. Is it possible to display 2 types of referenced data:
+     <ul>
+         <li> detail - in the bottom table are displayed <b> all rows </b> related to current <b>line</b> of the upper grid.
+         Relations, which are used, can be chosen in a drop-down list Detail. </li>
+         <li> Master - in the bottom table is displayed <b> one row</b> related to selected <b>cell</b> in upper grid.</li>
+         <li> master / detail works only if foreign keys are correctly defined.</li>
+         <li> The Go to <coreicon name='goto'/> Icon - data that is displayed in the bottom table, will appear in upper table, so you can 
+         edit it and transitively view its references. </li>
+     </ul>
+</p>
+
+<h2> Tool Bar History </h2>
+<coreicon name='browse'/>
+<br/>
+<p>
+This panel allows to move in the history of links browsed by "Go To" command Reference panel. History is relative
+to the table selected in the connection tree. The reset <coreicon name='reset'/> command clears this history for the selected table.
+</p> 
+
+</help>

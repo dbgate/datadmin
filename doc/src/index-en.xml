@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<contents>
+<item title="DatAdmin" href="start">
+    <item title="Main window" href="mainwindow"/>
+    <item title="Data Browser" href="datawindow"/>
+    <item title="Drag &amp; Drop operations" href="datadragdrop"/>
+</item>
+<item title="Database export">
+    <item title="Multiple files" href="multiplefiles"/>
+</item>
+<item title="How-to">
+    <item title="PHP Tunnel" href="phptunnel"/>
+</item>
+<item title="Command line interface" href="daci"/>
+</contents>

@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6DA08E77-8471-4AF8-8B3E-C3458DF17457}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DatAdmin</RootNamespace>
+    <AssemblyName>DatAdmin</AssemblyName>
+    <ApplicationIcon>datadmin.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LinqBridge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c2b14eb747628076, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\extbin\LinqBridge.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dockers\ConnectionsDocker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dockers\ConnectionsDocker.Designer.cs">
+      <DependentUpon>ConnectionsDocker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dockers\DataBrowserDocker.cs" />
+    <Compile Include="Dockers\DockerWrapper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dockers\DockerWrapper.Designer.cs">
+      <DependentUpon>DockerWrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dockers\LogDocker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dockers\LogDocker.Designer.cs">
+      <DependentUpon>LogDocker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dockers\SummaryDocker.cs" />
+    <Compile Include="Dockers\WindowsDocker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dockers\WindowsDocker.Designer.cs">
+      <DependentUpon>WindowsDocker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Icons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowSettings.cs" />
+    <Compile Include="MainWinRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainWinRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dockers\ConnectionsDocker.resx">
+      <DependentUpon>ConnectionsDocker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dockers\DockerWrapper.resx">
+      <DependentUpon>DockerWrapper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dockers\LogDocker.resx">
+      <DependentUpon>LogDocker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dockers\WindowsDocker.resx">
+      <DependentUpon>WindowsDocker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWinRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainWinRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dockers\SavedJobsDocker.resx">
+      <DependentUpon>SavedJobsDocker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Dockers\SavedJobsDocker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dockers\SavedJobsDocker.Designer.cs">
+      <DependentUpon>SavedJobsDocker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Singleton.cs" />
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatAdmin.Core\DatAdmin.Core.csproj">
+      <Project>{547419E9-1B72-4961-B69F-2B4242CDEF7C}</Project>
+      <Name>DatAdmin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatAdmin.Framework\DatAdmin.Framework.csproj">
+      <Project>{5D983A69-5556-45CF-B4E1-BF78CFF9FD15}</Project>
+      <Name>DatAdmin.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatAdmin.Wizard\DatAdmin.Wizard.csproj">
+      <Project>{94955608-38E0-43BE-AE73-0C16012E7445}</Project>
+      <Name>DatAdmin.Wizard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
+      <Project>{C75532C4-765B-418E-B09B-46D36B2ABDB1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lang\base.cz" />
+    <None Include="lang\base.en" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="datadmin.ico" />
+    <None Include="app.config" />
+    <None Include="datadmin.png" />
+    <Content Include="lang\cz.xml" />
+    <Content Include="lang\en.xml" />
+    <Content Include="lang\fr.xml" />
+    <Content Include="lang\it.xml" />
+    <None Include="lang\base.fr" />
+    <None Include="Resources\windowlist.png" />
+    <None Include="Resources\perspective.png" />
+    <None Include="Resources\export2.png" />
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\mainicon.png" />
+    <None Include="Resources\splash3.png" />
+    <None Include="lang\base.it" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\person.png" />
+    <None Include="Resources\uninstall.png" />
+    <None Include="Resources\install.png" />
+    <None Include="Resources\favorite.png" />
+    <None Include="Resources\fatal.png" />
+    <None Include="Resources\layout.xml" />
+    <None Include="Resources\feedback.png" />
+    <None Include="Resources\purchase.png" />
+    <None Include="Resources\properties.png" />
+    <None Include="Resources\sql.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\main_window.png" />
+    <None Include="Resources\alone_window.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\closeall.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\saveas.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\connect.png" />
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(ProjectDir)lang\*.* $(TargetDir)lang\ /Y /E
+xcopy $(ProjectDir)lib\*.* $(TargetDir)lib\ /Y /E
+xcopy $(ProjectDir)..\addons\lib\*.* $(TargetDir)lib\addons\ /Y /E
+xcopy $(ProjectDir)..\images\*.png $(TargetDir)images\ /Y /E
+xcopy $(ProjectDir)..\addons\drivers.xml $(TargetDir)lib\ /Y /E
+xcopy $(ProjectDir)..\doc\*.chm $(TargetDir) /Y /E
+
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

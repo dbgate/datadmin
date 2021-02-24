@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="PHP Tunnel">
+
+<h2>When use PHP Tunnel?</h2>
+<p>PHP Tunel can be used, when you have web server, which can run PHP scripts and can reach database, which is not visible from remote machines.</p>
+<h2>How to setup PHP tunnel</h2>
+<p>
+Choose menu command File &gt; Connect, select "PHP Tunnel" a type connection name. After confirming window you should see
+wizard with PHP tunnel properties.  
+</p>
+<h3>Basic settings</h3>
+<ul>
+    <li>
+        Select "Save phptunnel.php", recomended file name is phptunnel.php. Upload this file to web server.
+    </li>
+    <li>
+        Into URL field fill URL of upload PHP file with protocol, eg. http://myweb.com/phptunnel.php . You can check this URL in browser.
+    </li> 
+    <li>
+        Into server field fill address of database server, which is ised in PHP scripts, eg. localhost or 127.0.0.1 .
+    </li>
+    <li>
+        Go to next wizard page. If previous settings is not correct, this step fails.
+    </li>
+    <li>
+        Login name and password - is to database server. 
+    </li>
+    <li>
+        You can select database, then you will be able to work only with this database. If you have right only to one database,
+        it could be neccessary to fill database field manually.
+    </li>
+</ul>
+<h3>Advanced settings</h3>
+In this group HTTP Login/password and proxy can be configured
+<ul>
+    <li>
+        Authentization - <b>Login, Password</b> - HTTP authentization user name, passwor 
+    </li>
+    <li>
+        HTTP Proxy - <b>Server</b> - proxy server address, in format http://proxy.cz:port , if you leave this field blank, proxy server from your default should be used 
+    </li>
+    <li>
+        HTTP Proxy - <b>Login, Password</b> - HTTP proxy user name, password
+    </li>
+</ul>
+<p>
+    That's all, pres OK and enjoy. (If you don't see anything, try Refresh in context menu of tree root).
+</p>
+
+</help>

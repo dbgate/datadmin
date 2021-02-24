@@ -1,0 +1,106 @@
+<Job title="RESTORE DATABASE betest_1 FROM DISK = N'C:\jenasoft\DatAdmin\test\data\test_unity.bak' WITH  FILE = 1,  NOUNLOAD,  STATS = 10">
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+    </Connection>
+    <Sql>RESTORE DATABASE betest_1 
+FROM DISK = N'C:\jenasoft\DatAdmin\test\data\test_unity.bak'
+WITH
+MOVE N'TEST_UNITY' TO N'C:\temp\betest_1.mdf',
+MOVE N'TEST_UNITY_log' TO N'C:\temp\betest_1_log.LDF',
+FILE = 1,  NOUNLOAD,  STATS = 10</Sql>
+    <Database>
+    </Database>
+    <GroupId>a3d4be32-38d5-4101-8147-06a83c43c835</GroupId>
+  </Command>
+  <Command type="copydb">
+    <Source dbname="betest_1" type="generic">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+      </Connection>
+    </Source>
+    <Target filename="c:\jenasoft\DatAdmin\test\data\test_unity.dbk" type="dbk_writer" adtype="dbwriter" />
+    <Options>
+      <Members table="1" detail.view="1" detail.procedure="1" detail.function="1" detail.trigger="1" schema="0" domain="1" specobject="0">
+        <LoadDependencies>1</LoadDependencies>
+      </Members>
+      <TableOptions>
+        <AllowBulkCopy>1</AllowBulkCopy>
+      </TableOptions>
+      <Mode>structureanddata</Mode>
+      <SchemaMode>explicit</SchemaMode>
+    </Options>
+  </Command>
+  <Command type="runsql">
+    <Connection type="mssql" adtype="driver">
+      <Authentization>sspi</Authentization>
+      <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+      <Login>
+      </Login>
+      <Password>
+      </Password>
+    </Connection>
+    <Sql>create database betest_2</Sql>
+    <Database>
+    </Database>
+    <GroupId>60a54256-721f-46aa-ac84-bcb453bd7e4b</GroupId>
+  </Command>
+  <Command type="copydb">
+    <Source file="C:\jenasoft\DatAdmin\test\data\test_unity.dbk" type="dbkreader" />
+    <Target type="dbsource" adtype="dbwriter">
+      <Database dbname="betest_2" type="generic">
+        <Connection type="mssql" adtype="driver">
+          <Authentization>sspi</Authentization>
+          <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+          <Login>
+          </Login>
+          <Password>
+          </Password>
+        </Connection>
+      </Database>
+    </Target>
+    <Options>
+      <Members table="1" detail.view="1" detail.procedure="1" detail.function="1" detail.trigger="1" schema="0" domain="1" specobject="0">
+        <LoadDependencies>1</LoadDependencies>
+      </Members>
+      <TableOptions>
+        <AllowBulkCopy>1</AllowBulkCopy>
+      </TableOptions>
+      <Mode>structureanddata</Mode>
+      <SchemaMode>explicit</SchemaMode>
+    </Options>
+  </Command>
+  <Command type="copydb">
+    <Source dbname="betest_2" type="generic">
+      <Connection type="mssql" adtype="driver">
+        <Authentization>sspi</Authentization>
+        <DataSource>JENA-PC\SQLEXPRESS</DataSource>
+        <Login>
+        </Login>
+        <Password>
+        </Password>
+      </Connection>
+    </Source>
+    <Target filename="c:\jenasoft\DatAdmin\test\data\test_unity2.dbk" type="dbk_writer" adtype="dbwriter" />
+    <Options>
+      <Members table="1" detail.view="1" detail.procedure="1" detail.function="1" detail.trigger="1" schema="0" domain="1" specobject="0">
+        <LoadDependencies>1</LoadDependencies>
+      </Members>
+      <TableOptions>
+        <AllowBulkCopy>1</AllowBulkCopy>
+      </TableOptions>
+      <Mode>structureanddata</Mode>
+      <SchemaMode>explicit</SchemaMode>
+    </Options>
+  </Command>
+</Job>

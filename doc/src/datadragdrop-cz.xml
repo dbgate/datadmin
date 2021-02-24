@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<help title="Drag &amp; Drop">
+
+<h2>K čemu a jak používat drag &amp; drop ve stromě připojení</h2>
+<ul>
+    <li>Kopírování tabulek - přetáhněte tabulku na uzel "Tabulky", nabídne se název nové tabulky 
+    (takto lze tabulku i zduplikovat)</li>
+    <li>Kopírování dat v tabulce - přetáhněte jednu tabulku na druhou - objeví se dialog, kde je možné vybrat mapování sloupců</li>
+    <!--<li>Záloha databáze do datového archivu - přetáhněte databázi na kořenový uzel "Data" nebo na jinou složku</li>-->
+    <li>Obnova databáze z datového archivu - přetáhněte datový archiv na databázi (obnova se provede do existující databáze)
+        nebo na uzel Seznam databází (obnova se provede do nové databáze)</li>
+    <li>Obnova jedné tabulky z datového archivu - přetáhněte tabulku z datového archivu do tabulek databáze, ve které chcete obnocu provést</li>
+</ul>
+
+<h2>K čemu je "přetahovací" panel pod stromem připojení?</h2>
+<p>
+Tento panel slouží k tomu, aby si na něj bylo možné "odkládat" objekty ze stromu (tabulky, databáze), přetažení z tohoto panelu má 
+stejný efekt jako přetažení původního objektu. 
+</p>
+
+</help>

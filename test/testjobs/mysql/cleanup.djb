@@ -1,0 +1,21 @@
+<Job title="DROP DATABASE `betest_1`&#xD;">
+  <Command type="runsql">
+    <Connection type="mysql" adtype="driver">
+      <DataSource>localhost</DataSource>
+      <Login>root</Login>
+      <Password>nGO5dWPwmmOgLTg=</Password>
+      <Port>3306</Port>
+      <DatabaseMode>all</DatabaseMode>
+    </Connection>
+    <Sql>DROP DATABASE `betest_1`
+GO
+DROP DATABASE `betest_2`
+GO
+DROP DATABASE `betest_bcp`
+GO
+DROP DATABASE `betest1_from_mssql`</Sql>
+    <Database>
+    </Database>
+    <GroupId>629dd91e-af0f-462d-b7e2-467fd87ee4e1</GroupId>
+  </Command>
+</Job>

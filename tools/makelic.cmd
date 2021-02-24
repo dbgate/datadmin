@@ -1,0 +1,2 @@
+rem ..\keygens\keygencli\bin\Debug\keygencli.exe pro jan.prochazka@centrum.cz "Jan Prochazka" > datadmin.license
+..\keygens\keygencli\bin\Debug\keygencli.exe ultimate jan.prochazka@centrum.cz "Jan Prochazka" > datadmin.license

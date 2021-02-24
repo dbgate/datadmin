@@ -1,0 +1,463 @@
+<?xml  version="1.0"?>
+<SyntaxDefinition name="Sql_access" extensions=".sql">
+    <Digits name="Digits" bold="false" italic="false" color="DarkBlue"/>
+
+    <RuleSets>
+        <RuleSet ignorecase="true">
+            <Delimiters>&amp;&lt;&gt;~!%^*()-+=|\#/{}[]:;"' , .?@</Delimiters>
+        
+			<Span name="LineComment" stopateol="true" bold="false" italic="false" color="Gray" >
+				<Begin >--</Begin>
+			</Span>
+
+			<Span name="BlockComment" stopateol="false" bold="false" italic="false" color="Gray" >
+				<Begin >/*</Begin>
+                <End>*/</End>
+			</Span>
+        
+            <Span name="Identifier" bold="false" italic="false" color="Green" stopateol="true">
+                <Begin>[</Begin>
+                <End>]</End>
+            </Span>
+            
+            <Span name="String" bold="false" italic="false" color="Red" stopateol="false" escapecharacter='&apos;'>
+                <Begin>'</Begin>
+                <End>'</End>
+            </Span>
+            
+            <MarkFollowing markmarker="true" bold="false" italic="false" color="Purple">@</MarkFollowing>
+            
+            
+            <KeyWords name="keywords" bold="true" italic="false" color="Blue">
+            	
+            		<Key word="ADD"/>
+            	
+            		<Key word="ALL"/>
+            	
+            		<Key word="ALTER"/>
+            	
+            		<Key word="AND"/>
+            	
+            		<Key word="ANY"/>
+            	
+            		<Key word="AS"/>
+            	
+            		<Key word="ASC"/>
+            	
+            		<Key word="AUTOINCREMENT"/>
+            	
+            		<Key word="BETWEEN"/>
+            	
+            		<Key word="BINARY"/>
+            	
+            		<Key word="BY"/>
+            	
+            		<Key word="COLUMN"/>
+            	
+            		<Key word="CONSTRAINT"/>
+            	
+            		<Key word="COUNTER"/>
+            	
+            		<Key word="CREATE"/>
+            	
+            		<Key word="CURRENCY"/>
+            	
+            		<Key word="DATABASE"/>
+            	
+            		<Key word="DATE"/>
+            	
+            		<Key word="DELETE"/>
+            	
+            		<Key word="DESC"/>
+            	
+            		<Key word="DISALLOW"/>
+            	
+            		<Key word="DISTINCT"/>
+            	
+            		<Key word="DISTINCTROW"/>
+            	
+            		<Key word="DROP"/>
+            	
+            		<Key word="EXISTS"/>
+            	
+            		<Key word="FALSE"/>
+            	
+            		<Key word="FOREIGN"/>
+            	
+            		<Key word="FROM"/>
+            	
+            		<Key word="FUNCTION"/>
+            	
+            		<Key word="GENERAL"/>
+            	
+            		<Key word="GROUP"/>
+            	
+            		<Key word="GROUP BY"/>
+            	
+            		<Key word="GUID"/>
+            	
+            		<Key word="HAVING"/>
+            	
+            		<Key word="IGNORE"/>
+            	
+            		<Key word="INDEX"/>
+            	
+            		<Key word="INNER"/>
+            	
+            		<Key word="INSERT"/>
+            	
+            		<Key word="INTO"/>
+            	
+            		<Key word="IS"/>
+            	
+            		<Key word="JOIN"/>
+            	
+            		<Key word="KEY"/>
+            	
+            		<Key word="LEFT"/>
+            	
+            		<Key word="NAME"/>
+            	
+            		<Key word="NO"/>
+            	
+            		<Key word="NULL"/>
+            	
+            		<Key word="OFF"/>
+            	
+            		<Key word="ON"/>
+            	
+            		<Key word="OPTION"/>
+            	
+            		<Key word="OR"/>
+            	
+            		<Key word="ORDER"/>
+            	
+            		<Key word="OWNERACCESS"/>
+            	
+            		<Key word="PARAMETERS"/>
+            	
+            		<Key word="PERCENT"/>
+            	
+            		<Key word="PIVOT"/>
+            	
+            		<Key word="PRIMARY"/>
+            	
+            		<Key word="PROCEDURE"/>
+            	
+            		<Key word="REFERENCES"/>
+            	
+            		<Key word="RIGHT"/>
+            	
+            		<Key word="SCREEN"/>
+            	
+            		<Key word="SECTION"/>
+            	
+            		<Key word="SELECT"/>
+            	
+            		<Key word="SET"/>
+            	
+            		<Key word="SOME"/>
+            	
+            		<Key word="SQL"/>
+            	
+            		<Key word="TABLE"/>
+            	
+            		<Key word="TOP"/>
+            	
+            		<Key word="TRANSFORM"/>
+            	
+            		<Key word="TRUE"/>
+            	
+            		<Key word="UNION"/>
+            	
+            		<Key word="UNIQUE"/>
+            	
+            		<Key word="UPDATE"/>
+            	
+            		<Key word="USER"/>
+            	
+            		<Key word="VALUE"/>
+            	
+            		<Key word="VALUES"/>
+            	
+            		<Key word="VERSION"/>
+            	
+            		<Key word="WHERE"/>
+            	
+            		<Key word="WITH"/>
+            	
+            		<Key word="YES"/>
+            	
+            		<Key word="YESNO"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="datatypes" bold="true" italic="false" color="Teal">
+            	
+            		<Key word="BIT"/>
+            	
+            		<Key word="BOOLEAN"/>
+            	
+            		<Key word="BYTE"/>
+            	
+            		<Key word="CHAR"/>
+            	
+            		<Key word="CHARACTER"/>
+            	
+            		<Key word="DATETIME"/>
+            	
+            		<Key word="FLOAT"/>
+            	
+            		<Key word="FLOAT4"/>
+            	
+            		<Key word="FLOAT8"/>
+            	
+            		<Key word="DOUBLE"/>
+            	
+            		<Key word="IEEEDOUBLE"/>
+            	
+            		<Key word="IEEESINGLE"/>
+            	
+            		<Key word="INT"/>
+            	
+            		<Key word="INTEGER"/>
+            	
+            		<Key word="INTEGER1"/>
+            	
+            		<Key word="INTEGER2"/>
+            	
+            		<Key word="INTEGER4"/>
+            	
+            		<Key word="LOGICAL"/>
+            	
+            		<Key word="OGICAL1"/>
+            	
+            		<Key word="LONG"/>
+            	
+            		<Key word="LONGBINARY"/>
+            	
+            		<Key word="LONGTEXT"/>
+            	
+            		<Key word="MONEY"/>
+            	
+            		<Key word="MEMO"/>
+            	
+            		<Key word="NUMBER"/>
+            	
+            		<Key word="NUMERIC"/>
+            	
+            		<Key word="OLEOBJECT"/>
+            	
+            		<Key word="REAL"/>
+            	
+            		<Key word="STRING"/>
+            	
+            		<Key word="SHORT"/>
+            	
+            		<Key word="SINGLE"/>
+            	
+            		<Key word="SMALLINT"/>
+            	
+            		<Key word="TEXT"/>
+            	
+            		<Key word="TIME"/>
+            	
+            		<Key word="TIMESTAMP"/>
+            	
+            		<Key word="VARBINARY"/>
+            	
+            		<Key word="VARCHAR"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="functions" bold="true" italic="false" color="#FF00FF">
+            	
+            		<Key word="Avg"/>
+            	
+            		<Key word="Count"/>
+            	
+            		<Key word="Max"/>
+            	
+            		<Key word="Min"/>
+            	
+            		<Key word="Mod"/>
+            	
+            		<Key word="StDev"/>
+            	
+            		<Key word="StDevP"/>
+            	
+            		<Key word="Sum"/>
+            	
+            		<Key word="Var"/>
+            	
+            		<Key word="VarP"/>
+            	
+            </KeyWords>
+            
+            <KeyWords name="specfunc" bold="true" italic="false" color="DarkGray">
+            	
+            		<Key word="Alphanumeric"/>
+            	
+            		<Key word="Application"/>
+            	
+            		<Key word="Assistant"/>
+            	
+            		<Key word="CompactDatabase"/>
+            	
+            		<Key word="Container"/>
+            	
+            		<Key word="CreateDatabase"/>
+            	
+            		<Key word="CreateField"/>
+            	
+            		<Key word="CreateGroup"/>
+            	
+            		<Key word="CreateIndex"/>
+            	
+            		<Key word="CreateObject"/>
+            	
+            		<Key word="CreateProperty"/>
+            	
+            		<Key word="CreateRelation"/>
+            	
+            		<Key word="CreateTableDef"/>
+            	
+            		<Key word="CreateUser"/>
+            	
+            		<Key word="CreateWorkspace"/>
+            	
+            		<Key word="CurrentUser"/>
+            	
+            		<Key word="Description"/>
+            	
+            		<Key word="Document"/>
+            	
+            		<Key word="Echo"/>
+            	
+            		<Key word="Else"/>
+            	
+            		<Key word="End"/>
+            	
+            		<Key word="Eqv"/>
+            	
+            		<Key word="Error"/>
+            	
+            		<Key word="Exit"/>
+            	
+            		<Key word="Field"/>
+            	
+            		<Key word="Fields"/>
+            	
+            		<Key word="FillCache"/>
+            	
+            		<Key word="Form"/>
+            	
+            		<Key word="Forms"/>
+            	
+            		<Key word="Full"/>
+            	
+            		<Key word="GetObject"/>
+            	
+            		<Key word="GetOption"/>
+            	
+            		<Key word="GotoPage"/>
+            	
+            		<Key word="Idle"/>
+            	
+            		<Key word="If"/>
+            	
+            		<Key word="Imp"/>
+            	
+            		<Key word="IN"/>
+            	
+            		<Key word="Index"/>
+            	
+            		<Key word="Indexes"/>
+            	
+            		<Key word="InsertText"/>
+            	
+            		<Key word="LastModified"/>
+            	
+            		<Key word="Level"/>
+            	
+            		<Key word="Like"/>
+            	
+            		<Key word="Macro"/>
+            	
+            		<Key word="Match"/>
+            	
+            		<Key word="Module"/>
+            	
+            		<Key word="Move"/>
+            	
+            		<Key word="NewPassword"/>
+            	
+            		<Key word="Not"/>
+            	
+            		<Key word="Note"/>
+            	
+            		<Key word="Object"/>
+            	
+            		<Key word="OpenRecordset"/>
+            	
+            		<Key word="Orientation"/>
+            	
+            		<Key word="Outer"/>
+            	
+            		<Key word="Parameter"/>
+            	
+            		<Key word="Partial"/>
+            	
+            		<Key word="Property"/>
+            	
+            		<Key word="Queries"/>
+            	
+            		<Key word="Query"/>
+            	
+            		<Key word="Quit"/>
+            	
+            		<Key word="Recalc"/>
+            	
+            		<Key word="Recordset"/>
+            	
+            		<Key word="Refresh"/>
+            	
+            		<Key word="RefreshLink"/>
+            	
+            		<Key word="RegisterDatabase"/>
+            	
+            		<Key word="Relation"/>
+            	
+            		<Key word="Repaint"/>
+            	
+            		<Key word="RepairDatabase"/>
+            	
+            		<Key word="Report"/>
+            	
+            		<Key word="Reports"/>
+            	
+            		<Key word="Requery"/>
+            	
+            		<Key word="SetFocus"/>
+            	
+            		<Key word="SetOption"/>
+            	
+            		<Key word="TableDef"/>
+            	
+            		<Key word="TableDefs"/>
+            	
+            		<Key word="TableID"/>
+            	
+            		<Key word="Type"/>
+            	
+            		<Key word="Workspace"/>
+            	
+            		<Key word="Xor"/>
+            	
+            		<Key word="Year"/>
+            	
+            </KeyWords>
+            
+        </RuleSet>
+    </RuleSets>
+</SyntaxDefinition>
